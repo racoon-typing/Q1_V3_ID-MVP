@@ -1,22 +1,20 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.[contenthash].js',
+    path: path.resolve(__dirname, 'build'),
     clean: true,
-    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
   },
   devtool: 'source-map',
   plugins: [
     new HtmlPlugin({
       template: 'public/index.html',
     }),
-    new CopyWebpackPlugin({
+    new CopyPlugin({
       patterns: [
         {
           from: 'public',
@@ -25,13 +23,6 @@ module.exports = {
           },
         },
       ],
-    }),
-    new FileManagerPlugin({
-      events: {
-        onStart: {
-          delete: ['build'],
-        },
-      },
     }),
   ],
   module: {
@@ -53,20 +44,6 @@ module.exports = {
           "css-loader", // добавляет css в CommonJS
           "sass-loader", // sass в css
         ],
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: path.join('assets/img', '[name].[contenthash][ext]'),
-        },
-      },
-      {
-        test: /\.svg$/,
-        type: 'asset/resource',
-        generator: {
-          filename: path.join('assets/icons', '[name].[contenthash][ext]'),
-        },
       },
     ]
   }
