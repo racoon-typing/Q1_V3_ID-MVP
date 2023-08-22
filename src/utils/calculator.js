@@ -12,11 +12,15 @@ const categoryUser = [
 const caculatorForm = document.querySelector('#calculator__form');
 // Поля формы
 const allFields = document.querySelectorAll('.calculator__input');
-const heightInputWrapper = document.querySelector('.calculator__input-wrapper-height');
-const weightInputWrapper = document.querySelector('.calculator__input-wrapper-weight');
-const ageInputWrapper = document.querySelector('.calculator__input-wrapper-age');
-const genderInputWrapper = document.querySelector('.calculator__input-wrapper-gender');
+// Инпуты параметров юзера
 const allInputs = document.querySelectorAll('.calculator__input');
+// console.log(allInputs);
+
+const heightInput = document.querySelector('#height');
+const weightInput = document.querySelector('#weight');
+const ageInput = document.querySelector('#age');
+const genderSelector = document.querySelector('#form-select');
+// Сообщение с ошибкой
 const textError = document.querySelector('.calculator__input-text--error');
 const textErrorHeight = document.querySelector('.calculator__input-text--error-height');
 const textErrorWeight = document.querySelector('.calculator__input-text--error-weight');
@@ -31,22 +35,22 @@ const caculatorSelectList = document.querySelector('.calculator__select-list');
 let isOpen = false;
 
 // Функция добавления значение гендера в инпут
-function addSelectItem(evt) {
-    const item = evt.target;
-    caculatorSelect.value = item.textContent;
+// function addSelectItem(evt) {
+//     const item = evt.target;
+//     caculatorSelect.value = item.textContent;
 
-    // Скрывает меню: селект
-    caculatorSelectList.classList.add('calculator__select-list--hidden');
+//     // Скрывает меню: селект
+//     caculatorSelectList.classList.add('calculator__select-list--hidden');
 
-    // Убирает ошибку с поля селект
-    const isGenderEmpty = genderInputWrapper.classList.contains('calculator__input-wrapper--error');
-    if (isGenderEmpty) {
-        genderInputWrapper.classList.remove('calculator__input-wrapper--error');
-    }
+//     // Убирает ошибку с поля селект
+//     const isGenderEmpty = genderInputWrapper.classList.contains('is-invalid');
+//     if (isGenderEmpty) {
+//         genderInputWrapper.classList.remove('is-invalid');
+//     }
 
-    // Меню закрыто
-    isOpen = false;
-}
+//     // Меню закрыто
+//     isOpen = false;
+// }
 
 // Слушатель на селект
 // caculatorSelect.addEventListener(('click'), () => {
@@ -211,30 +215,30 @@ function checkUserInfo(userHeight, userWeight, userAge, userGender) {
     const rightHeightValue = userHeight > 100 && userHeight < 240;
     const rightWeightValue = userWeight > 30 && userWeight < 300;
     const rightAgeValue = userAge > 0 && userAge < 120;
-    const rightGenderValue = userGender !== '';
+    const rightGenderValue = userGender !== null;
 
     // Подсвечивает неверные поля
     if (!rightHeightValue) {
         // console.log(`Неверное значение рост: ${rightHeightValue}`)
-        heightInputWrapper.classList.add('calculator__input-wrapper--error');
+        heightInput.classList.add('is-invalid');
         textErrorHeight.classList.remove('calculator__input-text--error-hidden');
     }
 
     if (!rightWeightValue) {
         // console.log(`Неверное значение вес: ${rightWeightValue}`)
-        weightInputWrapper.classList.add('calculator__input-wrapper--error');
+        weightInput.classList.add('is-invalid');
         textErrorWeight.classList.remove('calculator__input-text--error-hidden');
     }
 
     if (!rightAgeValue) {
         // console.log(`Неверное значение возраст: ${rightAgeValue}`)
-        ageInputWrapper.classList.add('calculator__input-wrapper--error');
+        ageInput.classList.add('is-invalid');
         textErrorAge.classList.remove('calculator__input-text--error-hidden');
     }
 
     if (!rightGenderValue) {
         // console.log(`Неверное значение гендер: ${rightGenderValue}`)
-        genderInputWrapper.classList.add('calculator__input-wrapper--error');
+        genderSelector.classList.add('is-invalid');
     }
 }
 
@@ -251,8 +255,6 @@ caculatorForm.addEventListener('submit', (evt) => {
     const userAge = Number(formData.get('age'));
     const userGender = formData.get('gender');
 
-
-
     // Условие соответсвия всех полей
     const isRightValue = userHeight > 100 && userHeight < 240 && userWeight > 30 && userWeight < 300 && userAge > 0 && userAge < 120 && userGender !== '';
 
@@ -265,7 +267,6 @@ caculatorForm.addEventListener('submit', (evt) => {
             gender: userGender
         };
 
-
         // Рассчитываем BMI юзера
         const calcUserInfo = calcBmiIndex(userInfo);
 
@@ -276,12 +277,12 @@ caculatorForm.addEventListener('submit', (evt) => {
         getUserIcon(calcUserInfo.bmi, userInfo.gender);
 
         // Показывает следующий блок
-        const calculatorContainer = document.querySelector('.calculator__form-content');
+        const calculatorContainer = document.querySelector('.calculator__content');
         const questionContainer = document.querySelector('.question__wrapper');
 
+        // Скрывает блок Калькулятор и показывает блок Вопросы
         calculatorContainer.classList.add('hidden');
         questionContainer.classList.remove('hidden');
-
         return;
     } else {
         checkUserInfo(userHeight, userWeight, userAge, userGender);
@@ -296,11 +297,13 @@ allInputs.forEach(i => {
 
         // Находит обертку для инпута
         const parent = input.closest('.calculator__input-wrapper');
-        parent.classList.remove('calculator__input-wrapper--error');
+        input.classList.remove('is-invalid');
 
         // Убирает сообщение с ошибкой
-        const errorMessageNode = parent.querySelector('.calculator__input-text--error')
-        errorMessageNode.classList.add('calculator__input-text--error-hidden');
+        const errorMessageNode = parent.querySelector('.calculator__input-text--error');
+        if (errorMessageNode) {
+            errorMessageNode.classList.add('calculator__input-text--error-hidden');
+        }
     });
 });
 

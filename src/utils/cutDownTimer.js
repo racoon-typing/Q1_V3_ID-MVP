@@ -21,3 +21,5 @@ function cutDownTimer(minutes, seconds) {
         }
     }, 1000);
 }
+
+export {cutDownTimer};
