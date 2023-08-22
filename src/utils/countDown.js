@@ -1,7 +1,7 @@
 const cutdownTimer = document.querySelector('#cutdownTimer');
 
 function countDown(minutes, seconds) {
-    const totalSeconds = minutes * 60 + seconds;
+    let totalSeconds = minutes * 60 + seconds;
     const interval = setInterval(function () {
         if (totalSeconds <= 0) {
             clearInterval(interval);
