@@ -1,9 +1,8 @@
-
-
 // Импорт стилей из модулей
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 
+@import "./variables.scss";
 @import "./common/common.scss";
 @import "./blocks/first-screen/first-screen.scss";
 @import "./blocks/quiz/quiz.scss";

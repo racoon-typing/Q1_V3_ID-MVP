@@ -27,7 +27,7 @@
 
     &__body {
         margin-bottom: 20px;
-        background-color: #eff8f0;
+        background-color: $light-green;
         padding: 20px;
         border-radius: 10px;
 
@@ -75,7 +75,7 @@
     }
 
     &__allocated-info {
-        background-color: #eff8f0;
+        background-color: $light-green;
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 20px;
@@ -103,7 +103,7 @@
                 width: 30px;
                 height: 30px;
                 flex-shrink: 0;
-                color: #3db92c;
+                color: $green;
                 margin-right: 6px;
             }
 
@@ -163,7 +163,7 @@
         width: auto;
         height: min-content;
         max-height: 400px;
-        background: linear-gradient(to bottom right, #eff8f0, #ffffff);
+        background: linear-gradient(to bottom right, $light-green, #ffffff);
         border-radius: 5px;
         border: 1px solid #29a289;
         margin-bottom: 20px;
