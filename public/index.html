@@ -6,12 +6,16 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./css/normalize.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  
+  <!-- Скрипты -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- Стили -->
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
   <title>Квиз</title>
 </head>
 
@@ -320,7 +324,8 @@
     </div>
 
     <!-- Страница: Результат -->
-    <div class="result hidden">
+    <!-- hidden -->
+    <div class="result ">
       <h3 class="result__title">
         Program penurunan berat badan pribadi Anda
       </h3>
@@ -423,26 +428,27 @@
       </p>
 
       <!-- Слайдер -->
-      <div class="sldr" id="swiper">
-        <div class="slider" id="swiper-slider" style="width: auto">
-          <div class="swiper-slide">
-            <h3 class="swiper__slide-title">
+      <div id="result__slider" class="result__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
               🌿 Minggu 1: Pembersihan tubuh
             </h3>
 
-            <p class="swiper__slide-text">
+            <p class="result__slide-text">
               Membersihkan tubuh dari racun dan limbah, membantu mempersiapkan
               tubuh untuk turun berat badan secara otomatis. Formula ini juga
               meningkatkan fungsi sistem pencernaan dan meningkatkan
               metabolisme.
             </p>
           </div>
-          <div>
-            <h3 class="swiper__slide-title">
+
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
               🍏 Minggu 2: Memperkuat sistem pencernaan
             </h3>
 
-            <p class="swiper__slide-text">
+            <p class="result__slide-text">
               Formula ini meningkatkan kinerja sistem pencernaan, sehingga
               memungkinkan penyerapan nutrien yang lebih baik serta
               meningkatkan metabolisme. Selain itu, formula ini juga
@@ -450,23 +456,25 @@
               normal perut.
             </p>
           </div>
-          <div>
-            <h3 class="swiper__slide-title">
+
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
               🔥 Minggu 3: Peningkatan metabolisme
             </h3>
 
-            <p class="swiper__slide-text">
+            <p class="result__slide-text">
               Fase penurunan berat badan aktif. Peningkatan metabolisme dan
               memperbanyak jumlah energi yang dikonsumsi. Penurunan volume
               lemak tubuh, menurunkan berat badan secara otomatis.
             </p>
           </div>
-          <div>
-            <h3 class="swiper__slide-title">
+          
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
               👍🏼 Minggu 4: Mempertahankan hasil yang telah dicapai
             </h3>
 
-            <p class="swiper__slide-text">
+            <p class="result__slide-text">
               Mencegah berat badan kembali naik dan memblokir efek yoyo.
               Metabolisme telah sepenuhnya terbentuk. Peningkatan untuk
               kondisi tubuh secara keseluruhan dan mengurangi risiko penyakit
@@ -474,7 +482,10 @@
             </p>
           </div>
         </div>
+
+        <div class="swiper-pagination"></div>
       </div>
+
 
       <button class="button result__button">MASUK KE PAKET INDIVIDU</button>
 

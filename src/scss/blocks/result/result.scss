@@ -1,0 +1,226 @@
+.result {
+    width: 100%;
+    padding: 20px 15px;
+
+    &__title {
+        margin: 0;
+        margin-bottom: 16px;
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+        margin-bottom: 16px;
+    }
+
+    &__body {
+        margin-bottom: 20px;
+        background-color: #eff8f0;
+        padding: 20px;
+        border-radius: 10px;
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            min-height: 200px;
+            animation-name: open;
+            animation-duration: 2s;
+
+            &-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        &-text {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.33;
+            margin-bottom: 12px;
+
+            & b {
+                margin-right: 5px;
+            }
+
+            &--first {
+                text-align: center;
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__allocated-info {
+        background-color: #eff8f0;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+        & .result__text {
+            margin: 0;
+        }
+    }
+
+    &__check {
+        &-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            &-icon {
+                display: block;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                color: #3db92c;
+                margin-right: 6px;
+            }
+
+            &-text {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.33;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__programm {
+        &-title {
+            margin: 0;
+            margin-bottom: 16px;
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        &-chart {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        &-text {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.33;
+            margin-bottom: 16px;
+        }
+
+        & b {
+            margin-right: 5px;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.33;
+        padding: 7px 0;
+        text-decoration: none;
+        min-height: 45px;
+    }
+
+    &__slider {
+        position: relative;
+        width: auto;
+        height: min-content;
+        max-height: 400px;
+        background: linear-gradient(to bottom right, #eff8f0, #ffffff);
+        border-radius: 5px;
+        border: 1px solid #29a289;
+        margin-bottom: 20px;
+        padding-bottom: 25px;
+        overflow: hidden;
+
+        & .swiper-pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #9B9B9B;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        & .swiper-pagination-bullet-active {
+            background-color: #333;
+        }
+    }
+
+    &__slide {
+        padding: 10px;
+
+        &-title {
+            text-align: center;
+            font-size: 18px;
+            line-height: 25px;
+            margin: 16px 0;
+            font-weight: 600;
+        }
+
+        &-text {
+            text-align: center;
+            font-size: 18px;
+            line-height: 25px;
+            margin: 16px 0;
+        }
+    }
+}
+
+@keyframes open {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
