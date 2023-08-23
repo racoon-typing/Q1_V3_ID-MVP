@@ -27,6 +27,7 @@
   }
 }
 
+// Кнопка
 .button {
   display: flex;
   align-items: center;
@@ -45,12 +46,10 @@
   font-size: 18px;
 
   &::after {
-    background: linear-gradient(
-      90deg,
-      hsla(0, 0%, 100%, 0.1) 10%,
-      hsla(0, 0%, 100%, 0.2) 20%,
-      hsla(0, 0%, 100%, 0.6)
-    );
+    background: linear-gradient(90deg,
+        hsla(0, 0%, 100%, 0.1) 10%,
+        hsla(0, 0%, 100%, 0.2) 20%,
+        hsla(0, 0%, 100%, 0.6));
     width: 20px;
     content: "";
     position: absolute;
@@ -69,8 +68,34 @@
     0% {
       left: -20%;
     }
+
     100% {
       left: 110%;
     }
   }
+}
+
+// Текст
+.main-title {
+  margin: 0;
+  font-size: $font-size-main-title;
+  line-height: $line-height-2;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-title;
+  line-height: $line-height-2;
+}
+
+.sub-title {
+  margin: 0;
+  font-size: $font-size-sub-title;
+  line-height: $line-height;
+}
+
+.text {
+  margin: 0;
+  font-size: $font-size-text;
+  line-height: $line-height;
 }
