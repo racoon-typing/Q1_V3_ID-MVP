@@ -1,0 +1,233 @@
+.product {
+  padding-bottom: 30px;
+  width: 100%;
+
+  .margin-top{
+    margin-top: 20px;
+  }
+
+  &__content {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eff8f0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.33;
+    margin-bottom: 16px;
+  }
+
+  &__counter {
+    &-img {
+      margin: 0;
+      width: 95%;
+      height: auto;
+      object-fit: cover;
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        // background-image: url("../../img/content/bg-content-1.jpeg");
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &-list {
+      background-color: #fff4d0;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    &-item {
+      text-align: center;
+      margin-bottom: 10px;
+
+      &--price {
+        font-weight: 600;
+        margin-bottom: 14px;
+
+        .old-price {
+          color: #ef3124;
+          font-size: 18px;
+          margin-right: 8px;
+        }
+        .new-price {
+          font-size: 24px;
+        }
+      }
+
+      span {
+        font-size: 16px;
+        line-height: 1.33;
+      }
+    }
+  }
+
+  &__little {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  &__little-img {
+    display: block;
+    margin: 0;
+    width: 35%;
+    height: auto;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 470px;
+    gap: 15px;
+
+    &-img-and-prices {
+      display: flex;
+      justify-content: center;
+
+      .prices {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .old-price {
+          color: #ef3124;
+          font-size: 18px;
+          text-decoration: line-through;
+        }
+
+        .new-price {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &-icons {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: 20%;
+      }
+    }
+
+    &-inputs {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .iti {
+        width: 100%;
+      }
+    }
+  }
+
+  /* Weight Loss программа */
+  .weight-loss {
+    padding: 20px 15px;
+
+  }
+
+  .weight-loss__main-title {
+    color: #fff;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  .weight-loss__main-title-icon {
+    display: block;
+    margin: 0;
+    width: 101%;
+    margin-top: -1px;
+    margin-left: -1px;
+  }
+
+  .weight-loss__main-title .title {
+    background-color: #7485ff;
+    margin: 0;
+    padding: 20px;
+  }
+
+
+  .img{
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  /* Выделенный блок 2 */
+  .allocated-block-2 {
+  }
+
+  .allocated-block-2__icon {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .allocated-block-2__content {
+    padding: 0 20px;
+    padding-bottom: 40px;
+  }
+
+  /* Таблица */
+  .table__nutrition {
+    display: block;
+    border-collapse: collapse;
+    overflow: auto;
+  }
+
+  .table__nutrition tbody {
+    display: block;
+    min-width: 600px;
+  }
+
+
+  /* Таблица для мужчины и женщины */
+  .table__gen {
+    display: block;
+    border-collapse: collapse;
+    overflow: scroll;
+  }
+
+  .table__gen tbody {
+    display: block;
+  }
+
+  .table__gen th,
+  .table__gen td {
+    border: solid 1px;
+    padding: 2px 4px;
+  }
+
+  .table__gen tr th:nth-child(1),
+  .table__gen tr td:nth-child(1) {
+    min-width: 80px;
+  }
+}
