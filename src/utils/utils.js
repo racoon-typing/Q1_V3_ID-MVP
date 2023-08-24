@@ -4,3 +4,4 @@ import './calculator.js';
 // import './countDown.js';
 import './date.js';
 import './questions.js';
+import './validatorNumber.js';
