@@ -18,3 +18,4 @@ const resultSlider = new Swiper('#result__slider', {
     delay: 5000,
   },
 });
+
