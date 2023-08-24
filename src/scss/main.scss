@@ -2,8 +2,11 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 
+// Общие стили и переменные 
 @import "./variables.scss";
 @import "./common/common.scss";
+
+// Стили для страниц  
 @import "./blocks/first-screen/first-screen.scss";
 @import "./blocks/quiz/quiz.scss";
 @import "./common/header/header.scss";
@@ -14,3 +17,4 @@
 @import "./blocks/calculator/calculator.scss";
 @import './blocks/question/question.scss';
 @import './blocks/result/result.scss';
+@import './blocks/product/product.scss';
