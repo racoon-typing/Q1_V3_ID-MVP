@@ -1,4 +1,7 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
 
 .page {
   &__body {
@@ -8,7 +11,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    font-family: Euclid, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #000;
     font-size: 14px;
     line-height: 20px;
@@ -25,6 +28,15 @@
   .no-margin-top {
     margin-top: 0;
   }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+td, th{
+  text-align: center;
 }
 
 .button {
