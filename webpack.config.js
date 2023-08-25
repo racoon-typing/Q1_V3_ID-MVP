@@ -15,6 +15,9 @@ module.exports = {
   plugins: [
     new HtmlPlugin({
       template: 'public/index.html',
+    //   templateParameters: {
+    //     header: () => require('./src/template/header.html'),
+    //   },
     }),
     new CopyWebpackPlugin({
       patterns: [
