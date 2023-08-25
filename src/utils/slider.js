@@ -1,16 +1,21 @@
-// Слайдер
-$(document).ready(function () {
-  $(".slider").slick({
-    arrows: false,
-    prevArrow: '<button type="button" class="slick-prev">←</button>',
-    nextArrow: '<button type="button" class="slick-next">→</button>',
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-  });
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+
+
+const resultSlider = new Swiper('#result__slider', {
+  // Опции Swiper
+  modules: [Pagination],
+  autoHeight: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true, // Делает точки пагинации кликабельными
+  },
+  loop: true,
+  speed: 500,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  autoplay: {
+    delay: 5000,
+  },
 });
+

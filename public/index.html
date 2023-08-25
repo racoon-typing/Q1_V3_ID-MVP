@@ -1,607 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <title>Квиз</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Маска для телефона -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css"
-    />
-  </head>
+  <title>Квиз</title>
 
-  <body class="page__body">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js"></script>
+  <!-- Маска для телефона -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css" />
+</head>
 
-    <!-- Header -->
-    <header class="header">
-      <div class="header__wrapper">
-        <div class="header__top">
-          <p class="header__top-date">...</p>
+<body class="page__body">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js"></script>
 
-          <ul class="header__top-list" style="float: right">
-            <li class="header__top-item">
-              <a
-                class="header__top-item-link"
-                href="https://mail.kemkes.go.id/"
-              >
-                LOGIN
-              </a>
-            </li>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__top">
+        <p class="header__top-date">...</p>
 
-            <li class="header__top-item">
-              <a
-                class="header__top-item-link"
-                href="https://www.kemkes.go.id/folder/view/full-content/structure-kamus.html"
-              >
-                KAMUS
-              </a>
-            </li>
+        <ul class="header__top-list" style="float: right">
+          <li class="header__top-item">
+            <a class="header__top-item-link" href="https://mail.kemkes.go.id/">
+              LOGIN
+            </a>
+          </li>
 
-            <li class="header__top-item">
-              <a
-                class="header__top-item-link"
-                href="https://www.kemkes.go.id/folder/view/full-content/structure-faq.html"
-              >
-                FAQ
-              </a>
-            </li>
+          <li class="header__top-item">
+            <a class="header__top-item-link"
+              href="https://www.kemkes.go.id/folder/view/full-content/structure-kamus.html">
+              KAMUS
+            </a>
+          </li>
 
-            <li class="header__top-item">
-              <a
-                class="header__top-item-link"
-                href="https://www.kemkes.go.id/folder/view/01/structure-peta-situs.html"
-              >
-                PETA SITUS
-              </a>
-            </li>
-          </ul>
-        </div>
+          <li class="header__top-item">
+            <a class="header__top-item-link"
+              href="https://www.kemkes.go.id/folder/view/full-content/structure-faq.html">
+              FAQ
+            </a>
+          </li>
 
-        <div class="header__bottom"></div>
-      </div>
-    </header>
-
-    <!-- Main -->
-    <main class="main">
-      <!-- Главная -->
-      <div class="first-screen__container">
-        <h2 class="first-screen__title">
-          Hari ini kami memberi Anda kesempatan untuk mengikuti survei, yang
-          hasilnya Anda akan menerima rencana penurunan berat badan yang
-          dipersonalisasi secara gratis sesuai dengan metodologi unik dari dr
-          Grace Judio-Kahl!
-        </h2>
-
-        <p class="text">
-          Siti Badriah, Ussy Sulistiawaty, Ivan Gunawan, Okky Lukman —dan ini
-          belum lengkap semua dari mereka yang telah dibantu oleh Dr. Grace
-          Judio-Kahl untuk menurunkan berat badan. Cukup dalam 5 menit, Anda
-          dapat memiliki rencana menurunkan berat badan pribadi dari ahli gizi
-          selebriti.
-        </p>
-
-        <p class="text">
-          Menurunkan berat badan bisa sangat sulit. Sangat mudah untuk jadi
-          kebingungan karena di mana-mana ada banyak judul berita tentang
-          berbagai macam diet dan alat bantu penurunan berat badan dan pembakar
-          lemak. Mengapa itu semua tidak ada hasilnya? Faktanya adalah setiap
-          orang membutuhkan pendekatan individu. Hanya dengan pendekatan
-          pribadi, proses penurunan berat badan akan efektif, dan kelebihan
-          berat itu tidak akan kembali setelah sebulan.
-        </p>
-
-        <p class="text">
-          Berdasarkan hasil tes ini, salah satu ahli gizi terbaik di Indonesia
-          akan menyusun rencana penurunan berat badan yang disesuaikan untuk
-          Anda, yang dijamin akan memberikan hasil yang nyata hanya dalam
-          beberapa hari!
-        </p>
-
-        <figure class="first-screen__doctor-figure">
-          <img
-            class="first-screen__doctor-img"
-            src="img/content/content-1.jpg"
-            alt=""
-          />
-
-          <figcaption class="first-screen__doctor-figcaption">
-            dr. Grace Judio-Kahl, Msc, MH, CHt, Dipl. AAAM
-          </figcaption>
-        </figure>
-
-        <p class="text">
-          Dr Grace Judio-Kahl adalah seorang ahli fisiologi, gaya hidup dan
-          manajemen berat badan yang telah membantu lebih dari 100.000 wanita
-          dan pria di Indonesia untuk menemukan keselarasan dengan diri mereka
-          sendiri dengan mengembangkan rencana penurunan berat badan yang sesuai
-          dengan kebutuhan mereka!
-        </p>
-
-        <p class="text">
-          Seorang spesialis gaya hidup, ahli perilaku, ahli pengendalian berat
-          badan, dan ahli fisiologi. Dia berspesialisasi dalam manajemen berat
-          badan, obesitas, dan gangguan makan seperti kebiasaan ngemil yang
-          buruk, gangguan makan larut malam, bulimia, dan sebagainya.
-        </p>
-
-        <p class="text">
-          Dia juga menyusun metode pribadi yang telah membantu ratusan ribu
-          wanita dan pria di Indonesia untuk menurunkan berat badan.
-        </p>
-
-        <div class="first-screen__start">
-          <img
-            src="img/content/content-2.jpg"
-            alt=""
-            class="first-screen__start-vidget"
-          />
-
-          <p class="first-screen__start-text">
-            <b> Bonus setelah lulus tes: </b>
-            Rencana penurunan berat badan individu
-          </p>
-
-          <button class="button first-screen__start-link">IKUTI TESNYA</button>
-        </div>
+          <li class="header__top-item">
+            <a class="header__top-item-link" href="https://www.kemkes.go.id/folder/view/01/structure-peta-situs.html">
+              PETA SITUS
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <!-- Страница: Старт -->
-      <div class="start-quiz hidden">
-        <button class="start-quiz__close hidden">
-          <span
-            class="start-quiz__close-line start-quiz__close-line--fisrt"
-          ></span>
-          <span
-            class="start-quiz__close-line start-quiz__close-line--second"
-          ></span>
+      <div class="header__bottom"></div>
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main class="main">
+    <!-- Главная -->
+    <div class="first-screen__container">
+      <h2 class="first-screen__title">
+        Hari ini kami memberi Anda kesempatan untuk mengikuti survei, yang
+        hasilnya Anda akan menerima rencana penurunan berat badan yang
+        dipersonalisasi secara gratis sesuai dengan metodologi unik dari dr
+        Grace Judio-Kahl!
+      </h2>
+
+      <p class="text">
+        Siti Badriah, Ussy Sulistiawaty, Ivan Gunawan, Okky Lukman —dan ini
+        belum lengkap semua dari mereka yang telah dibantu oleh Dr. Grace
+        Judio-Kahl untuk menurunkan berat badan. Cukup dalam 5 menit, Anda
+        dapat memiliki rencana menurunkan berat badan pribadi dari ahli gizi
+        selebriti.
+      </p>
+
+      <p class="text">
+        Menurunkan berat badan bisa sangat sulit. Sangat mudah untuk jadi
+        kebingungan karena di mana-mana ada banyak judul berita tentang
+        berbagai macam diet dan alat bantu penurunan berat badan dan pembakar
+        lemak. Mengapa itu semua tidak ada hasilnya? Faktanya adalah setiap
+        orang membutuhkan pendekatan individu. Hanya dengan pendekatan
+        pribadi, proses penurunan berat badan akan efektif, dan kelebihan
+        berat itu tidak akan kembali setelah sebulan.
+      </p>
+
+      <p class="text">
+        Berdasarkan hasil tes ini, salah satu ahli gizi terbaik di Indonesia
+        akan menyusun rencana penurunan berat badan yang disesuaikan untuk
+        Anda, yang dijamin akan memberikan hasil yang nyata hanya dalam
+        beberapa hari!
+      </p>
+
+      <figure class="first-screen__doctor-figure">
+        <img class="first-screen__doctor-img" src="img/content/content-1.jpg" alt="" />
+
+        <figcaption class="first-screen__doctor-figcaption">
+          dr. Grace Judio-Kahl, Msc, MH, CHt, Dipl. AAAM
+        </figcaption>
+      </figure>
+
+      <p class="text">
+        Dr Grace Judio-Kahl adalah seorang ahli fisiologi, gaya hidup dan
+        manajemen berat badan yang telah membantu lebih dari 100.000 wanita
+        dan pria di Indonesia untuk menemukan keselarasan dengan diri mereka
+        sendiri dengan mengembangkan rencana penurunan berat badan yang sesuai
+        dengan kebutuhan mereka!
+      </p>
+
+      <p class="text">
+        Seorang spesialis gaya hidup, ahli perilaku, ahli pengendalian berat
+        badan, dan ahli fisiologi. Dia berspesialisasi dalam manajemen berat
+        badan, obesitas, dan gangguan makan seperti kebiasaan ngemil yang
+        buruk, gangguan makan larut malam, bulimia, dan sebagainya.
+      </p>
+
+      <p class="text">
+        Dia juga menyusun metode pribadi yang telah membantu ratusan ribu
+        wanita dan pria di Indonesia untuk menurunkan berat badan.
+      </p>
+
+      <div class="first-screen__start">
+        <img src="img/content/content-2.jpg" alt="" class="first-screen__start-vidget" />
+
+        <p class="first-screen__start-text">
+          <b> Bonus setelah lulus tes: </b>
+          Rencana penurunan berat badan individu
+        </p>
+
+        <button class="button first-screen__start-link">IKUTI TESNYA</button>
+      </div>
+    </div>
+
+
+    <!-- Страница: Старт -->
+    <div class="start-quiz hidden">
+      <button class="start-quiz__close hidden">
+        <span class="start-quiz__close-line start-quiz__close-line--fisrt"></span>
+        <span class="start-quiz__close-line start-quiz__close-line--second"></span>
+      </button>
+
+      <h2 class="start-quiz__title">
+        Dapatkan penawaran yang dipersonalisasi dari ahli gizi terkenal Grace
+        Judio-Kahl
+      </h2>
+
+      <p class="start-quiz__text">
+        Ikuti tes dan dapatkan rencana penurunan berat badan yang
+        dipersonalisasi
+      </p>
+
+      <button class="button start-quiz__button">IKUTI TESNYA</button>
+
+      <p class="start-quiz__description">Bonus setelah menyelesaikan tes:</p>
+
+      <div class="start-quiz__surprise">
+        <span class="start-quiz__surprise-lock">
+          <svg viewBox="0 0 6 6" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.99997 4.53334C3.14142 4.53334 3.27708 4.47715 3.37709 4.37713C3.47711 4.27711 3.5333 4.14145 3.5333 4C3.5333 3.704 3.2933 3.46667 2.99997 3.46667C2.85852 3.46667 2.72287 3.52286 2.62285 3.62288C2.52283 3.7229 2.46664 3.85855 2.46664 4C2.46664 4.14145 2.52283 4.27711 2.62285 4.37713C2.72287 4.47715 2.85852 4.53334 2.99997 4.53334ZM4.59997 2.13334C4.74142 2.13334 4.87708 2.18953 4.97709 2.28955C5.07711 2.38957 5.1333 2.52522 5.1333 2.66667V5.33334C5.1333 5.47479 5.07711 5.61044 4.97709 5.71046C4.87708 5.81048 4.74142 5.86667 4.59997 5.86667H1.39997C1.25852 5.86667 1.12287 5.81048 1.02285 5.71046C0.922828 5.61044 0.866638 5.47479 0.866638 5.33334V2.66667C0.866638 2.37067 1.10664 2.13334 1.39997 2.13334H1.66664V1.6C1.66664 1.24638 1.80711 0.907243 2.05716 0.657194C2.30721 0.407146 2.64635 0.26667 2.99997 0.26667C3.17507 0.26667 3.34845 0.301158 3.51022 0.368164C3.67198 0.43517 3.81897 0.533383 3.94278 0.657194C4.06659 0.781006 4.1648 0.927991 4.23181 1.08976C4.29882 1.25153 4.3333 1.42491 4.3333 1.6V2.13334H4.59997ZM2.99997 0.800004C2.7878 0.800004 2.58431 0.884289 2.43429 1.03432C2.28426 1.18435 2.19997 1.38783 2.19997 1.6V2.13334H3.79997V1.6C3.79997 1.38783 3.71569 1.18435 3.56566 1.03432C3.41563 0.884289 3.21214 0.800004 2.99997 0.800004Z">
+            </path>
+          </svg>
+        </span>
+
+        <span class="start-quiz__surprise-text">
+          Rencana penurunan berat badan individu
+        </span>
+      </div>
+    </div>
+
+
+    <!-- Страница: Калькулятор -->
+    <div class="calculator__content hidden">
+      <div class="calculator__wrapper">
+        <h2 class="calculator__title">Isi detail Anda</h2>
+
+        <form id="calculator__form" class="calculator__form">
+          <label for="height"> Tinggi: (sentimeter) </label>
+          <div class="calculator__input-wrapper calculator__input-wrapper-height">
+            <input type="number" name="height" id="height" class="calculator__input form-control" value=""
+              placeholder="180" />
+
+            <span
+              class="calculator__input-text--error calculator__input-text--error-height calculator__input-text--error-hidden">
+              Masukkan ketinggian yang benar: dari 100 hingga 240 sentimeter
+            </span>
+          </div>
+
+          <label for="weight"> Berat: (kilogram) </label>
+          <div class="calculator__input-wrapper calculator__input-wrapper-weight">
+            <input type="number" name="weight" id="weight" class="calculator__input form-control" value=""
+              placeholder="120" />
+
+            <span
+              class="calculator__input-text--error calculator__input-text--error-weight calculator__input-text--error-hidden">
+              Masukkan berat yang benar: 30 hingga 300 kilogram
+            </span>
+          </div>
+
+          <label for="age"> Umur: (tahun) </label>
+          <div class="calculator__input-wrapper calculator__input-wrapper-age">
+            <input type="number" name="age" id="age" class="calculator__input form-control" value="" placeholder="32" />
+
+            <span
+              class="calculator__input-text--error calculator__input-text--error-age calculator__input-text--error-hidden">
+              Masukkan usia yang benar: dari 0 hingga 120 tahun
+            </span>
+          </div>
+
+          <label for="gender"> Jenis kelamin </label>
+          <div class="calculator__select calculator__input-wrapper calculator__input-wrapper-gender">
+            <select class="calculator__input form-select" id="form-select" name="gender">
+              <option selected disabled>jenis kelamin Anda</option>
+              <option value="Wanita">Wanita</option>
+              <option value="Pria">Pria</option>
+            </select>
+          </div>
+
+          <div class="calculator__button-wrapper">
+            <button type="submit" class="calculator__button">
+              <svg class="calculator__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" id="arrow"
+                fill="currenColor">
+                <path
+                  d="M1408 960V832q0-26-19-45t-45-19H842l189-189q19-19 19-45t-19-45l-91-91q-18-18-45-18t-45 18L488 760l-91 91q-18 18-18 45t18 45l91 91 362 362q18 18 45 18t45-18l91-91q18-18 18-45t-18-45l-189-189h502q26 0 45-19t19-45zm256-64q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Страница: Вопросы -->
+    <div class="question__wrapper hidden">
+      <div class="question">
+        <p class="question__headline">
+          Jajak pendapat: cara menurunkan berat badan dengan mudah dan cepat.
+
+          <b>
+            <span>
+              5 menit untuk menentukan teknik penurunan berat badan individu
+            </span>
+          </b>
+        </p>
+
+        <button class="question__button-ext hidden">
+          <span class="question__button-line question__button-line--fisrt"></span>
+          <span class="question__button-line question__button-line--second">
+          </span>
         </button>
 
-        <h2 class="start-quiz__title">
-          Dapatkan penawaran yang dipersonalisasi dari ahli gizi terkenal Grace
-          Judio-Kahl
-        </h2>
-
-        <p class="start-quiz__text">
-          Ikuti tes dan dapatkan rencana penurunan berat badan yang
-          dipersonalisasi
-        </p>
-
-        <button class="button start-quiz__button">IKUTI TESNYA</button>
-
-        <p class="start-quiz__description">Bonus setelah menyelesaikan tes:</p>
-
-        <div class="start-quiz__surprise">
-          <span class="start-quiz__surprise-lock">
-            <svg
-              viewBox="0 0 6 6"
-              fill="#fff"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.99997 4.53334C3.14142 4.53334 3.27708 4.47715 3.37709 4.37713C3.47711 4.27711 3.5333 4.14145 3.5333 4C3.5333 3.704 3.2933 3.46667 2.99997 3.46667C2.85852 3.46667 2.72287 3.52286 2.62285 3.62288C2.52283 3.7229 2.46664 3.85855 2.46664 4C2.46664 4.14145 2.52283 4.27711 2.62285 4.37713C2.72287 4.47715 2.85852 4.53334 2.99997 4.53334ZM4.59997 2.13334C4.74142 2.13334 4.87708 2.18953 4.97709 2.28955C5.07711 2.38957 5.1333 2.52522 5.1333 2.66667V5.33334C5.1333 5.47479 5.07711 5.61044 4.97709 5.71046C4.87708 5.81048 4.74142 5.86667 4.59997 5.86667H1.39997C1.25852 5.86667 1.12287 5.81048 1.02285 5.71046C0.922828 5.61044 0.866638 5.47479 0.866638 5.33334V2.66667C0.866638 2.37067 1.10664 2.13334 1.39997 2.13334H1.66664V1.6C1.66664 1.24638 1.80711 0.907243 2.05716 0.657194C2.30721 0.407146 2.64635 0.26667 2.99997 0.26667C3.17507 0.26667 3.34845 0.301158 3.51022 0.368164C3.67198 0.43517 3.81897 0.533383 3.94278 0.657194C4.06659 0.781006 4.1648 0.927991 4.23181 1.08976C4.29882 1.25153 4.3333 1.42491 4.3333 1.6V2.13334H4.59997ZM2.99997 0.800004C2.7878 0.800004 2.58431 0.884289 2.43429 1.03432C2.28426 1.18435 2.19997 1.38783 2.19997 1.6V2.13334H3.79997V1.6C3.79997 1.38783 3.71569 1.18435 3.56566 1.03432C3.41563 0.884289 3.21214 0.800004 2.99997 0.800004Z"
-              ></path>
-            </svg>
-          </span>
-
-          <span class="start-quiz__surprise-text">
-            Rencana penurunan berat badan individu
-          </span>
+        <div class="question__list">
+          <div class="question__item"></div>
         </div>
-      </div>
 
-      <!-- Страница: Калькулятор -->
-      <div class="calculator__content hidden">
-        <div class="calculator__wrapper">
-          <h2 class="calculator__title">Isi detail Anda</h2>
+        <!-- Футер с кнопкой продолжить -->
+        <div class="question__message">
+          <div class="question__message-content">
+            <div class="question__message-wrapper">
+              <div class="question__message-programm-wrapper">
+                <div class="question__message-programm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
+                    class="bi bi-clipboard-data" viewBox="0 0 16 16">
+                    <path
+                      d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
+                    <path
+                      d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                    <path
+                      d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                  </svg>
+                  <span class="question__message-programm-surprise">
+                    <svg viewBox="0 0 6 6" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M2.99997 4.53334C3.14142 4.53334 3.27708 4.47715 3.37709 4.37713C3.47711 4.27711 3.5333 4.14145 3.5333 4C3.5333 3.704 3.2933 3.46667 2.99997 3.46667C2.85852 3.46667 2.72287 3.52286 2.62285 3.62288C2.52283 3.7229 2.46664 3.85855 2.46664 4C2.46664 4.14145 2.52283 4.27711 2.62285 4.37713C2.72287 4.47715 2.85852 4.53334 2.99997 4.53334ZM4.59997 2.13334C4.74142 2.13334 4.87708 2.18953 4.97709 2.28955C5.07711 2.38957 5.1333 2.52522 5.1333 2.66667V5.33334C5.1333 5.47479 5.07711 5.61044 4.97709 5.71046C4.87708 5.81048 4.74142 5.86667 4.59997 5.86667H1.39997C1.25852 5.86667 1.12287 5.81048 1.02285 5.71046C0.922828 5.61044 0.866638 5.47479 0.866638 5.33334V2.66667C0.866638 2.37067 1.10664 2.13334 1.39997 2.13334H1.66664V1.6C1.66664 1.24638 1.80711 0.907243 2.05716 0.657194C2.30721 0.407146 2.64635 0.26667 2.99997 0.26667C3.17507 0.26667 3.34845 0.301158 3.51022 0.368164C3.67198 0.43517 3.81897 0.533383 3.94278 0.657194C4.06659 0.781006 4.1648 0.927991 4.23181 1.08976C4.29882 1.25153 4.3333 1.42491 4.3333 1.6V2.13334H4.59997ZM2.99997 0.800004C2.7878 0.800004 2.58431 0.884289 2.43429 1.03432C2.28426 1.18435 2.19997 1.38783 2.19997 1.6V2.13334H3.79997V1.6C3.79997 1.38783 3.71569 1.18435 3.56566 1.03432C3.41563 0.884289 3.21214 0.800004 2.99997 0.800004Z">
+                      </path>
+                    </svg>
+                  </span>
+                </div>
+                Rencana individu
+              </div>
 
-          <form id="calculator__form" class="calculator__form">
-            <label for="height"> Tinggi: (sentimeter) </label>
-            <div
-              class="calculator__input-wrapper calculator__input-wrapper-height"
-            >
-              <input
-                type="number"
-                name="height"
-                id="height"
-                class="calculator__input form-control"
-                value=""
-                placeholder="180"
-              />
-
-              <span
-                class="calculator__input-text--error calculator__input-text--error-height calculator__input-text--error-hidden"
-              >
-                Masukkan ketinggian yang benar: dari 100 hingga 240 sentimeter
-              </span>
-            </div>
-
-            <label for="weight"> Berat: (kilogram) </label>
-            <div
-              class="calculator__input-wrapper calculator__input-wrapper-weight"
-            >
-              <input
-                type="number"
-                name="weight"
-                id="weight"
-                class="calculator__input form-control"
-                value=""
-                placeholder="120"
-              />
-
-              <span
-                class="calculator__input-text--error calculator__input-text--error-weight calculator__input-text--error-hidden"
-              >
-                Masukkan berat yang benar: 30 hingga 300 kilogram
-              </span>
-            </div>
-
-            <label for="age"> Umur: (tahun) </label>
-            <div
-              class="calculator__input-wrapper calculator__input-wrapper-age"
-            >
-              <input
-                type="number"
-                name="age"
-                id="age"
-                class="calculator__input form-control"
-                value=""
-                placeholder="32"
-              />
-
-              <span
-                class="calculator__input-text--error calculator__input-text--error-age calculator__input-text--error-hidden"
-              >
-                Masukkan usia yang benar: dari 0 hingga 120 tahun
-              </span>
-            </div>
-
-            <label for="gender"> Jenis kelamin </label>
-            <div
-              class="calculator__select calculator__input-wrapper calculator__input-wrapper-gender"
-            >
-              <select
-                class="calculator__input form-select"
-                id="form-select"
-                name="gender"
-              >
-                <option selected disabled>jenis kelamin Anda</option>
-                <option value="Wanita">Wanita</option>
-                <option value="Pria">Pria</option>
-              </select>
-            </div>
-
-            <div class="calculator__button-wrapper">
-              <button type="submit" class="calculator__button">
-                <svg
-                  class="calculator__button-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1792 1792"
-                  id="arrow"
-                  fill="currenColor"
-                >
-                  <path
-                    d="M1408 960V832q0-26-19-45t-45-19H842l189-189q19-19 19-45t-19-45l-91-91q-18-18-45-18t-45 18L488 760l-91 91q-18 18-18 45t18 45l91 91 362 362q18 18 45 18t45-18l91-91q18-18 18-45t-18-45l-189-189h502q26 0 45-19t19-45zm256-64q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
-                  ></path>
-                </svg>
+              <button class="question__button-next question__button-next--disabled" disabled>
+                LANJUTKAN SURVEI
               </button>
             </div>
-          </form>
-        </div>
-      </div>
 
-      <!-- Страница: Вопросы -->
-      <div class="question__wrapper hidden">
-        <div class="question">
-          <p class="question__headline">
-            Jajak pendapat: cara menurunkan berat badan dengan mudah dan cepat.
-
-            <b>
-              <span>
-                5 menit untuk menentukan teknik penurunan berat badan individu
-              </span>
-            </b>
-          </p>
-
-          <button class="question__button-ext hidden">
-            <span
-              class="question__button-line question__button-line--fisrt"
-            ></span>
-            <span class="question__button-line question__button-line--second">
-            </span>
-          </button>
-
-          <div class="question__list">
-            <div class="question__item"></div>
-          </div>
-
-          <!-- Футер с кнопкой продолжить -->
-          <div class="question__message">
-            <div class="question__message-content">
-              <div class="question__message-wrapper">
-                <div class="question__message-programm-wrapper">
-                  <div class="question__message-programm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="30"
-                      height="30"
-                      fill="#fff"
-                      class="bi bi-clipboard-data"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"
-                      />
-                      <path
-                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
-                      />
-                      <path
-                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
-                      />
-                    </svg>
-                    <span class="question__message-programm-surprise">
-                      <svg
-                        viewBox="0 0 6 6"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.99997 4.53334C3.14142 4.53334 3.27708 4.47715 3.37709 4.37713C3.47711 4.27711 3.5333 4.14145 3.5333 4C3.5333 3.704 3.2933 3.46667 2.99997 3.46667C2.85852 3.46667 2.72287 3.52286 2.62285 3.62288C2.52283 3.7229 2.46664 3.85855 2.46664 4C2.46664 4.14145 2.52283 4.27711 2.62285 4.37713C2.72287 4.47715 2.85852 4.53334 2.99997 4.53334ZM4.59997 2.13334C4.74142 2.13334 4.87708 2.18953 4.97709 2.28955C5.07711 2.38957 5.1333 2.52522 5.1333 2.66667V5.33334C5.1333 5.47479 5.07711 5.61044 4.97709 5.71046C4.87708 5.81048 4.74142 5.86667 4.59997 5.86667H1.39997C1.25852 5.86667 1.12287 5.81048 1.02285 5.71046C0.922828 5.61044 0.866638 5.47479 0.866638 5.33334V2.66667C0.866638 2.37067 1.10664 2.13334 1.39997 2.13334H1.66664V1.6C1.66664 1.24638 1.80711 0.907243 2.05716 0.657194C2.30721 0.407146 2.64635 0.26667 2.99997 0.26667C3.17507 0.26667 3.34845 0.301158 3.51022 0.368164C3.67198 0.43517 3.81897 0.533383 3.94278 0.657194C4.06659 0.781006 4.1648 0.927991 4.23181 1.08976C4.29882 1.25153 4.3333 1.42491 4.3333 1.6V2.13334H4.59997ZM2.99997 0.800004C2.7878 0.800004 2.58431 0.884289 2.43429 1.03432C2.28426 1.18435 2.19997 1.38783 2.19997 1.6V2.13334H3.79997V1.6C3.79997 1.38783 3.71569 1.18435 3.56566 1.03432C3.41563 0.884289 3.21214 0.800004 2.99997 0.800004Z"
-                        ></path>
-                      </svg>
-                    </span>
-                  </div>
-                  Rencana individu
-                </div>
-
-                <button
-                  class="question__button-next question__button-next--disabled"
-                  disabled
-                >
-                  LANJUTKAN SURVEI
-                </button>
-              </div>
-
-              <div class="question__list-stage">
-                <span class="question__list-stage-line"> </span>
-              </div>
+            <div class="question__list-stage">
+              <span class="question__list-stage-line"> </span>
             </div>
           </div>
         </div>
-
-        <!-- Шаблон для вопросов квиза -->
-        <template id="question__item-content">
-          <div class="question__item-content">
-            <h3 class="question__item-title"></h3>
-
-            <ul class="question__sub-list"></ul>
-
-            <div class="question__item-fact question__item-fact--hidden">
-              <img
-                class="question__item-fact-img"
-                src="img/content/content-1.jpg"
-                alt=""
-              />
-
-              <p class="question__item-fact-text"></p>
-            </div>
-          </div>
-        </template>
-
-        <!-- Шаблон вопроса квиза -->
-        <template id="question__sub-item">
-          <li class="question__sub-item" id="" data-point="">
-            <span class="radio__wrapper">
-              <span class="radio"> </span>
-            </span>
-            <span class="question__sub-item-text"> </span>
-          </li>
-        </template>
       </div>
 
-      <!-- Страница: Результат -->
-      <div class="result hidden">
-        <h3 class="result__title">
-          Program penurunan berat badan pribadi Anda
+      <!-- Шаблон для вопросов квиза -->
+      <template id="question__item-content">
+        <div class="question__item-content">
+          <h3 class="question__item-title"></h3>
+
+          <ul class="question__sub-list"></ul>
+
+          <div class="question__item-fact question__item-fact--hidden">
+            <img class="question__item-fact-img" src="img/content/content-1.jpg" alt="" />
+
+            <p class="question__item-fact-text"></p>
+          </div>
+        </div>
+      </template>
+
+      <!-- Шаблон вопроса квиза -->
+      <template id="question__sub-item">
+        <li class="question__sub-item" id="" data-point="">
+          <span class="radio__wrapper">
+            <span class="radio"> </span>
+          </span>
+          <span class="question__sub-item-text"> </span>
+        </li>
+      </template>
+    </div>
+
+    <!-- Страница: Результат -->
+    <div class="result hidden">
+      <h3 class="result__title">
+        Program penurunan berat badan pribadi Anda
+      </h3>
+
+      <img src="img/content/content-2.jpg" alt="" class="result__img" />
+
+      <div class="result__body">
+        <p class="result__body-text result__body-text--first">
+          🆘
+          <span id="result__body-text"> </span>
+          🆘
+        </p>
+
+        <div class="result__body-icon-wrapper">
+          <img class="result__body-icon" src="" alt="" />
+        </div>
+
+        <p class="result__body-text">
+          <b>BMI anda:</b>
+          <span id="result__bmi"></span>
+        </p>
+        <p class="result__body-text">
+          <b>Saat ini berat badan Anda:</b>
+          <span id="result__userWeight"></span>
+          kg
+        </p>
+        <p class="result__body-text">
+          <b>Berat badan target Anda:</b>
+          <span id="result__idealWeight"></span>
+          kg
+        </p>
+        <p class="result__body-text">
+          <b>Anda perlu menurunkan berat badan:</b>
+          <span id="result__excessWeight"></span>
+          kg
+        </p>
+        <p class="result__body-text">
+          <b>Berat anda ialah:</b>
+          <span id="result__toBeWeight"></span>
+          kg
+          <span>&nbsp;23.7.2023</span>
+        </p>
+      </div>
+
+      <!-- Индивидуальный послание -->
+      <p class="result__text" id="individual__message"></p>
+
+      <p class="result__text">
+        Rencana individual Anda akan mencakup rencana yang dirancang khusus
+        untuk program ini SlimMax. Anda dapat mengunduh rencana penurunan
+        berat badan individual di bawah ini.
+      </p>
+
+      <p class="result__text">
+        Formula SlimMax diciptakan di sebuah pusat penelitian di Jakarta
+        khusus untuk untuk orang yang kelebihan berat badan. Mengandung
+        bahan-bahan alami yang:
+      </p>
+
+      <div class="result__allocated-info">
+        <ul class="result__check-list">
+          <!-- Элементы списка -->
+        </ul>
+
+        <!-- Индивидуальный текст -->
+        <p class="result__text" id="individual__checkList-text"></p>
+      </div>
+
+      <div class="result__programm">
+        <h3 class="result__programm-title">
+          Dengan menggunakan SlimMax ini, Anda bisa mendapatkan hasil hanya
+          dalam waktu 1 bulan:
         </h3>
 
-        <img src="img/content/content-2.jpg" alt="" class="result__img" />
-
-        <div class="result__body">
-          <p class="result__body-text result__body-text--first">
-            🆘
-            <span id="result__body-text"> </span>
-            🆘
-          </p>
-
-          <div class="result__body-icon-wrapper">
-            <img class="result__body-icon" src="" alt="" />
-          </div>
-
-          <p class="result__body-text">
-            <b>BMI anda:</b>
-            <span id="result__bmi"></span>
-          </p>
-          <p class="result__body-text">
-            <b>Saat ini berat badan Anda:</b>
-            <span id="result__userWeight"></span>
-            kg
-          </p>
-          <p class="result__body-text">
-            <b>Berat badan target Anda:</b>
-            <span id="result__idealWeight"></span>
-            kg
-          </p>
-          <p class="result__body-text">
-            <b>Anda perlu menurunkan berat badan:</b>
-            <span id="result__excessWeight"></span>
-            kg
-          </p>
-          <p class="result__body-text">
-            <b>Berat anda ialah:</b>
-            <span id="result__toBeWeight"></span>
-            kg
-            <span>&nbsp;23.7.2023</span>
-          </p>
-        </div>
-
-        <!-- Индивидуальный послание -->
-        <p class="result__text" id="individual__message"></p>
-
-        <p class="result__text">
-          Rencana individual Anda akan mencakup rencana yang dirancang khusus
-          untuk program ini SlimMax. Anda dapat mengunduh rencana penurunan
-          berat badan individual di bawah ini.
+        <p class="result__programm-text">
+          👉 SlimMax - produk inovatif untuk penurunan berat badan yang
+          memungkinkan Anda mencapai hasil yang diinginkan dengan cepat dan
+          tanpa membahayakan kesehatan.
         </p>
 
-        <p class="result__text">
-          Formula SlimMax diciptakan di sebuah pusat penelitian di Jakarta
-          khusus untuk untuk orang yang kelebihan berat badan. Mengandung
-          bahan-bahan alami yang:
+        <p class="result__programm-text">
+          📈 Grafik unik kami akan menunjukkan bagaimana Anda secara bertahap
+          mendekati target.
         </p>
 
-        <div class="result__allocated-info">
-          <ul class="result__check-list">
-            <!-- Элементы списка -->
-          </ul>
-
-          <!-- Индивидуальный текст -->
-          <p class="result__text" id="individual__checkList-text"></p>
-        </div>
-
-        <div class="result__programm">
-          <h3 class="result__programm-title">
-            Dengan menggunakan SlimMax ini, Anda bisa mendapatkan hasil hanya
-            dalam waktu 1 bulan:
-          </h3>
-
-          <p class="result__programm-text">
-            👉 SlimMax - produk inovatif untuk penurunan berat badan yang
-            memungkinkan Anda mencapai hasil yang diinginkan dengan cepat dan
-            tanpa membahayakan kesehatan.
-          </p>
-
-          <p class="result__programm-text">
-            📈 Grafik unik kami akan menunjukkan bagaimana Anda secara bertahap
-            mendekati target.
-          </p>
-
-          <div
-            style="
+        <div style="
               width: 100%;
               height: 100%;
               min-height: 250px;
               margin-bottom: 16px;
-            "
-          >
-            <canvas id="myChart"></canvas>
-          </div>
+            ">
+          <canvas id="myChart"></canvas>
         </div>
-
-        <p class="result__text">
-          Tidak peduli berat badan awal Anda, Anda dapat kehilangan sekitar 30%
-          dari berat badan berlebih dalam seminggu. Dalam waktu empat minggu,
-          Anda akan mencapai bentuk tubuh yang diinginkan.
-        </p>
-
-        <!-- Слайдер -->
-        <div class="sldr" id="swiper">
-          <div class="slider" id="swiper-slider" style="width: auto">
-            <div class="swiper-slide">
-              <h3 class="swiper__slide-title">
-                🌿 Minggu 1: Pembersihan tubuh
-              </h3>
-
-              <p class="swiper__slide-text">
-                Membersihkan tubuh dari racun dan limbah, membantu mempersiapkan
-                tubuh untuk turun berat badan secara otomatis. Formula ini juga
-                meningkatkan fungsi sistem pencernaan dan meningkatkan
-                metabolisme.
-              </p>
-            </div>
-            <div>
-              <h3 class="swiper__slide-title">
-                🍏 Minggu 2: Memperkuat sistem pencernaan
-              </h3>
-
-              <p class="swiper__slide-text">
-                Formula ini meningkatkan kinerja sistem pencernaan, sehingga
-                memungkinkan penyerapan nutrien yang lebih baik serta
-                meningkatkan metabolisme. Selain itu, formula ini juga
-                memperkuat mikroorganisme dalam usus dan memulihkan fungsi
-                normal perut.
-              </p>
-            </div>
-            <div>
-              <h3 class="swiper__slide-title">
-                🔥 Minggu 3: Peningkatan metabolisme
-              </h3>
-
-              <p class="swiper__slide-text">
-                Fase penurunan berat badan aktif. Peningkatan metabolisme dan
-                memperbanyak jumlah energi yang dikonsumsi. Penurunan volume
-                lemak tubuh, menurunkan berat badan secara otomatis.
-              </p>
-            </div>
-            <div>
-              <h3 class="swiper__slide-title">
-                👍🏼 Minggu 4: Mempertahankan hasil yang telah dicapai
-              </h3>
-
-              <p class="swiper__slide-text">
-                Mencegah berat badan kembali naik dan memblokir efek yoyo.
-                Metabolisme telah sepenuhnya terbentuk. Peningkatan untuk
-                kondisi tubuh secara keseluruhan dan mengurangi risiko penyakit
-                yang berhubungan dengan obesitas.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <button class="button result__button">MASUK KE PAKET INDIVIDU</button>
-
-        <!-- Шаблон элемента чек-листа -->
-        <template id="result__check-item">
-          <li class="result__check-item">
-            <svg
-              class="result__check-item-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              id="checkmark"
-            >
-              <g data-name="Layer 2">
-                <path
-                  d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.3 7.61-4.57 6a1 1 0 0 1-.79.39 1 1 0 0 1-.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
-                  data-name="checkmark-circle-2"
-                ></path>
-              </g>
-            </svg>
-
-            <p class="result__check-item-text"></p>
-          </li>
-        </template>
       </div>
 
-      <!-- Страница: Продукт -->
-      <div class="product">
+      <p class="result__text">
+        Tidak peduli berat badan awal Anda, Anda dapat kehilangan sekitar 30%
+        dari berat badan berlebih dalam seminggu. Dalam waktu empat minggu,
+        Anda akan mencapai bentuk tubuh yang diinginkan.
+      </p>
+
+      <!-- Слайдер -->
+      <div id="result__slider" class="result__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
+              🌿 Minggu 1: Pembersihan tubuh
+            </h3>
+
+            <p class="result__slide-text">
+              Membersihkan tubuh dari racun dan limbah, membantu mempersiapkan
+              tubuh untuk turun berat badan secara otomatis. Formula ini juga
+              meningkatkan fungsi sistem pencernaan dan meningkatkan
+              metabolisme.
+            </p>
+          </div>
+
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
+              🍏 Minggu 2: Memperkuat sistem pencernaan
+            </h3>
+
+            <p class="result__slide-text">
+              Formula ini meningkatkan kinerja sistem pencernaan, sehingga
+              memungkinkan penyerapan nutrien yang lebih baik serta
+              meningkatkan metabolisme. Selain itu, formula ini juga
+              memperkuat mikroorganisme dalam usus dan memulihkan fungsi
+              normal perut.
+            </p>
+          </div>
+
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
+              🔥 Minggu 3: Peningkatan metabolisme
+            </h3>
+
+            <p class="result__slide-text">
+              Fase penurunan berat badan aktif. Peningkatan metabolisme dan
+              memperbanyak jumlah energi yang dikonsumsi. Penurunan volume
+              lemak tubuh, menurunkan berat badan secara otomatis.
+            </p>
+          </div>
+
+          <div class="swiper-slide result__slide">
+            <h3 class="result__slide-title">
+              👍🏼 Minggu 4: Mempertahankan hasil yang telah dicapai
+            </h3>
+
+            <p class="result__slide-text">
+              Mencegah berat badan kembali naik dan memblokir efek yoyo.
+              Metabolisme telah sepenuhnya terbentuk. Peningkatan untuk
+              kondisi tubuh secara keseluruhan dan mengurangi risiko penyakit
+              yang berhubungan dengan obesitas.
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <button class="button result__button">MASUK KE PAKET INDIVIDU</button>
+
+      <!-- Шаблон элемента чек-листа -->
+      <template id="result__check-item">
+        <li class="result__check-item">
+          <svg class="result__check-item-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 24 24" id="checkmark">
+            <g data-name="Layer 2">
+              <path
+                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.3 7.61-4.57 6a1 1 0 0 1-.79.39 1 1 0 0 1-.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
+                data-name="checkmark-circle-2"></path>
+            </g>
+          </svg>
+
+          <p class="result__check-item-text"></p>
+        </li>
+      </template>
+    </div>
+
+    <!-- Страница: Продукт -->
+    <div class="product">
         <h2 class="title">
           Program pelatihan dan gizi untuk mendapat hasil permanen. Berat badan
           turun dalam 30 hari berkat "SlimMax".
@@ -1492,15 +1396,16 @@
           </form>
         </div>
       </div>
-    </main>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer__wrapper">
-        <p class="footer__text">
-          COPYRIGHT @2013 - KEMENTERIAN KESEHATAN REPUBLIK INDONESIA
-        </p>
-      </div>
-    </footer>
-  </body>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <p class="footer__text">
+        COPYRIGHT @2013 - KEMENTERIAN KESEHATAN REPUBLIK INDONESIA
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>
