@@ -4,7 +4,6 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
 
-
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -16,17 +15,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new HtmlPlugin({
-    template: path.resolve(__dirname, './src/main.html'),
-      templateParameters: {
-        header: fs.readFileSync(path.resolve(__dirname, './src/template/header.html'), 'utf8'),
-        firstScreen: fs.readFileSync(path.resolve(__dirname, './src/template/first-screen.html'), 'utf8'),
-        startQuiz: fs.readFileSync(path.resolve(__dirname, './src/template/start-quiz.html'), 'utf8'),
-        calculator: fs.readFileSync(path.resolve(__dirname, './src/template/calculator.html'), 'utf8'),
-        question: fs.readFileSync(path.resolve(__dirname, './src/template/question.html'), 'utf8'),
-        result: fs.readFileSync(path.resolve(__dirname, './src/template/result.html'), 'utf8'),
-        product: fs.readFileSync(path.resolve(__dirname, './src/template/product.html'), 'utf8'),
-        footer: fs.readFileSync(path.resolve(__dirname, './src/template/footer.html'), 'utf8'),
-      },
+      template: './public/index.html',
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -54,16 +43,16 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
           },
         },
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
-          "css-loader", // добавляет css в CommonJS
-          "sass-loader", // sass в css
+          'style-loader',
+          'css-loader', // добавляет css в CommonJS
+          'sass-loader', // sass в css
         ],
       },
       {
@@ -80,6 +69,6 @@ module.exports = {
           filename: path.join('assets/icons', '[name].[contenthash][ext]'),
         },
       },
-    ]
-  }
+    ],
+  },
 };
