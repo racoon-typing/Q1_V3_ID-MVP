@@ -1,0 +1,176 @@
+<div class="result hidden">
+  <h3 class="result__title">Program penurunan berat badan pribadi Anda</h3>
+
+  <img src="img/content/content-2.jpg" alt="" class="result__img" />
+
+  <div class="result__body">
+    <p class="result__body-text result__body-text--first">
+      🆘
+      <span id="result__body-text"> </span>
+      🆘
+    </p>
+
+    <div class="result__body-icon-wrapper">
+      <img class="result__body-icon" src="" alt="" />
+    </div>
+
+    <p class="result__body-text">
+      <b>BMI anda:</b>
+      <span id="result__bmi"></span>
+    </p>
+    <p class="result__body-text">
+      <b>Saat ini berat badan Anda:</b>
+      <span id="result__userWeight"></span>
+      kg
+    </p>
+    <p class="result__body-text">
+      <b>Berat badan target Anda:</b>
+      <span id="result__idealWeight"></span>
+      kg
+    </p>
+    <p class="result__body-text">
+      <b>Anda perlu menurunkan berat badan:</b>
+      <span id="result__excessWeight"></span>
+      kg
+    </p>
+    <p class="result__body-text">
+      <b>Berat anda ialah:</b>
+      <span id="result__toBeWeight"></span>
+      kg
+      <span>&nbsp;23.7.2023</span>
+    </p>
+  </div>
+
+  <!-- Индивидуальный послание -->
+  <p class="result__text" id="individual__message"></p>
+
+  <p class="result__text">
+    Rencana individual Anda akan mencakup rencana yang dirancang khusus untuk
+    program ini SlimMax. Anda dapat mengunduh rencana penurunan berat badan
+    individual di bawah ini.
+  </p>
+
+  <p class="result__text">
+    Formula SlimMax diciptakan di sebuah pusat penelitian di Jakarta khusus
+    untuk untuk orang yang kelebihan berat badan. Mengandung bahan-bahan alami
+    yang:
+  </p>
+
+  <div class="result__allocated-info">
+    <ul class="result__check-list">
+      <!-- Элементы списка -->
+    </ul>
+
+    <!-- Индивидуальный текст -->
+    <p class="result__text" id="individual__checkList-text"></p>
+  </div>
+
+  <div class="result__programm">
+    <h3 class="result__programm-title">
+      Dengan menggunakan SlimMax ini, Anda bisa mendapatkan hasil hanya dalam
+      waktu 1 bulan:
+    </h3>
+
+    <p class="result__programm-text">
+      👉 SlimMax - produk inovatif untuk penurunan berat badan yang memungkinkan
+      Anda mencapai hasil yang diinginkan dengan cepat dan tanpa membahayakan
+      kesehatan.
+    </p>
+
+    <p class="result__programm-text">
+      📈 Grafik unik kami akan menunjukkan bagaimana Anda secara bertahap
+      mendekati target.
+    </p>
+
+    <div
+      style="width: 100%; height: 100%; min-height: 250px; margin-bottom: 16px"
+    >
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <p class="result__text">
+    Tidak peduli berat badan awal Anda, Anda dapat kehilangan sekitar 30% dari
+    berat badan berlebih dalam seminggu. Dalam waktu empat minggu, Anda akan
+    mencapai bentuk tubuh yang diinginkan.
+  </p>
+
+  <!-- Слайдер -->
+  <div id="result__slider" class="result__slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide result__slide">
+        <h3 class="result__slide-title">🌿 Minggu 1: Pembersihan tubuh</h3>
+
+        <p class="result__slide-text">
+          Membersihkan tubuh dari racun dan limbah, membantu mempersiapkan tubuh
+          untuk turun berat badan secara otomatis. Formula ini juga meningkatkan
+          fungsi sistem pencernaan dan meningkatkan metabolisme.
+        </p>
+      </div>
+
+      <div class="swiper-slide result__slide">
+        <h3 class="result__slide-title">
+          🍏 Minggu 2: Memperkuat sistem pencernaan
+        </h3>
+
+        <p class="result__slide-text">
+          Formula ini meningkatkan kinerja sistem pencernaan, sehingga
+          memungkinkan penyerapan nutrien yang lebih baik serta meningkatkan
+          metabolisme. Selain itu, formula ini juga memperkuat mikroorganisme
+          dalam usus dan memulihkan fungsi normal perut.
+        </p>
+      </div>
+
+      <div class="swiper-slide result__slide">
+        <h3 class="result__slide-title">
+          🔥 Minggu 3: Peningkatan metabolisme
+        </h3>
+
+        <p class="result__slide-text">
+          Fase penurunan berat badan aktif. Peningkatan metabolisme dan
+          memperbanyak jumlah energi yang dikonsumsi. Penurunan volume lemak
+          tubuh, menurunkan berat badan secara otomatis.
+        </p>
+      </div>
+
+      <div class="swiper-slide result__slide">
+        <h3 class="result__slide-title">
+          👍🏼 Minggu 4: Mempertahankan hasil yang telah dicapai
+        </h3>
+
+        <p class="result__slide-text">
+          Mencegah berat badan kembali naik dan memblokir efek yoyo. Metabolisme
+          telah sepenuhnya terbentuk. Peningkatan untuk kondisi tubuh secara
+          keseluruhan dan mengurangi risiko penyakit yang berhubungan dengan
+          obesitas.
+        </p>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <button class="button result__button">MASUK KE PAKET INDIVIDU</button>
+
+  <!-- Шаблон элемента чек-листа -->
+  <template id="result__check-item">
+    <li class="result__check-item">
+      <svg
+        class="result__check-item-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        id="checkmark"
+      >
+        <g data-name="Layer 2">
+          <path
+            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.3 7.61-4.57 6a1 1 0 0 1-.79.39 1 1 0 0 1-.79-.38l-2.44-3.11a1 1 0 0 1 1.58-1.23l1.63 2.08 3.78-5a1 1 0 1 1 1.6 1.22z"
+            data-name="checkmark-circle-2"
+          ></path>
+        </g>
+      </svg>
+
+      <p class="result__check-item-text"></p>
+    </li>
+  </template>
+</div>

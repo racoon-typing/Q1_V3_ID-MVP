@@ -1,0 +1,92 @@
+<div class="calculator__content hidden">
+  <div class="calculator__wrapper">
+    <h2 class="calculator__title">Isi detail Anda</h2>
+
+    <form id="calculator__form" class="calculator__form">
+      <label for="height"> Tinggi: (sentimeter) </label>
+      <div class="calculator__input-wrapper calculator__input-wrapper-height">
+        <input
+          type="number"
+          name="height"
+          id="height"
+          class="calculator__input form-control"
+          value=""
+          placeholder="180"
+        />
+
+        <span
+          class="calculator__input-text--error calculator__input-text--error-height calculator__input-text--error-hidden"
+        >
+          Masukkan ketinggian yang benar: dari 100 hingga 240 sentimeter
+        </span>
+      </div>
+
+      <label for="weight"> Berat: (kilogram) </label>
+      <div class="calculator__input-wrapper calculator__input-wrapper-weight">
+        <input
+          type="number"
+          name="weight"
+          id="weight"
+          class="calculator__input form-control"
+          value=""
+          placeholder="120"
+        />
+
+        <span
+          class="calculator__input-text--error calculator__input-text--error-weight calculator__input-text--error-hidden"
+        >
+          Masukkan berat yang benar: 30 hingga 300 kilogram
+        </span>
+      </div>
+
+      <label for="age"> Umur: (tahun) </label>
+      <div class="calculator__input-wrapper calculator__input-wrapper-age">
+        <input
+          type="number"
+          name="age"
+          id="age"
+          class="calculator__input form-control"
+          value=""
+          placeholder="32"
+        />
+
+        <span
+          class="calculator__input-text--error calculator__input-text--error-age calculator__input-text--error-hidden"
+        >
+          Masukkan usia yang benar: dari 0 hingga 120 tahun
+        </span>
+      </div>
+
+      <label for="gender"> Jenis kelamin </label>
+      <div
+        class="calculator__select calculator__input-wrapper calculator__input-wrapper-gender"
+      >
+        <select
+          class="calculator__input form-select"
+          id="form-select"
+          name="gender"
+        >
+          <option selected disabled>jenis kelamin Anda</option>
+          <option value="Wanita">Wanita</option>
+          <option value="Pria">Pria</option>
+        </select>
+      </div>
+
+      <div class="calculator__button-wrapper">
+        <button type="submit" class="calculator__button">
+          <svg
+            class="calculator__button-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1792 1792"
+            id="arrow"
+            fill="currenColor"
+          >
+            <path
+              d="M1408 960V832q0-26-19-45t-45-19H842l189-189q19-19 19-45t-19-45l-91-91q-18-18-45-18t-45 18L488 760l-91 91q-18 18-18 45t18 45l91 91 362 362q18 18 45 18t45-18l91-91q18-18 18-45t-18-45l-189-189h502q26 0 45-19t19-45zm256-64q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.1",
+    "fs": "^0.0.1-security",
     "swiper": "^10.2.0"
   }
 }
