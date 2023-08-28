@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js"></script>
+
+    <!-- Маска для телефона -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css"
+    />
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+
+    <title>Квиз</title>
+  </head>
+
+  <body class="page__body">
+    <!-- Header -->
+    <%= htmlWebpackPlugin.options.templateParameters.header %>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Страница: Первый экран -->
+      <%= htmlWebpackPlugin.options.templateParameters.firstScreen %>
+
+      <!-- Страница: Старт -->
+      <%= htmlWebpackPlugin.options.templateParameters.startQuiz %>
+
+      <!-- Страница: Калькулятор -->
+      <%= htmlWebpackPlugin.options.templateParameters.calculator %>
+
+      <!-- Страница: Вопросы -->
+      <%= htmlWebpackPlugin.options.templateParameters.question %>
+
+      <!-- Страница: Результат -->
+      <%= htmlWebpackPlugin.options.templateParameters.result %>
+
+      <!-- Страница: Продукт -->
+      <%= htmlWebpackPlugin.options.templateParameters.product %>
+    </main>
+
+    <!-- Footer -->
+    <%= htmlWebpackPlugin.options.templateParameters.footer %>
+  </body>
+</html>

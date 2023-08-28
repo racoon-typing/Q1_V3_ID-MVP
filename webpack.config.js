@@ -16,7 +16,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new HtmlPlugin({
-      template: 'public/index.html',
+    template: path.resolve(__dirname, './src/main.html'),
       templateParameters: {
         header: fs.readFileSync(path.resolve(__dirname, './src/template/header.html'), 'utf8'),
         firstScreen: fs.readFileSync(path.resolve(__dirname, './src/template/first-screen.html'), 'utf8'),
