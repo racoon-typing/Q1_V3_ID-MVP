@@ -2,58 +2,64 @@ const formSubmit = document.getElementById('form');
 const textAndForm = document.querySelector('.text-and-form');
 const textHidden = document.getElementById('textHidden');
 
-const userName = document.getElementById('name');
-const phone = document.getElementById('phone');
-
-const custom2 = document.getElementById('custom2');
-const pub_id = document.getElementById('pub_id');
-const lp_url = document.getElementById('lp_url');
-const pixel = document.getElementById('lp_url');
-const mediabuyer = document.getElementById('mediabuyer');
-
-const fetchUrl =
-  'https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=8f0e5599984bbd97bb39506dd877afc32347e9ad';
-
 formSubmit.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const jsonData = {
-    stream_code: 'zaiwq', // поменять
-    goal_id: '320',
-    firstname: userName.value,
-    phone: phone.value,
-    sub_id1: lp_url.value,
-    sub_id2: pub_id.value,
-    sub_id3: mediabuyer.value,
-    aff_click_id: custom2.value,
-  };
+//   Получает данные из формы
+  const formData = new FormData(formSubmit);
 
-  console.log(jsonData);
-
-  fetch(fetchUrl, {
+  fetch('get.php', {
     method: 'POST',
-    headers: headers,
-    body: JSON.stringify(jsonData),
+    body: formData,
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Ошибка запроса');
+      }
+
+      console.log('Запрос отправлен успешно');
+
+      // Показывает скрытую программу
+      textHidden.classList.remove('hidden');
+
+      // Отслеживает отбивается пиксель или нет
+      trackPixel();
+      //   return response.text();
+    })
     .then((data) => {
-      console.log(data);
-      console.log('успех');
-      // Здесь можно добавить дополнительную логику в случае успешного ответа
-
-      textHidden.classList.remove('hidden')
-      textAndForm.classList.add('hidden')
-
+      console.log('Ответ от сервера:', data);
     })
     .catch((error) => {
-      console.error('Error:', error);
-      console.log('провал');
-      // Здесь можно добавить логику обработки ошибки
-      textHidden.classList.remove('hidden')
-      textAndForm.classList.add('hidden')
+      console.log('Запрос не отправлен:', error);
     });
 });
 
-const headers = {
-  'Content-Type': 'application/json',
-};
+// Функция для отслеживания пикселя
+function trackPixel() {
+  var qParams = new URLSearchParams(window.location.search);
+  !(function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js',
+  );
+  fbq('init', qParams.get('p'));
+  fbq('track', 'Purchase');
+  fbq('track', 'Lead');
+  fbq('track', 'PageView');
+}

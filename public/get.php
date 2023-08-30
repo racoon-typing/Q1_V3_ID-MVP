@@ -64,13 +64,8 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-
 curl_close($curl);
 
-
-
-
-
-// header("Location:thanks.php?p=$p");
+// header("Location:thanks.html?p=$p");
 
 ?>
