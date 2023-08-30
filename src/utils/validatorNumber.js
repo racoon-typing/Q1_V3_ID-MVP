@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function processInput(phone) {
   var iti = window.intlTelInput(phone, {
     allowDropdown: false,
-    initialCountry: "GR",
+    initialCountry: "ID",
     nationalMode: true,
     autoPlaceholder: "aggressive",
     formatOnDisplay: true,
