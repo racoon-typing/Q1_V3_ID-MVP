@@ -13,7 +13,6 @@ $pub_id = (string)$_POST['pub_id'];
 
 $referer = (string)$_POST['referer'];
 $referrer = (string)$_POST['referrer'];
-$offer = (string)$_POST['offer_id'];
 $creative = (string)$_POST['pub_id'];
 $pixel = (string)$_POST['pixel'];
 $mediabuyer = (string)$_POST['mediabuyer'];
@@ -34,37 +33,44 @@ if($phone == '') {
 }
 
 
-#PP API
-$url = 'https://affiliate.drcash.sh/v1/order';
-
-//Initiate cURL.
-$ch = curl_init($url);
+$curl = curl_init();
 
 //The JSON data.
 $jsonData = [
-    'stream_code' => 'zaiwq', // поменять
-    'client' => [
-        'name' => $name,
-        'phone' => $phone,
-    ],
-    'sub1' => $custom2,
-    'sub2' => $pub_id,
-    'sub3' => $lp_url,
-    'product' => '97de142d-4108-4bd4-8c80-1299986de496',
+    'goal_id' => '320',
+    'firstname' => $name,
+    'phone' => $phone,
+    'sub_id1' => $lp_url,
+    'sub_id2' => $pub_id,
+    'sub_id3' => $mediabuyer,
+    'sub_id4' => $pixel,
+    "aff_click_id" => $custom2
 ];
 $jsonDataEncoded = json_encode($jsonData);
-$headers = [
-    "Content-Type: application/json",
-    "Authorization: Bearer YJG0MTHIYWQTZDVKMI00YZRJLWFMZDUTMGYXYJJKYZA5M2NL"
-];
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$result = curl_exec($ch);
-print_r($result);
-curl_close($ch);
 
-header("Location:thanks.php?p=$p&src=$src");
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=8f0e5599984bbd97bb39506dd877afc32347e9ad',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS => $jsonDataEncoded,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
+
+
+
+
+// header("Location:thanks.php?p=$p");
 
 ?>

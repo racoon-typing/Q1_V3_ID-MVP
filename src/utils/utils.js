@@ -5,3 +5,4 @@ import './slider.js';
 import './date.js';
 import './questions.js';
 import './validatorNumber.js';
+import './showMoreText.js'
