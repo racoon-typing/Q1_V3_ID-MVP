@@ -1,7 +1,6 @@
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 
-
 const resultSlider = new Swiper('#result__slider', {
   // Опции Swiper
   modules: [Pagination],
@@ -18,4 +17,3 @@ const resultSlider = new Swiper('#result__slider', {
     delay: 5000,
   },
 });
-

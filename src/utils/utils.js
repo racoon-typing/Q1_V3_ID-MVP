@@ -5,4 +5,4 @@ import './slider.js';
 import './date.js';
 import './questions.js';
 import './validatorNumber.js';
-import './api.js'
+import './api.js';

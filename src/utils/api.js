@@ -2,38 +2,6 @@ const formSubmit = document.getElementById('form');
 const textAndForm = document.querySelector('.text-and-form');
 const textHidden = document.getElementById('textHidden');
 
-formSubmit.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-//   Получает данные из формы
-  const formData = new FormData(formSubmit);
-
-  fetch('get.php', {
-    method: 'POST',
-    body: formData,
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Ошибка запроса');
-      }
-
-      console.log('Запрос отправлен успешно');
-
-      // Показывает скрытую программу
-      textHidden.classList.remove('hidden');
-
-      // Отслеживает отбивается пиксель или нет
-      trackPixel();
-      //   return response.text();
-    })
-    .then((data) => {
-      console.log('Ответ от сервера:', data);
-    })
-    .catch((error) => {
-      console.log('Запрос не отправлен:', error);
-    });
-});
-
 // Функция для отслеживания пикселя
 function trackPixel() {
   var qParams = new URLSearchParams(window.location.search);
@@ -63,3 +31,35 @@ function trackPixel() {
   fbq('track', 'Lead');
   fbq('track', 'PageView');
 }
+
+// Слушатель на форму отправки заявки
+formSubmit.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Получает данные из формы
+  const formData = new FormData(formSubmit);
+
+  fetch('get.php', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Ошибка запроса');
+      }
+
+      console.log('Запрос отправлен успешно');
+
+      // Показывает скрытую программу
+      textHidden.classList.remove('hidden');
+
+      // Отслеживает отбивается пиксель или нет
+      trackPixel();
+    })
+    .then((data) => {
+      console.log('Ответ от сервера:', data);
+    })
+    .catch((error) => {
+      console.log('Запрос не отправлен:', error);
+    });
+});

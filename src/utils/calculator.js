@@ -7,7 +7,6 @@ const categoryUser = [
 ];
 
 
-
 // Ноды формы
 const caculatorForm = document.querySelector('#calculator__form');
 // Поля формы
@@ -34,46 +33,6 @@ const caculatorSelectList = document.querySelector('.calculator__select-list');
 // Флаг на открытие меню
 let isOpen = false;
 
-// Функция добавления значение гендера в инпут
-// function addSelectItem(evt) {
-//     const item = evt.target;
-//     caculatorSelect.value = item.textContent;
-
-//     // Скрывает меню: селект
-//     caculatorSelectList.classList.add('calculator__select-list--hidden');
-
-//     // Убирает ошибку с поля селект
-//     const isGenderEmpty = genderInputWrapper.classList.contains('is-invalid');
-//     if (isGenderEmpty) {
-//         genderInputWrapper.classList.remove('is-invalid');
-//     }
-
-//     // Меню закрыто
-//     isOpen = false;
-// }
-
-// Слушатель на селект
-// caculatorSelect.addEventListener(('click'), () => {
-//     if (isOpen) {
-//         // Скрывает меню: селект
-//         caculatorSelectList.classList.add('calculator__select-list--hidden');
-
-//         // Слушатель на нажатие на элемент меню
-//         caculatorSelectList.removeEventListener('click', addSelectItem)
-
-//         // Закрывает меню
-//         isOpen = false;
-//     } else {
-//         // Показывает меню: селект
-//         caculatorSelectList.classList.remove('calculator__select-list--hidden');
-
-//         // Слушатель на нажатие на элемент меню
-//         caculatorSelectList.addEventListener('click', addSelectItem)
-
-//         // Открывает меню
-//         isOpen = true;
-//     }
-// });
 
 // Создает график с похудением пользователя
 function getUserLine(excessWeight) {
@@ -131,7 +90,7 @@ function calcBmiIndex(userInfo) {
     const excessWeight = userInfo.weight - idealWeightRounded;
     const excessWeightRounded = Math.round(excessWeight * 100) / 100;
 
-    // BMI юзера 
+    // BMI юзера
     const bmi = userInfo.weight / ((userInfo.height / 100) * (userInfo.height / 100));
     const bmiRounded = Math.round(bmi * 100) / 100;
 
@@ -180,7 +139,7 @@ function getUserIcon(bmi, gender) {
 
 // Выводит данные расчета на страницу: Результат
 function outputUserValue(calcUserInfo) {
-    // Находит поля для заполнения 
+    // Находит поля для заполнения
     const resultBmi = document.querySelector('#result__bmi');
     const resultUserWeight = document.querySelector('#result__userWeight');
     const resultIdealWeight = document.querySelector('#result__idealWeight');
@@ -290,7 +249,7 @@ caculatorForm.addEventListener('submit', (evt) => {
 });
 
 
-// Скрывает сообщение с ошибкой при вводе данных 
+// Скрывает сообщение с ошибкой при вводе данных
 allInputs.forEach(i => {
     i.addEventListener('input', (evt) => {
         const input = evt.target;
