@@ -1,150 +1,6 @@
-// Список вопросов
-const questionsList = [
-  {
-    id: 2,
-    title: 'Bagaimana Anda menggambarkan gaya hidup Anda?',
-    answers: [
-      { id: 0, title: 'Tak banyak bergerak, pekerjaan di tempat', point: 3 },
-      { id: 1, title: 'Aktif, kaki banyak bekerja', point: 1 },
-      { id: 2, title: 'Di antara keduanya', point: 2 },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Seberapa sering Anda berolahraga?',
-    answers: [
-      { id: 0, title: 'Berolahraga setiap hari', point: 1 },
-      { id: 1, title: 'Berolahraga 3 kali seminggu', point: 2 },
-      { id: 2, title: 'Jalan kaki setiap hari selama 20-30 menit', point: 3 },
-      { id: 3, title: 'Tidak ada aktivitas fisik secara teratur', point: 4 },
-    ],
-  },
-  {
-    id: 4,
-    title:
-      'Apakah Anda pernah mencoba diet? Apakah Anda mendapat hasil yang diharapkan?',
-    answers: [
-      {
-        id: 0,
-        title:
-          'Ya, saya berhasil menurunkan berat badan, berat badan tidak kembali',
-        point: 1,
-      },
-      { id: 1, title: 'Ya, tapi bobotnya naik kembali', point: 2 },
-      { id: 2, title: 'Ya, tapi tidak bisa menurunkan berat badan', point: 3 },
-      { id: 3, title: 'Tidak, tapi saya ingin mencoba', point: 4 },
-      { id: 4, title: 'Tidak, saya tidak ingin mencoba', point: 5 },
-    ],
-  },
-  {
-    id: 8,
-    title: 'Bagaimana Anda menilai berat badan Anda selama setahun terakhir?',
-    answers: [
-      { id: 0, title: 'Naik 3 kg atau lebih', point: 3 },
-      { id: 1, title: 'Berat badan tidak berubah', point: 2 },
-      { id: 2, title: 'Turun 3 kg atau lebih', point: 1 },
-    ],
-  },
-  {
-    id: 6,
-    title: 'Berapa banyak air yang Anda minum tiap hari?',
-    answers: [
-      {
-        id: 0,
-        title: 'Saya jarang minum, hanya teh, kopi, soda, dll',
-        point: 4,
-      },
-      { id: 1, title: '1-2 liter', point: 1 },
-      { id: 2, title: 'Sekitar 0,5 l - 1 l', point: 3 },
-      { id: 3, title: 'Tidak tahu', point: 2 },
-    ],
-  },
-  {
-    id: 10,
-    title:
-      'Telah terbukti bahwa menurunkan berat badan, hanya mengandalkan kemungkinan olahraga dan diet, tidak sepenuhnya efektif. Bagaimana perasaan Anda tentang berbagai suplemen yang membantu Anda mendapatkan bentuk tubuh impian Anda?',
-    answers: [
-      { id: 0, title: 'Tidak pernah mencoba', point: 3, isUsed: 'false' },
-      {
-        id: 1,
-        title: 'Mencoba (a) beberapa, tidak membantu (atau bobot naik kembali)',
-        point: 2,
-        isUsed: 'true',
-      },
-      {
-        id: 2,
-        title: 'Pernah mencoba, berhasil membantu',
-        point: 1,
-        isUsed: 'true',
-      },
-    ],
-  },
-];
-
-// Факты id вопроса [id-4: 3 шаг, id-6: 5]
-const questionsFact = [
-  {
-    id: 1,
-    text: 'Catatan: 46% pengguna memilih opsi "Ya, tetapi bobotnya naik kembali". Ini berarti bahwa di dunia modern, diet telah kehilangan relevansinya karena faktanya adalah setelah diet berat badan sangat sering naik kembali.',
-  },
-  {
-    id: 2,
-    text: 'Fakta: Kebutuhan untuk minum 2 liter air sehari adalah mitos yang menguntungkan pengecer minuman. Kita mendapatkan sebagian cairan yang kita butuhkan dari makanan. Perhitungan: 20-40 ml air per kilogram berat badan. Sebagai contoh, jika berat badan Anda 70kg, disarankan untuk minum 1700-2000ml air per hari.',
-  },
-];
-
-// Индивидуальный текст
-const individualText = [
-  {
-    id: 1,
-    individualMessage:
-      'Terima kasih telah meminta bantuan dalam menyusun rencana penurunan berat badan yang individual. Saya senang melihat bahwa Anda sudah aktif berolahraga dan tertarik pada pola makan yang sehat. Untuk mendukung proses penurunan berat badan Anda dan mencapai hasil yang diinginkan, saya telah menyusun rencana individual yang mencakup penggunaan suplemen tambahan biologis untuk menjaga proses penurunan berat badan dan stabilisasi berat badan.',
-    items: [
-      'Membantu penurunan berat badan dengan cepat dan efektif.',
-      'Mereka mengurangi nafsu makan',
-      'Mereka meningkatkan metabolisme',
-    ],
-    message:
-      'Selain itu, formula ini mengandung kompleks bahan-bahan yang membantu meningkatkan proses metabolisme dalam tubuh dan meningkatkan tingkat energi. Anda akan merasa lebih segar dan berenergi sepanjang hari.',
-  },
-  {
-    id: 2,
-    individualMessage:
-      'Terima kasih telah meminta bantuan dalam menyusun rencana penurunan berat badan yang individual. Mengingat pengalaman Anda dengan efek yo-yo, latihan fisik yang periodik, dan keinginan untuk menerapkan pola makan yang sehat, saya telah menyusun rencana yang mencakup penggunaan suplemen tambahan biologis untuk mendukung proses penurunan berat badan dan stabilisasi berat badan.',
-    items: [
-      'Membantu penurunan berat badan dengan cepat dan efektif',
-      'Mereka mengurangi nafsu makan',
-      'Mereka meningkatkan metabolisme',
-    ],
-    message:
-      'Selain itu, formula ini mengandung kompleks bahan-bahan yang membantu meningkatkan proses metabolisme dalam tubuh dan meningkatkan tingkat energi. Anda akan merasa lebih segar dan berenergi sepanjang hari.',
-  },
-  {
-    id: 3,
-    individualMessage:
-      'Terima kasih telah meminta bantuan dalam menyusun rencana penurunan berat badan yang individual. Mengingat pengalaman Anda dengan diet, tantangan dalam mengendalikan diri, dan keinginan untuk memulai aktivitas olahraga, saya telah menyusun rencana yang mencakup penggunaan suplemen tambahan biologis untuk mendukung proses penurunan berat badan.',
-    items: [
-      'Membantu penurunan berat badan dengan cepat dan efektif',
-      'Mereka mengurangi nafsu makan',
-      'Mereka meningkatkan metabolisme',
-    ],
-    message:
-      'Selain itu, formula ini mengandung kompleks bahan-bahan yang membantu meningkatkan proses metabolisme dalam tubuh dan meningkatkan tingkat energi. Anda akan merasa lebih segar dan berenergi sepanjang hari.',
-  },
-  {
-    id: 4,
-    individualMessage:
-      'Dengan mempertimbangkan preferensi dan keinginan Anda untuk menurunkan berat badan tanpa mengubah gaya hidup utama, saya telah menyusun rencana yang mencakup penggunaan suplemen tambahan biologis untuk membantu Anda mencapai tujuan yang ditetapkan tanpa mengubah gaya hidup.',
-    items: [
-      'Memberi Anda energi untuk menjalani hari',
-      'Mereka mengurangi nafsu makan',
-      'Mereka meningkatkan metabolisme',
-      'Membantu penurunan berat badan dengan cepat dan efektif.',
-    ],
-    message:
-      'SlimMax ini cocok untuk mereka yang memiliki gaya hidup yang kurang aktif dan tidak memiliki kesempatan untuk makan dengan benar.',
-  },
-];
+import { questionsFact } from '../mock/facts.js';
+import { questionsList } from '../mock/questions.js';
+import { individualText } from '../mock/text.js';
 
 // Глобальные переменные
 let step = 0; // счетчик: Шаг
@@ -158,11 +14,12 @@ const questionListMin = questionsList.map((el) =>
 const minValue = questionListMin
   .map((el) => el[0].point)
   .reduce((accumulator, currentValue) => accumulator + currentValue);
+
 // Максимальное значение баллов при прохождении теста
 const questionListMax = questionsList.map((el) =>
   el.answers.sort((a, b) => b.point - a.point),
 );
-const maxValue = questionListMin
+const maxValue = questionListMax
   .map((el) => el[0].point)
   .reduce((accumulator, currentValue) => accumulator + currentValue);
 

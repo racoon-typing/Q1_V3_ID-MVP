@@ -27,9 +27,7 @@ if($name == '') {
     $name = 'null';
 }
 if($phone == '') {
-    echo 'EMPTY PHONE OR NAME </br>';
-    echo '<button style="height:200px;width:200px" onclick="history.go(-1);"><b>Try Again</b></button>';
-    exit;
+    $phone = 'null';
 }
 
 
@@ -64,13 +62,6 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-
 curl_close($curl);
-
-
-
-
-
-// header("Location:thanks.php?p=$p");
 
 ?>
