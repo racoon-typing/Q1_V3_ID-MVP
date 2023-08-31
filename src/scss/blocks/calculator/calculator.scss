@@ -11,25 +11,17 @@
 
   &__title {
     margin: 0;
-    font-size: 26px;
-    line-height: 1.2;
+    font-size: $font-size-title;
+    line-height: $line-height-2;
     margin-bottom: 20px;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
   }
 
   &__input {
-    width: 100%;
-    min-height: 40px;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #d9d8e699;
-    padding: 5px 10px;
 
     &-wrapper {
       position: relative;

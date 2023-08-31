@@ -11,10 +11,10 @@
     padding: 10px 15px;
     padding-right: 30px;
     padding-left: 0;
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: $font-size-text;
+    line-height: $line-height-2;
     margin: 0;
-    border-bottom: 1.5px solid #f3f3f3;
+    border-bottom: 1.5px solid $light-gray;
     margin-bottom: 20px;
   }
 
@@ -38,7 +38,7 @@
       background-color: #a29c9c;
       top: 11px;
       left: 3px;
-      border-radius: 10px;
+      border-radius: $border-radius-2;
       &--fisrt {
         rotate: 45deg;
       }
@@ -65,8 +65,8 @@
         }
 
         &-title {
-          font-size: 22px;
-          line-height: 1.2;
+          font-size: $font-size-title;
+          line-height: $line-height-2;
           font-weight: 500;
           margin: 0;
           margin-bottom: 20px;
@@ -86,15 +86,15 @@
     display: flex;
     padding: 14px 16px;
     border: 1px solid rgba(217, 216, 230, 0.55);
-    border-radius: 6px;
+    border-radius: $border-radius-1;
     transition: .3s ease-in-out;
     cursor: pointer;
     &--checked {
-      border: 1px solid$green;
+      border: 1px solid $green;
     }
 
     &--checked > .radio__wrapper {
-      border: 1px solid$green;
+      border: 1px solid $green;
       background-color: $green;
       box-shadow: inset 0 0 0 4px #ffff;
     }
@@ -113,14 +113,14 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  background-color: #e8e8e8;
-  border-radius: 50%;
-  border: 1px solid#e8e8e8;
+  background-color: $dark-gray;
+  border-radius: $border-radius-3;
+  border: 1px solid $dark-gray;
   transition: .3s ease-in-out;
 }
 
 .question__sub-item-text {
-  font-size: 14px;
+  font-size: $font-size-helper;
   margin-left: 15px;
 }
 
@@ -146,7 +146,7 @@
   margin: 0;
   font-size: 14px;
   background-color: $light-gray;
-  border-radius: 10px;
+  border-radius: $border-radius-2;
   padding: 10px 15px;
 }
 
@@ -197,7 +197,7 @@
   background-color: $dark-gray;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: $border-radius-2;
   margin-right: 10px;
 }
 
@@ -210,9 +210,9 @@
   justify-content: center;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-  border: 2px solid #fff;
+  border-radius: $border-radius-3;
+  background-color: $dark-gray;
+  border: 2px solid $white;
   box-shadow: 0 4px 10px 0 var(--color-bg-alpha2, rgba(0, 0, 0, 0.1));
 }
 
@@ -245,7 +245,7 @@
   position: relative;
   width: 100%;
   height: 6px;
-  background-color: #dbdbdb;
+  background-color: $dark-gray;
 }
 
 .question__list-stage-line {
@@ -253,7 +253,7 @@
   display: block;
   width: 0;
   height: 100%;
-  background-color: rgb(43, 194, 83);
+  background-color: $green;
   background-image: linear-gradient(90deg, #2f9122, #56d345);
   box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
     inset 0 -2px 6px rgba(0, 0, 0, 0.4);

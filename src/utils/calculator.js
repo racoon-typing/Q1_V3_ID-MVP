@@ -212,8 +212,8 @@ function outputUserValue(calcUserInfo) {
 // Функция проверки полей, заполенных Пользователем
 function checkUserInfo(userHeight, userWeight, userAge, userGender) {
     // Проверка полей
-    const rightHeightValue = userHeight > 100 && userHeight < 240;
-    const rightWeightValue = userWeight > 30 && userWeight < 300;
+    const rightHeightValue = userHeight > 100 && userHeight < 260;
+    const rightWeightValue = userWeight > 30 && userWeight < 500;
     const rightAgeValue = userAge > 0 && userAge < 120;
     const rightGenderValue = userGender !== null;
 
@@ -256,7 +256,7 @@ caculatorForm.addEventListener('submit', (evt) => {
     const userGender = formData.get('gender');
 
     // Условие соответсвия всех полей
-    const isRightValue = userHeight > 100 && userHeight < 240 && userWeight > 30 && userWeight < 300 && userAge > 0 && userAge < 120 && userGender !== '';
+    const isRightValue = userHeight > 100 && userHeight < 240 && userWeight > 30 && userWeight < 300 && userAge > 0 && userAge < 120 && userGender !== null;
 
     if (isRightValue) {
         // Данные юзера

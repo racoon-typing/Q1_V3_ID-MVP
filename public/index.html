@@ -161,14 +161,6 @@
 
       <!-- Страница: Старт -->
       <div class="start-quiz hidden">
-        <button class="start-quiz__close hidden">
-          <span
-            class="start-quiz__close-line start-quiz__close-line--fisrt"
-          ></span>
-          <span
-            class="start-quiz__close-line start-quiz__close-line--second"
-          ></span>
-        </button>
 
         <h2 class="start-quiz__title">
           Dapatkan penawaran yang dipersonalisasi dari ahli gizi terkenal Grace
@@ -220,12 +212,15 @@
                 class="calculator__input form-control"
                 value=""
                 placeholder="180"
+                min="100"
+                max="260"
+                tabindex="0"
               />
 
               <span
                 class="calculator__input-text--error calculator__input-text--error-height calculator__input-text--error-hidden"
               >
-                Masukkan ketinggian yang benar: dari 100 hingga 240 sentimeter
+                Masukkan ketinggian yang benar: dari 100 hingga 260 sentimeter
               </span>
             </div>
 
@@ -240,12 +235,15 @@
                 class="calculator__input form-control"
                 value=""
                 placeholder="120"
+                min="30"
+                max="300"
+                tabindex="0"
               />
 
               <span
                 class="calculator__input-text--error calculator__input-text--error-weight calculator__input-text--error-hidden"
               >
-                Masukkan berat yang benar: 30 hingga 300 kilogram
+                Masukkan berat yang benar: 30 hingga 500 kilogram
               </span>
             </div>
 
@@ -260,6 +258,9 @@
                 class="calculator__input form-control"
                 value=""
                 placeholder="32"
+                min="0"
+                max="120"
+                tabindex="0"
               />
 
               <span
@@ -277,6 +278,7 @@
                 class="calculator__input form-select"
                 id="form-select"
                 name="gender"
+                tabindex="0"
               >
                 <option selected disabled>jenis kelamin Anda</option>
                 <option value="Wanita">Wanita</option>

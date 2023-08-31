@@ -9,51 +9,19 @@
   align-items: flex-start;
   flex-grow: 1;
 
-  &__close {
-    display: block;
-    position: relative;
-    width: 24px;
-    height: 24px;
-    margin-left: auto;
-    border: none;
-    background-color: transparent;
-    margin-bottom: 10px;
-  }
-
-  &__close {
-    &-line {
-      position: absolute;
-      width: 80%;
-      height: 2px;
-      background-color: #a29c9c;
-      top: 11px;
-      left: 3px;
-      border-radius: 10px;
-
-      &--fisrt {
-        rotate: 45deg;
-      }
-
-      &--second {
-        rotate: -45deg;
-      }
-    }
-  }
-
   &__title {
-    font-size: 26px;
+    font-size: $font-size-title;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: $line-height-2;
     margin-bottom: 16px;
     margin-top: 10px;
   }
 
   &__text {
     margin: 0;
-    font-size: 16px;
+    font-size: $font-size-text;
     font-weight: 500;
-    line-height: 1.33;
-    margin-bottom: 16px;
+    line-height: $line-height-2;
   }
 
   &__button {
@@ -69,7 +37,7 @@
 
   &__description {
     margin: 0;
-    font-size: 10px;
+    font-size: $font-size-description;
     font-weight: 700;
     margin-bottom: 6px;
   }
@@ -86,8 +54,8 @@
         #1a5213);
     padding: 15px;
     box-sizing: border-box;
-    border-radius: 5px;
-    box-shadow: 1.9px 6.7px 7px 0 rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius-1;
+    box-shadow: $box-shadow-2;
 
     &-lock {
       position: absolute;
@@ -98,9 +66,9 @@
       justify-content: center;
       width: 24px;
       height: 24px;
-      border-radius: 50%;
-      background-color: #8d8d8d;
-      border: 4px solid #fff;
+      border-radius: $border-radius-3;
+      background-color: $dark-gray-2;
+      border: 4px solid $white;
 
       svg {
         width: 11px;
@@ -111,11 +79,11 @@
     &-text {
       display: block;
       max-width: 120px;
-      font-size: 14px;
-      line-height: 1.1;
+      font-size: $font-size-helper;
+      line-height: $line-height-2;
       text-align: right;
       font-weight: 700;
-      color: #fff;
+      color: $white;
     }
   }
 }
