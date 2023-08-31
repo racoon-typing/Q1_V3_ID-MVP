@@ -39,6 +39,7 @@ formSubmit.addEventListener('submit', function (e) {
   // Получает данные из формы
   const formData = new FormData(formSubmit);
 
+  // Fetch запрос
   fetch('get.php', {
     method: 'POST',
     body: formData,
