@@ -12,12 +12,20 @@ function changeStepHandler(button, prevElement, nextElement, className) {
   button.addEventListener('click', () => {
     prevElement.classList.add(className);
     nextElement.classList.remove(className);
+    // Прокрутка страницы наверх
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
 
     if (button.classList.contains('result__button')) {
       cutDownTimer(15, 0);
     }
+
+    
   });
 }
+
 
 // Блок: Главный экран
 const mainButton = document.querySelector('.first-screen__start-link');

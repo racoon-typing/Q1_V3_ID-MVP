@@ -27,6 +27,8 @@ const maxValue = questionListMax
 const scaleWidth = document.querySelector('.question__list-stage-line');
 scaleWidth.style.width = `${(step + 1 / questionsList.length) * 100}%`;
 
+const percent = document.getElementById('percent')
+percent.textContent = `${Math.round(((step + 1) / questionsList.length) * 100)}%`;
 // Контейнер для вопроса
 const questionsItemNode = document.querySelector('.question__item');
 
@@ -288,6 +290,8 @@ buttonNext.addEventListener('click', () => {
     // Изменяет длину шкалы
     const scaleWidth = document.querySelector('.question__list-stage-line');
     scaleWidth.style.width = `${((step + 1) / questionsList.length) * 100}%`;
+
+    percent.textContent = `${Math.round(((step + 1) / questionsList.length) * 100)}%`;
   }
 
   // Удаляет отрисованный вопрос
