@@ -19,24 +19,24 @@
     flex-direction: column;
     align-items: center;
     background-color: #eff8f0;
-    border-radius: 10px;
+    border-radius: $border-radius-2;
     margin-bottom: 30px;
     margin-top: 20px;
   }
 
   &__description {
     margin: 0;
-    font-size: 16px;
+    font-size: $font-size-text;
     font-weight: 500;
-    line-height: 1.33;
+    line-height: $line-height-2;
     margin-bottom: 16px;
   }
 
   &__text {
     margin: 0;
-    font-size: 16px;
+    font-size: $font-size-text;
     font-weight: 500;
-    line-height: 1.33;
+    line-height: $line-height-2;
     margin-bottom: 16px;
   }
 
@@ -72,18 +72,18 @@
         margin-bottom: 14px;
 
         .old-price {
-          color: #ef3124;
-          font-size: 18px;
+          color: $red;
+          font-size: $font-size-btn;
           margin-right: 8px;
         }
         .new-price {
-          font-size: 24px;
+          font-size: $font-size-title;
         }
       }
 
       span {
-        font-size: 16px;
-        line-height: 1.33;
+        font-size: $font-size-text;
+        line-height: $line-height-2;
       }
     }
   }
@@ -120,12 +120,12 @@
 
         .old-price {
           color: #ef3124;
-          font-size: 18px;
+          font-size: $font-size-btn;
           text-decoration: line-through;
         }
 
         .new-price {
-          font-size: 24px;
+          font-size: $font-size-title;
           font-weight: 600;
         }
       }
@@ -178,7 +178,7 @@
 
   .img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: $border-radius-1;
   }
 
   /* Выделенный блок 2 */
@@ -250,7 +250,7 @@
   .btn-more {
     position: absolute;
     padding: 5px 10px;
-    border-radius: 40px;
+    border-radius: $border-radius-btn;
     border: 1px solid #000;
     background-color: rgba(255, 255, 255, 0.7);
     bottom: 5px;

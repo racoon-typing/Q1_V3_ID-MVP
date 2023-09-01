@@ -1,6 +1,7 @@
+
+import { showMoreText } from './showMoreText.js';
+
 const formSubmit = document.getElementById('form');
-const textAndForm = document.querySelector('.text-and-form');
-const textHidden = document.getElementById('textHidden');
 
 // Функция для отслеживания пикселя
 function trackPixel() {
@@ -52,12 +53,14 @@ formSubmit.addEventListener('submit', function (e) {
       console.log('Запрос отправлен успешно');
 
       // Показывает скрытую программу
-      textHidden.classList.remove('hidden');
+      showMoreText();
 
       // Отслеживает отбивается пиксель или нет
       trackPixel();
     })
     .catch((error) => {
       console.log('Запрос не отправлен:', error);
+      // Показывает скрытую программу
+      showMoreText();
     });
 });
