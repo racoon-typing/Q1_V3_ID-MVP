@@ -24,7 +24,7 @@ const maxValue = questionListMax
   .reduce((accumulator, currentValue) => accumulator + currentValue);
 
 // Устанавливает начальную длину шкалы
-const scaleWidth = document.querySelector('.question__list-stage-line');
+const scaleWidth = document.querySelector('.question__stage-line');
 scaleWidth.style.width = `${(step + 1 / questionsList.length) * 100}%`;
 
 const percent = document.getElementById('percent')
@@ -93,7 +93,7 @@ function clickByAnswer() {
 
       if (!isAnswered) {
         buttonNext.disabled = false;
-        buttonNext.classList.remove('question__button-next--disabled');
+        buttonNext.classList.remove('question__stage-button--disabled');
       }
     }
   });
@@ -212,7 +212,7 @@ function getIndividualUserMessage(questionResults) {
 }
 
 // Кнопка дальше
-const buttonNext = document.querySelector('.question__button-next');
+const buttonNext = document.querySelector('.question__stage-button');
 
 // Слушатель на кнопку дальше
 buttonNext.addEventListener('click', () => {
@@ -231,7 +231,7 @@ buttonNext.addEventListener('click', () => {
 
   // Блокирует кнопку
   buttonNext.disabled = true;
-  buttonNext.classList.add('question__button-next--disabled');
+  buttonNext.classList.add('question__stage-button--disabled');
 
   // Проверка на наличие вопросов
   if (step >= questionsList.length) {
@@ -288,7 +288,7 @@ buttonNext.addEventListener('click', () => {
     return;
   } else {
     // Изменяет длину шкалы
-    const scaleWidth = document.querySelector('.question__list-stage-line');
+    const scaleWidth = document.querySelector('.question__stage-line');
     scaleWidth.style.width = `${((step + 1) / questionsList.length) * 100}%`;
 
     percent.textContent = `${Math.round(((step + 1) / questionsList.length) * 100)}%`;
