@@ -57,9 +57,6 @@ formSubmit.addEventListener('submit', function (e) {
       // Отслеживает отбивается пиксель или нет
       trackPixel();
     })
-    .then((data) => {
-      console.log('Ответ от сервера:', data);
-    })
     .catch((error) => {
       console.log('Запрос не отправлен:', error);
     });
