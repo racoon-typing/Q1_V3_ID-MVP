@@ -76,6 +76,7 @@
       padding: 0 40px;
       text-decoration: none;
       min-height: 55px;
+      width: 100%;
       position: relative;
       background-color: $green;
       color: #fff;
@@ -84,12 +85,14 @@
       font-size: $font-size-btn;
 
       &::after {
-        background: linear-gradient(90deg,
-            hsla(0, 0%, 100%, 0.1) 10%,
-            hsla(0, 0%, 100%, 0.2) 20%,
-            hsla(0, 0%, 100%, 0.6));
+        background: linear-gradient(
+          90deg,
+          hsla(0, 0%, 100%, 0.1) 10%,
+          hsla(0, 0%, 100%, 0.2) 20%,
+          hsla(0, 0%, 100%, 0.6)
+        );
         width: 20px;
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
@@ -112,5 +115,86 @@
         }
       }
     }
+  }
+
+  &__wrapper{
+    padding: 20px 0 0;
+    width: 100%;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: $font-size-description;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  &__stars{
+    
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+
+    img{
+      width: 50%;
+      height: auto;
+    }
+
+    span{
+      font-size: $font-size-description;
+      color: $black;
+    }
+  }
+
+
+  &__surprise {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 200px;
+    width: 200px;
+    height: 100px;
+    background: linear-gradient(
+      to bottom right,
+      rgb(123, 221, 110) 5px,
+      #1a5213
+    );
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: $border-radius-1;
+    box-shadow: $box-shadow-2;
+
+    &-lock {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: $border-radius-3;
+      background-color: $dark-gray-2;
+      border: 4px solid $white;
+
+      svg {
+        width: 11px;
+        height: 11px;
+      }
+    }
+
+    &-text {
+      display: block;
+      max-width: 120px;
+      font-size: $font-size-helper;
+      line-height: $line-height-2;
+      text-align: right;
+      font-weight: 700;
+      color: $white;
+    }
+
+    
   }
 }
