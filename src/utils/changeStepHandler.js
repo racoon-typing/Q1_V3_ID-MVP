@@ -30,15 +30,15 @@ function changeStepHandler(button, prevElement, nextElement, className) {
 // Блок: Главный экран
 const mainButton = document.querySelector('.first-screen__start-link');
 const mainContainer = document.querySelector('.first-screen__container');
-const startQuiz = document.querySelector('.start-quiz');
+const calculatorContainer = document.querySelector('.calculator__content');
+// const startQuiz = document.querySelector('.start-quiz');
 
-changeStepHandler(mainButton, mainContainer, startQuiz, 'hidden');
+changeStepHandler(mainButton, mainContainer, calculatorContainer, 'hidden');
 
 // Блок: Старт
-const startQuizButton = document.querySelector('.start-quiz__button');
-const calculatorContainer = document.querySelector('.calculator__content');
+// const startQuizButton = document.querySelector('.start-quiz__button');
 
-changeStepHandler(startQuizButton, startQuiz, calculatorContainer, 'hidden');
+// changeStepHandler(startQuizButton, startQuiz, calculatorContainer, 'hidden');
 
 // Блок: Результат
 const resultButton = document.querySelector('.result__button');
