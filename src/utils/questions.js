@@ -27,8 +27,10 @@ const maxValue = questionListMax
 const scaleWidth = document.querySelector('.question__stage-line');
 scaleWidth.style.width = `${(step + 1 / questionsList.length) * 100}%`;
 
-const percent = document.getElementById('percent')
-percent.textContent = `${Math.round(((step + 1) / questionsList.length) * 100)}%`;
+const percent = document.getElementById('percent');
+percent.textContent = `${Math.round(
+  ((step + 1) / questionsList.length) * 100,
+)}%`;
 // Контейнер для вопроса
 const questionsItemNode = document.querySelector('.question__item');
 
@@ -182,7 +184,7 @@ function getAnswerPoints() {
 }
 
 // Возвращает объект с индивидуальным посланием в зависимости от баллов
-function getIndividualUserMessage(questionResults) {
+function getIndividualUserMessage(questionResults, index) {
   // Пороговые значения для групп
   const gradePoit = (questionResults.maxValue - questionResults.minValue) / 4;
   const firstGroup = questionResults.minValue + gradePoit; // 10 + 6.25 = до 16,25 Небольшой лишний вес
@@ -207,8 +209,8 @@ function getIndividualUserMessage(questionResults) {
   }
 
   // Объект с результатом юзера
-  const userResultMessage = individualText[grade];
-  return userResultMessage;
+  const userResultMessage = [individualText[grade]];
+  return userResultMessage[index];
 }
 
 // Кнопка дальше
@@ -245,7 +247,7 @@ buttonNext.addEventListener('click', () => {
     };
 
     // Получает объект с индивидуальным ответом
-    const userMessage = getIndividualUserMessage(questionResults);
+    // const userMessage = getIndividualUserMessage(questionResults);
 
     // Дубликат узла
     const individualCheckListNode = document.querySelector(
@@ -253,37 +255,47 @@ buttonNext.addEventListener('click', () => {
     );
     const checkItemTemplate = document.querySelector('#result__check-item');
 
-    // Создает элементы списка Чек-лист
-    userMessage.items.map((el) => {
-      // Получает шаблон элемента Чек-листа
-      const checkItem = checkItemTemplate.content.cloneNode(true);
 
-      // Вставляет характеристики
-      const checkItemText = checkItem.querySelector('.result__check-item-text');
-      checkItemText.textContent = el;
+    // Первое индивидуальное сообщение
+    const firstIndividualMessage = document.getElementById('individual__message-1');
+    firstIndividualMessage.textContent = getIndividualUserMessage(questionResults, 0).individualMessage.replace('{BMI}', 12);
 
-      // Добавляет на старницу
-      individualCheckListNode.append(checkItem);
+    // Показывает блок загрузки
+    const questionContainer = document.querySelector('.question__wrapper');
+    const loaderContainer = document.querySelector('.loader');
+    questionContainer.classList.add('hidden');
+    loaderContainer.classList.remove('hidden');
+
+    let resultTime = 0;
+    const textLoaders = document.querySelectorAll('.text-loader');
+    textLoaders.forEach((loader, index) => {
+      const wordsCount = loader.textContent.split(' ').length;
+      const delay = wordsCount * 100; // Интервал в миллисекундах, зависящий от количества слов
+      resultTime += delay;
+      setTimeout(() => {
+        if (index < 1) {
+          // loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
+        } else {
+          textLoaders[index - 1].classList.toggle('o-0');
+          loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
+        }
+      }, resultTime);
+      // if()
     });
 
-    // Добавляет индивидуальное послание
-    const individualMessageNode = document.querySelector(
-      '#individual__message',
-    );
-    individualMessageNode.textContent = userMessage.individualMessage;
-
-    // Добавляет текст после элементов списка
-    const individualText = document.querySelector(
-      '#individual__checkList-text',
-    );
-    individualText.textContent = userMessage.message;
-
     // Показывает следующий блок
-    const questionContainer = document.querySelector('.question__wrapper');
     const resultContainer = document.querySelector('.result');
 
-    questionContainer.classList.add('hidden');
-    resultContainer.classList.remove('hidden');
+    setTimeout(() => {
+      loaderContainer.classList.add('hidden');
+      resultContainer.classList.remove('hidden');
+    }, resultTime + 4000);
+
+    // Прокрутка страницы наверх
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth'
+    // });
 
     return;
   } else {
@@ -291,7 +303,9 @@ buttonNext.addEventListener('click', () => {
     const scaleWidth = document.querySelector('.question__stage-line');
     scaleWidth.style.width = `${((step + 1) / questionsList.length) * 100}%`;
 
-    percent.textContent = `${Math.round(((step + 1) / questionsList.length) * 100)}%`;
+    percent.textContent = `${Math.round(
+      ((step + 1) / questionsList.length) * 100,
+    )}%`;
   }
 
   // Удаляет отрисованный вопрос

@@ -167,13 +167,10 @@
               <img src="./img/icon/stars.png" alt="stars" >
               <span>100 ribu+ pengguna yang bahagia</span>
             </div> -->
-            
 
             <p class="first-screen__description">
               Bonus setelah mengikuti tes:
             </p>
-
-            
 
             <div class="first-screen__surprise">
               <span class="first-screen__surprise-lock">
@@ -191,46 +188,10 @@
               <span class="first-screen__surprise-text">
                 Rencana penurunan berat badan yang dipersonalisasi
               </span>
-              
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Страница: Старт -->
-      <!-- <div class="start-quiz hidden">
-        <h2 class="start-quiz__title">
-          Dapatkan penawaran yang dipersonalisasi dari ahli gizi terkenal Grace
-          Judio-Kahl
-        </h2>
-
-        <p class="start-quiz__text">
-          Ikuti tes dan dapatkan rencana penurunan berat badan yang
-          dipersonalisasi
-        </p>
-
-        <button class="button start-quiz__button">IKUTI TESNYA</button>
-
-        <p class="start-quiz__description">Bonus setelah menyelesaikan tes:</p>
-
-        <div class="start-quiz__surprise">
-          <span class="start-quiz__surprise-lock">
-            <svg
-              viewBox="0 0 6 6"
-              fill="#fff"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.99997 4.53334C3.14142 4.53334 3.27708 4.47715 3.37709 4.37713C3.47711 4.27711 3.5333 4.14145 3.5333 4C3.5333 3.704 3.2933 3.46667 2.99997 3.46667C2.85852 3.46667 2.72287 3.52286 2.62285 3.62288C2.52283 3.7229 2.46664 3.85855 2.46664 4C2.46664 4.14145 2.52283 4.27711 2.62285 4.37713C2.72287 4.47715 2.85852 4.53334 2.99997 4.53334ZM4.59997 2.13334C4.74142 2.13334 4.87708 2.18953 4.97709 2.28955C5.07711 2.38957 5.1333 2.52522 5.1333 2.66667V5.33334C5.1333 5.47479 5.07711 5.61044 4.97709 5.71046C4.87708 5.81048 4.74142 5.86667 4.59997 5.86667H1.39997C1.25852 5.86667 1.12287 5.81048 1.02285 5.71046C0.922828 5.61044 0.866638 5.47479 0.866638 5.33334V2.66667C0.866638 2.37067 1.10664 2.13334 1.39997 2.13334H1.66664V1.6C1.66664 1.24638 1.80711 0.907243 2.05716 0.657194C2.30721 0.407146 2.64635 0.26667 2.99997 0.26667C3.17507 0.26667 3.34845 0.301158 3.51022 0.368164C3.67198 0.43517 3.81897 0.533383 3.94278 0.657194C4.06659 0.781006 4.1648 0.927991 4.23181 1.08976C4.29882 1.25153 4.3333 1.42491 4.3333 1.6V2.13334H4.59997ZM2.99997 0.800004C2.7878 0.800004 2.58431 0.884289 2.43429 1.03432C2.28426 1.18435 2.19997 1.38783 2.19997 1.6V2.13334H3.79997V1.6C3.79997 1.38783 3.71569 1.18435 3.56566 1.03432C3.41563 0.884289 3.21214 0.800004 2.99997 0.800004Z"
-              ></path>
-            </svg>
-          </span>
-
-          <span class="start-quiz__surprise-text">
-            Rencana penurunan berat badan individu
-          </span>
-        </div>
-      </div> -->
 
       <!-- Страница: Калькулятор -->
       <div class="calculator__content hidden">
@@ -238,6 +199,21 @@
           <h2 class="calculator__title">Isi detail Anda</h2>
 
           <form id="calculator__form" class="calculator__form">
+            <label for="name"> Nama: </label>
+            <div
+              class="calculator__input-wrapper "
+            >
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="calculator__input form-control"
+                value=""
+                placeholder="Nama:"
+                tabindex="0"
+                required
+              />
+            </div>
             <label for="height"> Tinggi: (sentimeter) </label>
             <div
               class="calculator__input-wrapper calculator__input-wrapper-height"
@@ -465,13 +441,36 @@
         </template>
       </div>
 
+      <div class="loader hidden">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="loader__text">
+          <p class="text-loader">Menganalisis data...</p>
+          <p class="text-loader o-0">Mengukur proporsi tubuh...</p>
+          <p class="text-loader o-0">
+            Membangun jalur untuk mencapai tujuan Anda...
+          </p>
+          <p class="text-loader o-0">
+            Rencana penurunan berat badan pribadi Anda sudah siap!
+          </p>
+        </div>
+      </div>
+
       <!-- Страница: Результат -->
       <div class="result hidden">
         <h3 class="result__title">
-          Program penurunan berat badan pribadi Anda
+          <span class="username">(USER NAME)</span>, program penurunan berat
+          badan pribadi Anda selama 30 hari dari Cissie Nugraha sudah siap:
         </h3>
 
-        <img src="img/content/content-2.jpg" alt="" class="result__img" />
+        <img src="img/content/content-2.png" alt="" class="result__img" />
+        <p class="text">
+          <span class="username">(USER NAME)</span>, dengan senang hati saya
+          informasikan kepada Anda tentang kesempatan luar biasa untuk memulai
+          perjalanan Anda menuju bentuk tubuh yang sempurna dan sehat sekarang
+          juga!
+        </p>
 
         <div class="result__body">
           <p class="result__body-text result__body-text--first">
@@ -512,62 +511,177 @@
         </div>
 
         <!-- Индивидуальный послание -->
-        <p class="result__text" id="individual__message"></p>
-
-        <p class="result__text">
-          Rencana individual Anda akan mencakup rencana yang dirancang khusus
-          untuk program ini SlimMax. Anda dapat mengunduh rencana penurunan
-          berat badan individual di bawah ini.
+        <p class="result__text" id="individual__message-1">
+          Hasil tes Anda menunjukkan bahwa Anda mengalami obesitas karena BMI
+          Anda adalah 21,2. 15% dari pengguna yang mengikuti tes ini memiliki
+          hasil yang sama, dan mereka telah mengambil langkah pertama untuk
+          mengubah hidup mereka.
         </p>
 
         <p class="result__text">
-          Formula SlimMax diciptakan di sebuah pusat penelitian di Jakarta
-          khusus untuk untuk orang yang kelebihan berat badan. Mengandung
-          bahan-bahan alami yang:
+          Saya memiliki penawaran khusus untuk Anda - rencana penurunan berat
+          badan unik yang dirancang khusus untuk parameter dan gaya hidup Anda.
+          Rencana ini termasuk penggunaan suplemen bio khusus (PRODUK) yang akan
+          membantu Anda mencapai hasil yang Anda inginkan hanya dalam 30 hari.
         </p>
 
-        <div class="result__allocated-info">
-          <ul class="result__check-list">
-            <!-- Элементы списка -->
-          </ul>
+        <p class="result__text">
+          Anda dapat mengambil rencana penurunan berat badan pribadi Anda di
+          bawah ini.
+        </p>
 
-          <!-- Индивидуальный текст -->
-          <p class="result__text" id="individual__checkList-text"></p>
+        <!-- <div
+        style="
+          width: 100%;
+          height: 100%;
+          min-height: 250px;
+          margin-bottom: 16px;
+        "
+      >
+        <canvas id="myChart"></canvas>
+      </div> -->
+
+        <h3 class="title">
+          15 ribu orang dengan profil yang sama telah menurunkan berat badan
+          melalui program penurunan berat badan dengan (PRODUCT)! Salah satunya
+          adalah Titi DJ.
+        </h3>
+
+        <!-- Обращение -->
+        <div class="result__appeal margin-bottom">
+          <img class="head-img" src="./img/content/star-1.jpg" alt="" />
+          <h4>Titi DJ</h4>
+          <p class="text">
+            Berkat program penurunan berat badan dari Dr. Cissie Nugraha, saya
+            terlihat luar biasa! Anda bisa berdebat dengan saya, tapi menurut
+            saya dia adalah ahli gizi terbaik di Indonesia. Dialah yang menyusun
+            rencana penurunan berat badan untuk saya dan menyarankan suplemen
+            bernama (PRODUCT). Teman-teman, saya telah mencoba banyak cara untuk
+            menurunkan berat badan, tapi (PRODUCT) adalah sesuatu yang luar
+            biasa. Saya akan jujur, saya tidak sepenuhnya mengikuti rencana
+            latihan dan pola makan, dan saya pikir saya tidak akan berhasil.
+            Namun, dalam sebulan saya berhasil menurunkan berat badan dan merasa
+            penuh energi dan sehat! Jika Anda telah berjuang dengan berat badan
+            berlebih untuk waktu yang lama, saya sangat menyarankan Anda mencoba
+            (PRODUCT). Terima kasih, Dr. Cissie Nugraha, Anda adalah seorang
+            profesional sejati!
+          </p>
+          <img class="body-img" src="./img/content/star-1(2).jpg" alt="" />
         </div>
 
-        <div class="result__programm">
-          <h3 class="result__programm-title">
-            Dengan menggunakan SlimMax ini, Anda bisa mendapatkan hasil hanya
-            dalam waktu 1 bulan:
-          </h3>
-
-          <p class="result__programm-text">
-            👉 SlimMax - produk inovatif untuk penurunan berat badan yang
-            memungkinkan Anda mencapai hasil yang diinginkan dengan cepat dan
-            tanpa membahayakan kesehatan.
-          </p>
-
-          <p class="result__programm-text">
-            📈 Grafik unik kami akan menunjukkan bagaimana Anda secara bertahap
-            mendekati target.
-          </p>
-
-          <div
-            style="
-              width: 100%;
-              height: 100%;
-              min-height: 250px;
-              margin-bottom: 16px;
-            "
-          >
-            <canvas id="myChart"></canvas>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                (NAME)
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <img src="./img/content/content-4.jpg" alt="" />
+                <p class="text">
+                  Selama lima tahun saya mencoba berbagai macam diet dan
+                  berpartisipasi dalam berbagai program kebugaran, tetapi setiap
+                  kali saya hanya menyiksa diri saya sendiri dan kecewa.
+                </p>
+                <p class="text">
+                  Lalu suatu hari teman saya merekomendasikan saya (PRODUCT).
+                  Saya tidak percaya itu bisa membantu, tetapi saya memutuskan
+                  untuk mencobanya. Dan saya tidak pernah menyesali pilihan
+                  saya.
+                </p>
+                <p class="text">
+                  Dengan (PRODUCT), saya merasa seperti mulai mengendalikan
+                  tubuh saya lagi. Nafsu makan saya berkurang, saya mulai tidur
+                  lebih nyenyak dan saya memiliki lebih banyak energi, yang
+                  menyebabkan penurunan berat badan. Tapi yang paling penting,
+                  saya mendapatkan kembali kepercayaan diri saya dan mulai
+                  menikmati hidup lagi.
+                </p>
+                <p class="text">
+                  Jangan pernah menyerah dalam perjalanan Anda menuju kesehatan!
+                  Ketika sepertinya sudah tidak ada kesempatan lagi, (PRODUCT)
+                  membantu saya melawan dan mengalahkan kelebihan berat badan
+                  yang ditakuti itu!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                (NAME)
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <img src="./img/content/content-5.jpg" alt="" />
+                <p class="text">
+                  Saya benar-benar menyukai (PRODUCT)! Produk ini mengubah hidup
+                  saya. Saya tidak lagi takut untuk menimbang berat badan, dan
+                  keluarga serta teman-teman saya tidak bisa percaya seberapa
+                  besar perubahan yang terjadi pada diri saya. Hanya dalam satu
+                  setengah bulan, saya berhasil menurunkan 20 kg... Ketika saya
+                  memiliki berat badan yang berlebih, saya pikir saya tidak akan
+                  pernah bisa memiliki keluarga, saya merasa tidak akan disukai
+                  oleh siapapun, sulit bagi saya untuk berjalan kaki meskipun
+                  usia saya baru 32 tahun!
+                </p>
+                <p class="text">
+                  Namun, berkat Tuhan, itu semua adalah masa lalu. Sekarang saya
+                  merasa muda dan sangat cantik! Terima kasih kepada Cissie
+                  Nugraha yang luar biasa karena memberi saya kesempatan untuk
+                  memulai hidup yang baru.
+                </p>
+                <p class="text">
+                  Pelanggan yang puas adalah pencapaian utama saya!🔥
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <p class="result__text">
-          Tidak peduli berat badan awal Anda, Anda dapat kehilangan sekitar 30%
-          dari berat badan berlebih dalam seminggu. Dalam waktu empat minggu,
-          Anda akan mencapai bentuk tubuh yang diinginkan.
+        <h3 class="title">
+          Formula (PRODUCT) diciptakan di pusat penelitian di Jakarta khusus
+          untuk orang yang kelebihan berat badan.
+        </h3>
+
+        <p class="text">
+          Studi klinis telah menunjukkan hasil yang mengesankan: 98% responden
+          mampu menurunkan berat badan dalam waktu singkat. Itu sebabnya selama
+          beberapa tahun berturut-turut (PRODUCT) telah dimasukkan ke dalam
+          banyak program penurunan berat badan oleh para ahli gizi terkemuka di
+          Indonesia.
+        </p>
+
+        <p class="text">
+          Saya dapat melihat bahwa (PRODUCT) adalah solusi yang tepat untuk
+          Anda. Ini adalah kesempatan Anda untuk merasa lebih baik dan mengambil
+          langkah pertama menuju kehidupan yang baru.
         </p>
 
         <!-- Слайдер -->
@@ -628,6 +742,181 @@
 
           <div class="swiper-pagination"></div>
         </div>
+
+        <h3 class="title">
+          Mengapa Anda dianjurkan untuk menggunakan (PRODUCT)?
+        </h3>
+
+        <p class="text">
+          <span class="username">(USER NAME)</span>, setelah menganalisis profil Anda, saya sampai pada
+          kesimpulan bahwa untuk penurunan berat badan yang cepat tanpa efek
+          yo-yo, Anda perlu:
+        </p>
+
+        <div
+          class="accordion margin-bottom"
+          id="accordionPanelsStayOpenExample"
+        >
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne"
+              >
+                Membersihkan tubuh dari racun:
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne"
+            >
+              <div class="accordion-body">
+                Formula unik dari (PRODUCT) mengandung komponen alami yang aktif
+                menghilangkan toksin dan limbah dari tubuh, mempercepat
+                metabolisme. Penggunaan rutin (PRODUCT) akan memperkuat tubuh
+                Anda dan melindunginya dari dampak negatif lingkungan.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                Mempercepat metabolisme:
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo"
+            >
+              <div class="accordion-body">
+                (PRODUCT) membantu mengaktifkan metabolisme Anda, yang berarti
+                tubuh Anda akan membakar kalori dan memecah lemak dengan lebih
+                efisien. Anda akan merasa lebih berenergi, yang akan membantu
+                Anda mencapai tujuan penurunan berat badan Anda dengan lebih
+                cepat dan efisien.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Menstabilkan metabolisme:
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingThree"
+            >
+              <div class="accordion-body">
+                (PRODUCT) membantu dalam stabilisasi metabolisme, yang pada
+                gilirannya mendukung pemeliharaan berat badan yang sehat dalam
+                jangka panjang. Karena itu, Anda dapat yakin bahwa setelah
+                program 30 hari dengan (PRODUCT), kelebihan berat badan Anda
+                tidak akan kembali.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFour"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFour"
+              >
+                Memperbaiki kebiasaan makan:
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingFour"
+            >
+              <div class="accordion-body">
+                (PRODUCT) adalah langkah Anda menuju gaya hidup yang sehat.
+                Formula ini akan membantu Anda mengubah kebiasaan makan Anda.
+                Anda akan memilih makanan yang lebih sehat, mengontrol nafsu
+                makan Anda, dan menghindari makanan yang tidak sehat.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFive"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFive"
+              >
+                Menguatkan otot:
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingFive"
+            >
+              <div class="accordion-body">
+                (PRODUCT) mengandung komponen khusus yang membantu menguatkan
+                otot, membuat tubuh Anda lebih ramping dan kuat. Konsumsi rutin
+                (PRODUCT) membantu dalam pembentukan tubuh yang indah dan
+                kencang. Klien saya melaporkan peningkatan dalam tonus otot,
+                yang membuat latihan menjadi lebih efisien dan memberi Anda
+                lebih banyak kegembiraan dalam aktivitas fisik.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title margin-bottom">
+          Oleh karena itu, kombinasi dari (PRODUCT) dan program penurunan berat
+          badan Anda meningkatkan efektivitas hasil Anda sebanyak 80%.
+        </h3>
+
+        <p class="text">
+          (PRODUCT) bukan hanya pil "ajaib". Ini adalah pendekatan yang seimbang
+          yang didasarkan pada penelitian ilmiah tentang metabolisme. Formula
+          alami unik dari (PRODUCT) memungkinkan Anda untuk mempercepat proses
+          pembakaran lemak dan memberikan hasil yang Anda impikan.
+        </p>
+
+        <h3 class="title margin-bottom">
+          Di bawah ini, Anda bisa mendapatkan program penurunan berat badan
+          eksklusif secara gratis!
+        </h3>
+
+        <p class="text">
+          Program ini mencakup latihan pribadi dan rencana makanan yang
+          dikembangkan oleh pelatih profesional dan ahli gizi. Ini dirancang
+          untuk mempercepat dan meningkatkan hasil Anda, tetapi ingat,
+          efektivitasnya akan maksimal hanya saat menggunakan produk penurunan
+          berat badan yang direkomendasikan, (PRODUCT).
+        </p>
 
         <button class="button result__button">MASUK KE PAKET INDIVIDU</button>
 
