@@ -109,6 +109,7 @@ export const questionsList = [
       { id: 1, title: 'Tidak', point: 1 },
       { id: 2, title: 'Tidak tahu', point: 2 },
     ],
+    fact: '52% pengguna memilih opsi "Ya, tetapi berat badan kembali". Ini menunjukkan bahwa di dunia modern, diet telah kehilangan daya tariknya karena berat badan sering kali kembali naik setelahnya',
   },
   {
     id: 10,
@@ -162,6 +163,7 @@ export const questionsList = [
         point: 1,
       },
     ],
+    fact: 'Fakta: Kebutuhan untuk minum 2 liter air sehari adalah mitos yang menguntungkan bagi penjual minuman. Sebagian cairan yang kita butuhkan diperoleh dari makanan. Perhitungannya: 20-40 ml air untuk setiap kilogram berat badan. Misalnya, dengan berat 70 kg, disarankan untuk minum 1700-2000 ml air per hari.',
   },
   // {
   //   id: 12,

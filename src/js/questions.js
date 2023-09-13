@@ -50,12 +50,7 @@ function clickByAnswer() {
       // Добаляет активный класс нажатому элементу
       nearestItem.classList.toggle('question__sub-item--checked');
 
-      // Показывает факт на выбранный шаг 3, 5, 8
-      // [id-4: 3 шаг, id-6: 5]
-      if (step === 2) {
-        factNode.classList.remove('question__item-fact--hidden');
-        crollToBottom();
-      } else if (step === 4) {
+      if(questionsList[step].fact){
         factNode.classList.remove('question__item-fact--hidden');
         crollToBottom();
       }
@@ -99,18 +94,11 @@ function createQuestionItem() {
   factNode.classList.add('question__item-fact--hidden');
 
   // Запоняет совет текстом: номер зависит от вопросов (step - 1 от порядкового номера)
-  let factNum = null;
-  if (step === 2) {
-    factNum = 0;
-    factText.textContent = questionsFact[factNum].text;
-  } else if (step === 4) {
-    factNum = 1;
-    factText.textContent = questionsFact[factNum].text;
+
+  if(questionsList[step].fact){
+    factText.textContent = questionsList[step].fact
   }
-  // else if (step === 8) {
-  //     factNum = 2;
-  //     factText.textContent = questionsFact[factNum].text;
-  // }
+
 
   // Запоняет шаблон данными
   title.textContent = stepQuestion.title;
