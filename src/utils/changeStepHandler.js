@@ -8,7 +8,7 @@ import { cutDownTimer } from './cutDownTimer';
  * @param {string} className - Класс для скрытия элемента
  */
 
-function changeStepHandler(button, prevElement, nextElement, className) {
+export function changeStepHandler(button, prevElement, nextElement, className) {
   button.addEventListener('click', () => {
     prevElement.classList.add(className);
     nextElement.classList.remove(className);
@@ -46,3 +46,4 @@ const resultContainer = document.querySelector('.result');
 const productContainer = document.querySelector('.product');
 
 changeStepHandler(resultButton, resultContainer, productContainer, 'hidden');
+
