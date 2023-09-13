@@ -154,7 +154,7 @@ function getAnswerPoints() {
 }
 
 // Возвращает объект с индивидуальным посланием в зависимости от баллов
-function getIndividualUserMessage(questionResults, index) {
+function getIndividualUserMessage(questionResults) {
   // Пороговые значения для групп
   const gradePoit = (questionResults.maxValue - questionResults.minValue) / 4;
   const firstGroup = questionResults.minValue + gradePoit; // 10 + 6.25 = до 16,25 Небольшой лишний вес
@@ -181,8 +181,8 @@ function getIndividualUserMessage(questionResults, index) {
   }
 
   // Объект с результатом юзера
-  const userResultMessage = [individualText[grade]];
-  return userResultMessage[index];
+  const userResultMessage = individualText[grade];
+  return userResultMessage;
 }
 
 // Задержка отображения текста
@@ -248,19 +248,29 @@ buttonNext.addEventListener('click', () => {
     );
     const checkItemTemplate = document.querySelector('#result__check-item');
 
-    // Первое индивидуальное сообщение
+    // Индивидуальные сообщения
     const firstIndividualMessage = document.getElementById(
       'individual__message-1',
     );
-    firstIndividualMessage.textContent = getIndividualUserMessage(
-      questionResults,
-      0,
-    ).individualMessage.replace('{BMI}', userInfo.bmi);
+    firstIndividualMessage.textContent = getIndividualUserMessage(questionResults).individualMessage.replace('{BMI}', userInfo.bmi);
 
-    // Второе индивидуальное сообщение (обращение)
-    // const secondIndividualText = document.getElementById('individual__message-2');
-    // const imageIndividual = secondIndividualText.querySelector('.head-img');
+    const secondIndividualText = document.getElementById(
+      'individual__message-2',
+    );
+    const imageIndividual = secondIndividualText.querySelector('.head-img');
+    imageIndividual.src = getIndividualUserMessage(questionResults).appeal.src
 
+    const headerIndividual = document.querySelector('.headerText');
+    headerIndividual.textContent = getIndividualUserMessage(questionResults).appeal.headerText;
+
+    const nameIndividual = secondIndividualText.querySelector('.h4')
+    nameIndividual.textContent = getIndividualUserMessage(questionResults).appeal.name;
+
+    const appealTextIndividual = secondIndividualText.querySelector('.appeal__text')
+    appealTextIndividual.textContent = getIndividualUserMessage(questionResults).appeal.text;
+
+    const bodyImgIndividual = secondIndividualText.querySelector('.body-img');
+    bodyImgIndividual.src = getIndividualUserMessage(questionResults).appeal.srcWide;
     // Показывает лоадер после прохождения квиза
     openLoader();
 
