@@ -1,7 +1,8 @@
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 
-const resultSlider = new Swiper('#result__slider', {
+// Слайдер с информацией для недели
+const weeksSlider = new Swiper('#result__slider', {
   // Опции Swiper
   modules: [Pagination],
   autoHeight: true,
