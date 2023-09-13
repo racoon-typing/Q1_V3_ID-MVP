@@ -183,6 +183,8 @@ function getAnswerPoints() {
   return points;
 }
 
+let calcUserInfo = {}
+
 // Возвращает объект с индивидуальным посланием в зависимости от баллов
 function getIndividualUserMessage(questionResults, index) {
   // Пороговые значения для групп
@@ -190,6 +192,8 @@ function getIndividualUserMessage(questionResults, index) {
   const firstGroup = questionResults.minValue + gradePoit; // 10 + 6.25 = до 16,25 Небольшой лишний вес
   const secondGroup = firstGroup + gradePoit; // 16,25 + 6.25 = до 22,5
   const thirdGroup = secondGroup + gradePoit; // 22,5 + 6.25 = до 28,75
+
+  calcUserInfo = JSON.parse(localStorage.getItem("calcUserInfo"));
 
   let grade;
   if (questionResults.myUserPoints <= firstGroup) {
@@ -258,7 +262,12 @@ buttonNext.addEventListener('click', () => {
 
     // Первое индивидуальное сообщение
     const firstIndividualMessage = document.getElementById('individual__message-1');
-    firstIndividualMessage.textContent = getIndividualUserMessage(questionResults, 0).individualMessage.replace('{BMI}', 12);
+    firstIndividualMessage.textContent = getIndividualUserMessage(questionResults, 0).individualMessage.replace('{BMI}', calcUserInfo.bmi);
+
+    // Второе индивидуальное сообщение (обращение)
+    const secondIndividualText = document.getElementById('individual__message-2');
+    const imageIndividual = secondIndividualText.querySelector('.head-img');
+    
 
     // Показывает блок загрузки
     const questionContainer = document.querySelector('.question__wrapper');

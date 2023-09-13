@@ -245,8 +245,7 @@ caculatorForm.addEventListener('submit', (evt) => {
 
     // Рассчитываем BMI юзера
     const calcUserInfo = calcBmiIndex(userInfo);
-    bmiForExport = calcUserInfo.bmi
-    
+    localStorage.setItem('calcUserInfo', JSON.stringify(calcUserInfo))
 
     // Вставялет данные о юзере на страницу: Резлультат
     outputUserValue(calcUserInfo);
