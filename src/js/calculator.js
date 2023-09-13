@@ -1,77 +1,22 @@
-// Объект с призывом к действию
-const categoryUser = [
-  'Kurang Berat Badan',
-  'Sedikit Kelebihan Berat Badan',
-  'Kelebihan Berat Badan',
-  'TINDAKAN SEGERA',
-];
+import { getUserIcon } from './user-icon.js';
+import { outputUserValue } from './user-result.js';
 
-// Ноды формы
-const caculatorForm = document.querySelector('#calculator__form');
-// Поля формы
-const allFields = document.querySelectorAll('.calculator__input');
-// Инпуты параметров юзера
-const allInputs = document.querySelectorAll('.calculator__input');
-// console.log(allInputs);
-
-const heightInput = document.querySelector('#height');
-const weightInput = document.querySelector('#weight');
-const ageInput = document.querySelector('#age');
-const genderSelector = document.querySelector('#form-select');
-// Сообщение с ошибкой
-const textError = document.querySelector('.calculator__input-text--error');
+// Ноды
+const caculatorForm = document.querySelector('#calculator__form'); // Форма калькулятора
+const allInputs = document.querySelectorAll('.calculator__input'); // Поля формы
+const heightInput = document.querySelector('#height'); // инпут рост
+const weightInput = document.querySelector('#weight'); // инпут вес
+const ageInput = document.querySelector('#age'); // инпут возраст
+const genderSelector = document.querySelector('#form-select'); // инпут гендер
 const textErrorHeight = document.querySelector(
   '.calculator__input-text--error-height',
-);
+); // Текст ошибки для неправильного рост
 const textErrorWeight = document.querySelector(
   '.calculator__input-text--error-weight',
-);
+); // Текст ошибки для неправильного веса
 const textErrorAge = document.querySelector(
   '.calculator__input-text--error-age',
-);
-
-// Селект
-const caculatorSelect = document.querySelector('.calculator__select-output');
-const caculatorSelectList = document.querySelector('.calculator__select-list');
-
-// Флаг на открытие меню
-let isOpen = false;
-
-// Создает график с похудением пользователя
-function getUserLine(excessWeight) {
-  const gradeWeight = excessWeight / 3;
-
-  // Массив с весом
-  let arr = [];
-  for (let index = 0; index < 4; index++) {
-    arr.push(excessWeight - gradeWeight * index);
-  }
-
-  const CHART = document.getElementById('myChart');
-  let lineChart = new Chart(CHART, {
-    type: 'line',
-    data: {
-      labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
-      datasets: [
-        {
-          label: 'Jumlah kilogram',
-          data: arr,
-          backgroundColor: ['#daf3dd'],
-          borderColor: ['#009076cc'],
-          borderWidth: 2,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: {
-        duration: 1500,
-        easing: 'easeInOutQuart',
-      },
-    },
-  });
-}
+); // Текст ошибки для неправильного возраста
 
 // Рассчитывает BMI юзера
 function calcBmiIndex(userInfo) {
@@ -94,9 +39,6 @@ function calcBmiIndex(userInfo) {
     userInfo.weight / ((userInfo.height / 100) * (userInfo.height / 100));
   const bmiRounded = Math.round(bmi * 100) / 100;
 
-  // Создает график лишнего веса
-  getUserLine(excessWeightRounded);
-
   // Объект с данными для страницы Результат (calcUserInfo)
   return {
     name: userInfo.name,
@@ -105,74 +47,6 @@ function calcBmiIndex(userInfo) {
     idealWeight: idealWeightRounded, // Идеальный вес
     excessWeight: excessWeightRounded, // Лишний вес
   };
-}
-
-// Отрисовывает SVG иконка человека
-function getUserIcon(bmi, gender) {
-  const userIcon = document.querySelector('.result__body-icon');
-
-  // SVG иконка человека
-  let userImg;
-  if (gender === 'Женщина') {
-    if (bmi < 18.5) {
-      userImg = 'img/svg/woman-4.svg';
-    } else if (bmi >= 18.5 && bmi < 25) {
-      userImg = 'img/svg/woman-3.svg';
-    } else if (bmi >= 25 && bmi < 30) {
-      userImg = 'img/svg/woman-2.svg';
-    } else {
-      userImg = 'img/svg/woman-1.svg';
-    }
-  } else {
-    if (bmi < 18.5) {
-      userImg = 'img/svg/man-4.svg';
-    } else if (bmi >= 18.5 && bmi < 25) {
-      userImg = 'img/svg/man-3.svg';
-    } else if (bmi >= 25 && bmi < 30) {
-      userImg = 'img/svg/man-2.svg';
-    } else {
-      userImg = 'img/svg/man-1.svg';
-    }
-  }
-
-  userIcon.src = userImg;
-}
-
-// Выводит данные расчета на страницу: Результат
-function outputUserValue(calcUserInfo) {
-  console.log(calcUserInfo);
-  // Находит поля для заполнения
-  const resultName = document.querySelectorAll('.username');
-  const resultBmi = document.querySelector('#result__bmi');
-  const resultUserWeight = document.querySelector('#result__userWeight');
-  const resultIdealWeight = document.querySelector('#result__idealWeight');
-  const resultExcessWeight = document.querySelector('#result__excessWeight');
-  const resultToBeWeight = document.querySelector('#result__toBeWeight');
-
-  // Вставляет данные о юзере на страницу
-  resultBmi.textContent = calcUserInfo.bmi;
-  resultUserWeight.textContent = calcUserInfo.userWeight;
-  resultIdealWeight.textContent = calcUserInfo.idealWeight;
-  resultExcessWeight.textContent = calcUserInfo.excessWeight;
-  resultToBeWeight.textContent = calcUserInfo.idealWeight;
-  resultName.forEach((element) => {
-    console.log(calcUserInfo.name);
-    element.textContent = calcUserInfo.name;
-  });
-
-  // Выводит заголовок: Призыв к действию
-  const bmi = calcUserInfo.bmi;
-
-  const bmiText = document.querySelector('#result__body-text');
-  if (bmi < 18.5) {
-    bmiText.textContent = categoryUser[0];
-  } else if (bmi >= 18.5 && bmi < 25) {
-    bmiText.textContent = categoryUser[1];
-  } else if (bmi >= 25 && bmi < 30) {
-    bmiText.textContent = categoryUser[2];
-  } else {
-    bmiText.textContent = categoryUser[3];
-  }
 }
 
 // Функция проверки полей, заполенных Пользователем
@@ -207,7 +81,6 @@ function checkUserInfo(userHeight, userWeight, userAge, userGender) {
     genderSelector.classList.add('is-invalid');
   }
 }
-let bmiForExport = ''
 
 // Слушатель на отправку формы расчета
 caculatorForm.addEventListener('submit', (evt) => {
@@ -245,7 +118,7 @@ caculatorForm.addEventListener('submit', (evt) => {
 
     // Рассчитываем BMI юзера
     const calcUserInfo = calcBmiIndex(userInfo);
-    localStorage.setItem('calcUserInfo', JSON.stringify(calcUserInfo))
+    localStorage.setItem('userInfo', JSON.stringify(calcUserInfo));
 
     // Вставялет данные о юзере на страницу: Резлультат
     outputUserValue(calcUserInfo);

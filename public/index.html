@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Скрипты -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js"></script>
 
     <!-- Маска для телефона -->
@@ -200,9 +200,7 @@
 
           <form id="calculator__form" class="calculator__form">
             <label for="name"> Nama: </label>
-            <div
-              class="calculator__input-wrapper "
-            >
+            <div class="calculator__input-wrapper">
               <input
                 type="text"
                 name="name"
@@ -319,8 +317,8 @@
       </div>
 
       <!-- Страница: Вопросы -->
-      <!-- hidden -->
       <div class="question__wrapper hidden">
+        <!-- Квиз -->
         <div class="question">
           <p class="question__headline lead">
             Jajak pendapat: cara menurunkan berat badan dengan mudah dan cepat.
@@ -332,46 +330,12 @@
             </b>
           </p>
 
+          <!-- Вопросы квиза -->
           <div class="question__list">
             <div class="question__item"></div>
           </div>
 
-          <!-- Футер с кнопкой продолжить -->
-          <!-- <div class="question__message">
-            <div class="question__message-content">
-              <div class="question__message-wrapper">
-                <div class="question__message-programm-wrapper">
-                  <span class="">Selesai:</span>
-                  <span class="percent" id="percent"></span>
-                </div>
-
-                <button
-                  class="question__button-next question__button-next--disabled"
-                  disabled
-                >
-                  Berikutnya
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="25"
-                    fill="currentColor"
-                    class="bi bi-arrow-right-circle"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-
-              <div class="question__list-stage">
-                <span class="question__list-stage-line"> </span>
-              </div>
-            </div>
-          </div> -->
-
+          <!-- Шкала: номер вопроса -->
           <div class="question__stage">
             <div class="question__stage-content">
               <div class="question__stage-wrapper">
@@ -441,6 +405,7 @@
         </template>
       </div>
 
+      <!-- Страница: Лоадер -->
       <div class="loader hidden">
         <div class="spinner-border text-success" role="status">
           <span class="visually-hidden">Loading...</span>
@@ -529,17 +494,6 @@
           Anda dapat mengambil rencana penurunan berat badan pribadi Anda di
           bawah ini.
         </p>
-
-        <!-- <div
-        style="
-          width: 100%;
-          height: 100%;
-          min-height: 250px;
-          margin-bottom: 16px;
-        "
-      >
-        <canvas id="myChart"></canvas>
-      </div> -->
 
         <h3 class="title">
           15 ribu orang dengan profil yang sama telah menurunkan berat badan
@@ -748,9 +702,9 @@
         </h3>
 
         <p class="text">
-          <span class="username">(USER NAME)</span>, setelah menganalisis profil Anda, saya sampai pada
-          kesimpulan bahwa untuk penurunan berat badan yang cepat tanpa efek
-          yo-yo, Anda perlu:
+          <span class="username">(USER NAME)</span>, setelah menganalisis profil
+          Anda, saya sampai pada kesimpulan bahwa untuk penurunan berat badan
+          yang cepat tanpa efek yo-yo, Anda perlu:
         </p>
 
         <div

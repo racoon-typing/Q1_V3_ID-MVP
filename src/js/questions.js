@@ -1,53 +1,27 @@
 import { questionsFact } from '../mock/facts.js';
 import { questionsList } from '../mock/questions.js';
 import { individualText } from '../mock/text.js';
+import { crollToBottom, minValue, maxValue } from '../utils.js';
 
 // Глобальные переменные
-let step = 0; // счетчик: Шаг
-let isStart = false; // флаг на первую загрузку вопросов
-let myUserPoints = 0;
+let step = 0; // счетчик: Номер вопроса
+let isStart = false; // Флаг на первую загрузку вопросов
+let myUserPoints = 0; // Кол-во очков, которое получил юзер после прохождения квиза
+let isAnswered = false; // Флаг ответил на вопрос или нет
+let userInfo = {};
 
-// Минимальное значение баллов при прохождении теста
-const questionListMin = questionsList.map((el) =>
-  el.answers.sort((a, b) => a.point - b.point),
-);
-const minValue = questionListMin
-  .map((el) => el[0].point)
-  .reduce((accumulator, currentValue) => accumulator + currentValue);
-
-// Максимальное значение баллов при прохождении теста
-const questionListMax = questionsList.map((el) =>
-  el.answers.sort((a, b) => b.point - a.point),
-);
-const maxValue = questionListMax
-  .map((el) => el[0].point)
-  .reduce((accumulator, currentValue) => accumulator + currentValue);
-
-// Устанавливает начальную длину шкалы
+// Устанавливает начальный процент прохождения квиза
 const scaleWidth = document.querySelector('.question__stage-line');
 scaleWidth.style.width = `${(step + 1 / questionsList.length) * 100}%`;
 
+// Выводит процент прохождения квиза
 const percent = document.getElementById('percent');
 percent.textContent = `${Math.round(
   ((step + 1) / questionsList.length) * 100,
 )}%`;
+
 // Контейнер для вопроса
 const questionsItemNode = document.querySelector('.question__item');
-
-// Скролл к совету врача
-function crollToBottom() {
-  const messageHeight = document.querySelector(
-    '.question__item-fact',
-  ).offsetHeight;
-
-  window.scrollBy({
-    top: messageHeight,
-    behavior: 'smooth',
-  });
-}
-
-// Флаг нажатия на ответ
-let isAnswered = false;
 
 // Делает элемент списка ответов активным / неактивным
 function clickByAnswer() {
@@ -85,10 +59,6 @@ function clickByAnswer() {
         factNode.classList.remove('question__item-fact--hidden');
         crollToBottom();
       }
-      // else if (step === 8) {
-      //     factNode.classList.remove('question__item-fact--hidden');
-      //     crollToBottom();
-      // }
 
       // Меняет флаг на не Ответил
       isAnswered = false;
@@ -171,7 +141,7 @@ function createQuestionItem() {
     list.append(questionItem);
   });
 
-  // Ставит слушатель на нажатие на ОТВЕТ
+  // Ставит слушатель на ответ на вопрос
   clickByAnswer();
 }
 
@@ -183,8 +153,6 @@ function getAnswerPoints() {
   return points;
 }
 
-let calcUserInfo = {}
-
 // Возвращает объект с индивидуальным посланием в зависимости от баллов
 function getIndividualUserMessage(questionResults, index) {
   // Пороговые значения для групп
@@ -193,7 +161,7 @@ function getIndividualUserMessage(questionResults, index) {
   const secondGroup = firstGroup + gradePoit; // 16,25 + 6.25 = до 22,5
   const thirdGroup = secondGroup + gradePoit; // 22,5 + 6.25 = до 28,75
 
-  calcUserInfo = JSON.parse(localStorage.getItem("calcUserInfo"));
+  userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
   let grade;
   if (questionResults.myUserPoints <= firstGroup) {
@@ -217,12 +185,38 @@ function getIndividualUserMessage(questionResults, index) {
   return userResultMessage[index];
 }
 
+// Задержка отображения текста
+const loaderContainer = document.querySelector('.loader');
+let resultTime = 0;
+
+// Показывает блок загрузки
+function openLoader() {
+  const questionContainer = document.querySelector('.question__wrapper');
+  questionContainer.classList.add('hidden');
+  loaderContainer.classList.remove('hidden');
+
+  const textLoaders = document.querySelectorAll('.text-loader');
+  textLoaders.forEach((loader, index) => {
+    const wordsCount = loader.textContent.split(' ').length;
+    const delay = wordsCount * 100; // Интервал в миллисекундах, зависящий от количества слов
+    resultTime += delay;
+    setTimeout(() => {
+      if (index < 1) {
+        // loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
+      } else {
+        textLoaders[index - 1].classList.toggle('o-0');
+        loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
+      }
+    }, resultTime);
+  });
+}
+
 // Кнопка дальше
 const buttonNext = document.querySelector('.question__stage-button');
 
 // Слушатель на кнопку дальше
 buttonNext.addEventListener('click', () => {
-  // Меняет флаг: вопросы будут менять по клике на кнопку
+  // Меняет флаг: первая отрисовка произошла
   isStart = true;
 
   // Получает баллы за ответ на вопрос
@@ -241,8 +235,6 @@ buttonNext.addEventListener('click', () => {
 
   // Проверка на наличие вопросов
   if (step >= questionsList.length) {
-    // console.log('закончиись')
-
     // Баллы за тест: результат юзера, минимальный результат, максимальный результат
     const questionResults = {
       myUserPoints,
@@ -250,47 +242,27 @@ buttonNext.addEventListener('click', () => {
       maxValue,
     };
 
-    // Получает объект с индивидуальным ответом
-    // const userMessage = getIndividualUserMessage(questionResults);
-
     // Дубликат узла
     const individualCheckListNode = document.querySelector(
       '.result__check-list',
     );
     const checkItemTemplate = document.querySelector('#result__check-item');
 
-
     // Первое индивидуальное сообщение
-    const firstIndividualMessage = document.getElementById('individual__message-1');
-    firstIndividualMessage.textContent = getIndividualUserMessage(questionResults, 0).individualMessage.replace('{BMI}', calcUserInfo.bmi);
+    const firstIndividualMessage = document.getElementById(
+      'individual__message-1',
+    );
+    firstIndividualMessage.textContent = getIndividualUserMessage(
+      questionResults,
+      0,
+    ).individualMessage.replace('{BMI}', userInfo.bmi);
 
     // Второе индивидуальное сообщение (обращение)
-    const secondIndividualText = document.getElementById('individual__message-2');
-    const imageIndividual = secondIndividualText.querySelector('.head-img');
-    
+    // const secondIndividualText = document.getElementById('individual__message-2');
+    // const imageIndividual = secondIndividualText.querySelector('.head-img');
 
-    // Показывает блок загрузки
-    const questionContainer = document.querySelector('.question__wrapper');
-    const loaderContainer = document.querySelector('.loader');
-    questionContainer.classList.add('hidden');
-    loaderContainer.classList.remove('hidden');
-
-    let resultTime = 0;
-    const textLoaders = document.querySelectorAll('.text-loader');
-    textLoaders.forEach((loader, index) => {
-      const wordsCount = loader.textContent.split(' ').length;
-      const delay = wordsCount * 100; // Интервал в миллисекундах, зависящий от количества слов
-      resultTime += delay;
-      setTimeout(() => {
-        if (index < 1) {
-          // loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
-        } else {
-          textLoaders[index - 1].classList.toggle('o-0');
-          loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
-        }
-      }, resultTime);
-      // if()
-    });
+    // Показывает лоадер после прохождения квиза
+    openLoader();
 
     // Показывает следующий блок
     const resultContainer = document.querySelector('.result');
@@ -299,12 +271,6 @@ buttonNext.addEventListener('click', () => {
       loaderContainer.classList.add('hidden');
       resultContainer.classList.remove('hidden');
     }, resultTime + 4000);
-
-    // Прокрутка страницы наверх
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: 'smooth'
-    // });
 
     return;
   } else {

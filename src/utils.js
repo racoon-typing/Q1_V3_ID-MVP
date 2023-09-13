@@ -1,5 +1,6 @@
-import './utils/calculator.js';
-import './utils/questions.js';
+import { questionsList } from './mock/questions.js';
+import './js/calculator.js';
+import './js/questions.js';
 
 // Запускает обратный отсчет
 function cutDownTimer(minutes, seconds) {
@@ -37,4 +38,32 @@ function showMoreText() {
   });
 }
 
-export { cutDownTimer, showMoreText };
+// Скролл к совету врача
+function crollToBottom() {
+  const messageHeight = document.querySelector(
+    '.question__item-fact',
+  ).offsetHeight;
+
+  window.scrollBy({
+    top: messageHeight,
+    behavior: 'smooth',
+  });
+}
+
+// Минимальное значение баллов при прохождении теста
+const questionListMin = questionsList.map((el) =>
+  el.answers.sort((a, b) => a.point - b.point),
+);
+const minValue = questionListMin
+  .map((el) => el[0].point)
+  .reduce((accumulator, currentValue) => accumulator + currentValue);
+
+// Максимальное значение баллов при прохождении теста
+const questionListMax = questionsList.map((el) =>
+  el.answers.sort((a, b) => b.point - a.point),
+);
+const maxValue = questionListMax
+  .map((el) => el[0].point)
+  .reduce((accumulator, currentValue) => accumulator + currentValue);
+
+export { cutDownTimer, showMoreText, crollToBottom, minValue, maxValue };
