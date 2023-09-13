@@ -1,6 +1,6 @@
+import { showMoreText } from '../utils.js';
 
-import { showMoreText } from './showMoreText.js';
-
+// Форма заявки
 const formSubmit = document.getElementById('form');
 
 // Функция для отслеживания пикселя

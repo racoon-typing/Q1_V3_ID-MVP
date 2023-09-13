@@ -1,10 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  var phones = document.querySelectorAll('input[name=phone]');
-  for (var i = phones.length - 1; i >= 0; i--) {
-    processInput(phones[i]);
-  }
-});
-
+// Устанавливает флаг на поле телефон
 function processInput(phone) {
   var iti = window.intlTelInput(phone, {
     allowDropdown: false,
@@ -21,3 +15,11 @@ function processInput(phone) {
     if (!iti.isValidNumber()) phone.setCustomValidity('!!!');
   });
 }
+
+// Устанавливает флаг на все поля
+document.addEventListener('DOMContentLoaded', () => {
+  var phones = document.querySelectorAll('input[name=phone]');
+  for (var i = phones.length - 1; i >= 0; i--) {
+    processInput(phones[i]);
+  }
+});
