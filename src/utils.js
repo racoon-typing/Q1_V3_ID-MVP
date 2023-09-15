@@ -1,6 +1,7 @@
 import { questionsList } from './mock/questions.js';
 import './js/calculator.js';
 import './js/questions.js';
+import './js/dates-table.js';
 
 // Запускает обратный отсчет
 function cutDownTimer(minutes, seconds) {

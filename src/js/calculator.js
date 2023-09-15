@@ -1,5 +1,6 @@
 import { getUserIcon } from './user-icon.js';
 import { outputUserValue } from './user-result.js';
+import { populateProfile } from './profile.js';
 
 // Ноды
 const caculatorForm = document.querySelector('#calculator__form'); // Форма калькулятора
@@ -46,6 +47,9 @@ function calcBmiIndex(userInfo) {
     userWeight: userInfo.weight, // Вес юзера
     idealWeight: idealWeightRounded, // Идеальный вес
     excessWeight: excessWeightRounded, // Лишний вес
+    userHeight: userInfo.height,
+    age: userInfo.age,
+    gender: userInfo.gender,
   };
 }
 
@@ -118,6 +122,7 @@ caculatorForm.addEventListener('submit', (evt) => {
 
     // Рассчитываем BMI юзера
     const calcUserInfo = calcBmiIndex(userInfo);
+    console.log(calcUserInfo);
     localStorage.setItem('userInfo', JSON.stringify(calcUserInfo));
 
     // Вставялет данные о юзере на страницу: Резлультат
@@ -125,6 +130,9 @@ caculatorForm.addEventListener('submit', (evt) => {
 
     // Отрисовывает SVG иконка человека
     getUserIcon(calcUserInfo.bmi, userInfo.gender);
+
+    // Вставляет данные в профиль
+    populateProfile();
 
     // Показывает следующий блок
     const calculatorContainer = document.querySelector('.calculator__content');

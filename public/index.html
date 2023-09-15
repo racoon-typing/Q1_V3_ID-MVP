@@ -476,12 +476,9 @@
         </div>
 
         <!-- Индивидуальный послание -->
-        <p class="result__text" id="individual__message-1">
-          Hasil tes Anda menunjukkan bahwa Anda mengalami obesitas karena BMI
-          Anda adalah 21,2. 15% dari pengguna yang mengikuti tes ini memiliki
-          hasil yang sama, dan mereka telah mengambil langkah pertama untuk
-          mengubah hidup mereka.
-        </p>
+        <p class="result__text" id="individual__message-1">(BMI-MESSAGE)</p>
+
+        <p class="result__text" id="individual__message-quiz">(QUIZ-MESSAGE)</p>
 
         <p class="result__text">
           Saya memiliki penawaran khusus untuk Anda - rencana penurunan berat
@@ -900,26 +897,28 @@
       <!-- Страница: Продукт -->
       <div class="product hidden">
         <h2 class="title">
-          Program pelatihan dan gizi untuk mendapat hasil permanen. Berat badan
-          turun dalam 30 hari berkat "SlimMax".
+          Program olahraga dan nutrisi untuk
+          <span class="username">(USER NAME)</span>. Menurunkan berat badan
+          dalam 30 hari dengan (PRODUCT).
         </h2>
 
         <p class="text">
-          <b> Tips Program: </b>
-
-          Program ini mencakup saran-saran tentang program aktivitas fisik dan
-          gizi selama program berlangsung. Jika Anda mengikuti petunjuk program
-          ini, maka Anda berpotensi turun berat badan hingga 20 kg dalam satu
-          bulan.
+          Program ini mencakup rekomendasi tentang cara mempertahankan aktivitas
+          fisik dan program nutrisi Anda selama 30 hari. Jika Anda mengikuti
+          instruksi dalam program ini, Anda akan dapat menurunkan berat badan
+          <span>
+            <b class="excessWeight">(sebanyak yang dibutuhkan pengguna)</b>
+          </span>
+          dalam sebulan.
         </p>
 
         <p class="text">
-          *Program ini disusun dengan bantuan produsen produk pembakar lemak
-          "SlimMax". Hasil disajikan ketika "SlimMax" digunakan. Rencana ini
-          disusun oleh ahli gizi di Pusat Penelitian di Jakarta.
+          *(PRODUCT) memainkan peran kunci dalam mencapai tujuan Anda dan
+          merupakan bagian integral dari kesuksesan program penurunan berat
+          badan Anda.
         </p>
 
-        <p class="text">
+        <!-- <p class="text">
           <b>
             Apa pun yang Anda makan atau seberapa sering Anda berolahraga, Anda
             dapat mengikuti rekomendasi dari rencana yang dibuat untuk Anda,
@@ -933,9 +932,9 @@
         <h3 class="sub-title">
           Menurut survei di antara lebih dari 100.000 pengguna "SlimMax", produk
           ini menunjukkan efisiensi tinggi sebagai berikut:
-        </h3>
+        </h3> -->
 
-        <ol class="list-group list-group-flush">
+        <!-- <ol class="list-group list-group-flush">
           <li class="list-group-item">
             1. Pencernaan menjadi normal: 97% responden
           </li>
@@ -948,40 +947,41 @@
           <li class="list-group-item">
             4. Berat yang dicapai tetap bertahan selamanya: 95% responden
           </li>
-        </ol>
+        </ol> -->
 
         <div class="text-and-form" id="textShown">
           <div>
             <h3>Isi program:</h3>
             <div class="list-group">
               <a href="#form" class="list-group-item list-group-item-action"
-                >Pendahuluan</a
+                >Pendahuluan.</a
               >
               <a href="#form" class="list-group-item list-group-item-action"
-                >Tingkat latihan minimal</a
+                >Profil umum.</a
               >
               <a href="#form" class="list-group-item list-group-item-action"
-                >Rekomendasi gizi</a
+                >Kumpulan latihan minimal yang diperlukan.</a
               >
               <a href="#form" class="list-group-item list-group-item-action"
-                >Makanan dan minuman merusak yang harus dihindari</a
+                >Rekomendasi untuk pola makan.</a
               >
-              <a href="#form" class="list-group-item list-group-item-action"
-                >Tabel hasil</a
-              >
+              <a href="#form" class="list-group-item list-group-item-action">
+                Rekomendasi untuk menghindari beberapa produk yang berbahaya.
+              </a>
+              <a href="#form" class="list-group-item list-group-item-action">
+                Buku harian penurunan berat badan.
+              </a>
             </div>
 
             <!-- Первый шаг -->
-            <h4 class="title--little margin-top" id="1step">1) Pendahuluan</h4>
+            <h4 class="title--little margin-top" id="1step">1) Pendahuluan.</h4>
 
             <p class="text fade-text">
-              Program ini dirancang untuk jangka waktu satu bulan dan tidak
-              hanya mencakup daftar latihan, tetapi juga tips tentang gizi yang
-              tepat. Jika Anda mengikuti semua petunjuk yang diberikan, Anda
-              bisa turun hingga 15 kg dalam satu bulan. Kesehatan Anda tidak
-              akan terganggu dan Anda hanya akan kehilangan lemak, bukan air
-              atau otot. Jadi, pada akhirnya Anda akan menyingkirkan kelebihan
-              berat badan Anda.
+              Program ini dirancang untuk satu bulan dan tidak hanya mencakup
+              daftar latihan, tetapi juga tips tentang nutrisi yang tepat. Anda
+              tidak akan membahayakan kesehatan Anda dan hanya akan kehilangan
+              lemak, bukan air dan otot. Ini berarti Anda akan menghilangkan
+              berat badan Anda sepenuhnya.
               <button class="btn-more">
                 <a href="#form"> заполни форму чтобы прочитать </a>
               </button>
@@ -1042,7 +1042,7 @@
 
           <!-- Форма -->
           <form
-            class="product__form shadow p-3 mb-5 bg-body rounded"
+            class="product__form shadow p-3 mb-3 bg-body rounded"
             id="form"
             action=""
             method="POST"
@@ -1168,56 +1168,147 @@
               />
 
               <button class="button product__form-button" type="submit">
-                KLIK DI SINI,
-                <br />
-                untuk mendapatkan SlimMax
+                Pesan SlimMax
               </button>
             </div>
           </form>
+          <p class="lead mini-text">
+            * Saya yakin program saya akan efektif untuk Anda dan Anda akan
+            mendapatkan hasil yang nyata dalam 4 minggu! Jika tidak, saya
+            bersedia mengembalikan uang Anda kembali jika Anda dapat menunjukkan
+            bahwa Anda telah mengikuti program yang telah dipersonalisasi dengan
+            (PRODUCT).
+          </p>
         </div>
 
         <div class="hidden" id="textHidden">
           <h3>Isi program:</h3>
           <div class="list-group">
             <a href="#1step" class="list-group-item list-group-item-action"
-              >Pendahuluan</a
+              >Pendahuluan.</a
             >
             <a href="#2step" class="list-group-item list-group-item-action"
-              >Tingkat latihan minimal</a
+              >Profil umum.</a
             >
             <a href="#3step" class="list-group-item list-group-item-action"
-              >Rekomendasi gizi</a
+              >Kumpulan latihan minimal yang diperlukan.</a
             >
             <a href="#4step" class="list-group-item list-group-item-action"
-              >Makanan dan minuman merusak yang harus dihindari</a
+              >Rekomendasi untuk pola makan.</a
             >
             <a href="#5step" class="list-group-item list-group-item-action"
-              >Tabel hasil</a
+              >Rekomendasi untuk menghindari beberapa produk yang berbahaya.</a
+            >
+            <a href="#6step" class="list-group-item list-group-item-action"
+              >Buku harian penurunan berat badan.</a
             >
           </div>
 
           <!-- Первый шаг -->
-          <h4 class="title--little margin-top" id="1step">1) Pendahuluan</h4>
+          <h4 class="title--little margin-top" id="1step">1) Pendahuluan.</h4>
 
           <p class="text">
-            Program ini dirancang untuk jangka waktu satu bulan dan tidak hanya
-            mencakup daftar latihan, tetapi juga tips tentang gizi yang tepat.
-            Jika Anda mengikuti semua petunjuk yang diberikan, Anda bisa turun
-            hingga 15 kg dalam satu bulan. Kesehatan Anda tidak akan terganggu
-            dan Anda hanya akan kehilangan lemak, bukan air atau otot. Jadi,
-            pada akhirnya Anda akan menyingkirkan kelebihan berat badan Anda.
+            Program ini dirancang untuk satu bulan dan tidak hanya mencakup
+            daftar latihan, tetapi juga tips tentang nutrisi yang tepat. Anda
+            tidak akan membahayakan kesehatan Anda dan hanya akan kehilangan
+            lemak, bukan air dan otot. Ini berarti Anda akan menghilangkan berat
+            badan Anda sepenuhnya.
+          </p>
+
+          <p class="text">
+            Program ini dirancang untuk mempercepat dan meningkatkan hasil Anda.
+            Namun, ingatlah bahwa program ini hanya akan efektif jika
+            dikombinasikan dengan produk pelangsing yang direkomendasikan
+            (PRODUK).
+          </p>
+
+          <h5 class="text">
+            Berdasarkan survei terhadap lebih dari 100 ribu pengguna (PRODUCT),
+            produk ini menunjukkan efektivitas yang tinggi:
+          </h5>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Pencernaan menjadi normal - 97% responden
+            </li>
+            <li class="list-group-item">
+              Munculnya energi, tidur membaik - 95% responden
+            </li>
+            <li class="list-group-item">
+              Berhasil menurunkan berat badan - 99% responden
+            </li>
+            <li class="list-group-item">
+              Berat badan baru bertahan selamanya - 95% responden
+            </li>
+          </ul>
+
+          <p class="text">
+            Anda juga bisa menggunakan (PRODUCT) tanpa mengubah gaya hidup Anda
+            saat ini. Ini berarti Anda dapat mempertahankan kebiasaan makan Anda
+            dan tingkat aktivitas fisik jika itu lebih nyaman bagi Anda. Bahkan
+            dengan gaya hidup yang kurang sehat, (PRODUCT) menunjukkan
+            efektivitasnya dalam penurunan berat badan.
           </p>
 
           <!-- Второй шаг -->
           <h4 class="title--little" id="2step">2) Tingkat latihan minimal</h4>
 
+          <div class="border rounded profile">
+            <h5 class="text">
+              Profil pengguna <span class="username">(USER NAME)</span>
+            </h5>
+            <div class="profile__row">
+              <span>Tinggi (cm):</span>
+              <span><b class="cm">0</b> cm</span>
+            </div>
+            <div class="profile__row">
+              <span>Berat (kg):</span>
+              <span><b class="kg">0</b> kg</span>
+            </div>
+            <div class="profile__row">
+              <span>Usia (tahun):</span>
+              <span><b class="years">0</b> tahun</span>
+            </div>
+            <div class="profile__row">
+              <span>Jenis kelamin:</span>
+              <span><b class="gender">Laki-laki</b></span>
+            </div>
+            <div class="profile__row">
+              <span>Berat badan target:</span>
+              <span
+                ><b><span class="excessWeightProfile">0</span></b> kg</span
+              >
+            </div>
+            <div class="profile__row">
+              <span>BMI:</span>
+              <span><b class="bmi">100</b></span>
+            </div>
+            <div class="profile__row">
+              <span>Nama:</span>
+              <span><b class="username">Semen</b></span>
+            </div>
+            <div class="profile__row pt-2 border-top">
+              <span>Konsumsi air sehari-hari:</span>
+              <span><b class="water">1,8 </b> liter</span>
+            </div>
+            <div class="profile__row">
+              <span>Asupan kalori sehari-hari:</span>
+              <span><b class="calories">1592 </b> kal</span>
+            </div>
+          </div>
+
+          <!-- Третий шаг -->
+          <h4 class="title--little" id="3step">
+            3) Kumpulan Latihan yang Diperlukan
+          </h4>
+
           <p class="text">
-            Pilihan terbaik untuk tubuh Anda adalah berolahraga setiap dua hari
-            sekali. Jangan berlebihan—aktivitas 30-50 menit per hari sudah cukup
-            untuk memperkuat otot dan mulai membakar lemak. Anda memerlukan
-            aktivitas fisik tingkat sedang, karena melakukan olahraga keras,
-            terutama tanpa persiapan yang diperlukan, dapat berdampak buruk bagi
-            kesehatan.
+            Lakukan olahraga dua hari sekali, karena ini akan optimal untuk
+            tubuh Anda. Jangan terlalu banyak bekerja - 30-50 menit aktivitas
+            sehari sudah cukup untuk memperkuat otot Anda dan mulai membakar
+            lemak. Anda membutuhkan aktivitas fisik yang moderat, karena
+            olahraga yang berat, terutama tanpa latihan yang tepat, berdampak
+            buruk bagi kesehatan Anda.
           </p>
 
           <h5 class="text">
@@ -1225,19 +1316,23 @@
           </h5>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Lari lambat di tempat</li>
-            <li class="list-group-item">Memutar torso ke kanan dan ke kiri</li>
-            <li class="list-group-item">Squat (10-15 kali)</li>
-            <li class="list-group-item">Ayunan lengan bebas</li>
+            <li class="list-group-item">Jogging ringan di tempat</li>
+            <li class="list-group-item">
+              Tubuh bergerak miring ke kiri dan ke kanan
+            </li>
+            <li class="list-group-item">Jongkok (10-15 kali)</li>
+            <li class="list-group-item">
+              Mengayunkan lengan secara sewenang-wenang
+            </li>
           </ul>
 
           <p class="text margin-top">
-            Dianjurkan melakukan pemanasan setidaknya selama 5-8 menit sebelum
-            latihan.
+            Dianjurkan untuk meluangkan waktu minimal 5-8 menit untuk melakukan
+            pemanasan sebelum latihan.
           </p>
 
           <h5 class="text">
-            <b> Latihan dasar: </b>
+            <b> Latihan utama: </b>
           </h5>
 
           <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -1251,7 +1346,7 @@
                   aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseOne"
                 >
-                  <b>1. Berjalan atau berlari 5 km/berenang 1 jam</b>
+                  <b>1. Berjalan kaki atau lari 5 km / Berenang 1 jam.</b>
                 </button>
               </h2>
               <div
@@ -1263,21 +1358,20 @@
                   <img class="img" src="./img/program/content-1.png" alt="" />
 
                   <p class="text margin-top">
-                    Jika pergi ke kolam renang membuat Anda tidak nyaman, Anda
-                    bisa memprioritaskan lari atau jalan kaki. Tidak masuk akal
-                    untuk mulai berjalan dengan jarak sejauh maraton secara
-                    teratur dengan langkah cepat.
+                    Jika Anda merasa tidak nyaman memikirkan kolam renang, Anda
+                    bisa memprioritaskan berlari atau berjalan kaki. Tidak ada
+                    gunanya memulai berjalan kaki secara teratur dengan jarak
+                    maraton dan kecepatan tinggi.
                   </p>
 
                   <p class="text">
-                    Nanti, ketika berjalan sudah berubah menjadi sesuatu yang
-                    menyenangkan, Anda dapat meningkatkan jarak dan kecepatan.
-                    Jangan terburu-buru menambah beban – yang penting adalah
-                    membuat pikiran Anda senang dengan inisiatif yang baik ini
-                    alih-alih membuat takut. Dua hari menempuh jarak 5 km jauh
-                    lebih baik daripada berpacu sejauh 15 km dan berhenti total
-                    setelahnya karena penolakan. Jangan abaikan jalan kaki
-                    sebagai olahraga rutin.
+                    Dan ketika berjalan kaki menjadi menyenangkan, Anda dapat
+                    meningkatkan jarak dan kecepatan. Tidak perlu terburu-buru
+                    dengan peningkatan beban - penting untuk tidak
+                    menakut-nakuti diri Anda sendiri dari inisiatif yang baik.
+                    Lebih baik dua hari 5 km daripada "lari" sejauh 15 km dan
+                    penolakan total terhadap ide tersebut. Jangan abaikan jalan
+                    kaki sebagai olahraga teratur.
                   </p>
                 </div>
               </div>
@@ -1292,7 +1386,9 @@
                   aria-expanded="false"
                   aria-controls="panelsStayOpen-collapseTwo"
                 >
-                  <b>2. Sit up—2 set dengan 10 repetisi</b>
+                  <b
+                    >2. Sit-up (atau bisa juga "skrup") — 2 set, 10 repetisi.</b
+                  >
                 </button>
               </h2>
               <div
@@ -1304,11 +1400,11 @@
                   <img class="img" src="./img/program/content-2.jpg" alt="" />
 
                   <p class="text margin-top">
-                    Luruskan lengan Anda ke atas kepala atau pegang di belakang
-                    kepala. Buang napas, kencangkan perut, dan tahan napas.
-                    Pegang kepala, bahu, dan tulang belikat Anda menjauh dari
-                    lantai, biarkan punggung bagian bawah menempel ke tanah.
-                    Perlahan kembali ke posisi awal dan ulangi.
+                    Luruskan tangan di atas kepala atau lingkarkan di belakang
+                    kepala. Hembuskan nafas, ketegangkan otot perut dan tahan
+                    nafas. Angkat kepala, bahu, dan tulang belikat dari lantai,
+                    biarkan bagian pinggang tetap menempel di lantai. Perlahan
+                    kembali ke posisi awal dan ulangi.
                   </p>
                 </div>
               </div>
@@ -1323,7 +1419,7 @@
                   aria-expanded="false"
                   aria-controls="panelsStayOpen-collapseThree"
                 >
-                  <b>3. Squat—3 set dengan 15 repetisi</b>
+                  <b>3. Squat - 3 set, 15 repetisi.</b>
                 </button>
               </h2>
               <div
@@ -1335,12 +1431,12 @@
                   <img class="img" src="img/program/content-3.jpg" alt="" />
 
                   <p class="text margin-top">
-                    Untuk melakukan squat standar, Anda harus menjaga punggung
-                    tetap lurus. Kemudian mulailah menurunkan pinggul Anda
-                    secara perlahan hingga sejajar atau hampir sejajar dengan
-                    lantai. Pada posisi terendah, berhenti, tahan tubuh selama
-                    1-2 detik sambil mengembuskan napas dan kembali ke posisi
-                    awal.
+                    Untuk melakukan squat standar, jaga punggung tetap lurus.
+                    Kemudian mulailah menurunkan pinggul Anda secara perlahan
+                    hingga sejajar atau hampir sejajar dengan lantai. Pada
+                    posisi bawah, berhentilah, tahan tubuh Anda dengan cara ini
+                    selama 1-2 detik saat menghembuskan napas dan kembali ke
+                    posisi awal.
                   </p>
                 </div>
               </div>
@@ -1355,7 +1451,7 @@
                   aria-expanded="false"
                   aria-controls="panelsStayOpen-collapseFour"
                 >
-                  <b>4. Angkat lengan-kaki—3 set 16 repetisi</b>
+                  <b>4. Angkatan tangan dan kaki - 3 set, 16 repetisi.</b>
                 </button>
               </h2>
               <div
@@ -1379,56 +1475,58 @@
             </div>
           </div>
 
-          <!-- Третий шаг -->
-          <h4 class="title--little margin-top" id="3step">
-            3) Rekomendasi diet:
+          <!-- Четвертый шаг -->
+          <h4 class="title--little margin-top" id="4step">
+            4) Rekomendasi untuk Pola Makan:
           </h4>
 
-          <h5 class="text"><b>5 aturan gizi utama:</b></h5>
+          <h5 class="text">5 aturan utama pola makan:</h5>
 
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              1. Konsumsi 2 gram protein per kilogram berat badan per hari.
-              Protein akan membantu mengurangi rasa lapar dan menjaga massa otot
-              dalam proses penurunan berat badan.
+              1. Konsumsi 2 g protein per kilogram berat badan setiap hari.
+              Protein akan membantu mengurangi rasa lapar dan mempertahankan
+              massa otot selama proses penurunan berat badan.
             </li>
             <li class="list-group-item">
-              2. Batasi atau hilangkan sama sekali gula dan manisan, roti putih,
-              dan kue kering.
+              2. Batasi atau sepenuhnya hindari gula dan makanan manis, roti
+              putih, dan kue-kuean.
             </li>
             <li class="list-group-item">
-              3. Konsumsi lebih banyak serat dari buah-buahan, sayuran, dan
-              biji-bijian.
+              3. Konsumsi lebih banyak serat dari sayuran dan buah, serta produk
+              biji-bijian utuh.
             </li>
             <li class="list-group-item">
-              4. Minum segelas air putih 30 menit sebelum makan.
+              4. Minumlah satu gelas air 30 menit sebelum makan.
             </li>
-            <li class="list-group-item">5.Kurangi asupan kalori Anda.</li>
+            <li class="list-group-item">
+              5. Kurangi asupan kalori dari makanan Anda.
+            </li>
           </ul>
 
-          <img class="img" src="img/program/content-5.jpg" alt="" />
+          <img class="img m-2" src="img/program/content-5.jpg" alt="" />
 
           <p class="text">
-            Aturan “seperempat, seperempat, setengah” adalah cara mudah untuk
-            mengingat proporsi yang benar dari setiap kelompok makanan untuk
-            mencapai makanan yang seimbang. Caranya adalah:
+            Seperempat, seperempat, setengah — ini adalah cara sederhana untuk
+            mengingat proporsi yang benar dari setiap kelompok makanan dalam
+            asupan makanan yang seimbang. Begini caranya:
           </p>
 
           <ol class="list-group list-group-flush">
             <li class="list-group-item">
-              Isi seperempat piring Anda dengan beras-berasan utuh
+              Isi seperempat piring dengan sereal biji-bijian utuh.
             </li>
             <li class="list-group-item">
-              Isi seperempat piring Anda dengan sumber protein yang baik
+              Isi seperempat piring dengan sumber protein yang baik.
             </li>
             <li class="list-group-item">
-              Isi setengah piring Anda dengan buah-buahan dan sayuran
+              Isi setengah piring dengan buah-buahan dan sayuran.
             </li>
           </ol>
 
-          <h5 class="text margin-top">
-            <b> Rencana makan 5 hari </b>
-          </h5>
+          <img class="img" src="img/program/content-6.jpg" alt="" />
+
+          <h5 class="text margin-top">Contoh program makanan untuk 5 hari.</h5>
 
           <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
@@ -1452,24 +1550,24 @@
                 <div class="accordion-body">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      <b>Sarapan:</b> Oatmeal dan beberapa buah/kacang kering,
-                      susu rendah lemak dan buah-buahan.
+                      <b>Sarapan:</b> Sereal gandum dan beberapa
+                      buah/kacang-kacangan kering, susu rendah lemak dan buah.
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan pertama:</b> Buah atau kerupuk dengan keju
-                      krim.
+                      <b>Camilan pertama:</b> Buah atau biskuit dengan keju
+                      cottage
                     </li>
                     <li class="list-group-item">
-                      <b>Makan siang:</b> Sup dengan ayam dan sayuran. Salad
-                      sayuran dengan minyak zaitun.
+                      <b>Makan siang:</b> Sup ayam dan sayuran. Salad sayuran
+                      dengan minyak zaitun
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan kedua:</b> Dua potong roti sereal dengan teh
-                      atau jus tanpa pemanis.
+                      <b>Camilan kedua:</b> Dua roti gandum dengan teh atau jus
+                      tanpa pemanis
                     </li>
                     <li class="list-group-item">
-                      <b>Makan malam:</b> Lada Bulgaria, nasi dengan daging sapi
-                      cincang. Tomat ceri dan sejumlah sayuran hijau.
+                      <b>Makan malam:</b> Paprika, nasi dengan daging sapi
+                      cincang. Tomat ceri dan beberapa sayuran.
                     </li>
                   </ul>
                 </div>
@@ -1500,19 +1598,19 @@
                       sepotong roti gandum.
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan pertama:</b> Keju cottage bebas lemak, buah
-                      beri segar atau beku.
+                      <b>Camilan pertama:</b> Keju cottage skim, buah beri segar
+                      atau frozen.
                     </li>
                     <li class="list-group-item">
-                      <b>Makan siang:</b> Brokoli panggang dengan ikan. Selada
-                      segar.
+                      <b>Makan siang:</b> Brokoli yang dipanggang dengan ikan.
+                      Daun selada segar.
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan kedua:</b> Kue oatmeal, teh hijau
+                      <b>Camilan kedua:</b> Biskuit oatmeal, teh hijau
                     </li>
                     <li class="list-group-item">
-                      <b>Makan malam:</b> Fillet ikan dengan sayuran. Yogurt
-                      tawar.
+                      <b>Makan malam:</b> Fillet ikan dengan lauk sayuran.
+                      Yoghurt alami.
                     </li>
                   </ul>
                 </div>
@@ -1539,22 +1637,22 @@
                 <div class="accordion-body">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      <b>Sarapan:</b> Bubur oatmeal dengan kismis.
+                      <b>Sarapan:</b> Bubur oat dengan kismis
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan pertama:</b> Satu gelas jus segar dan dua
-                      sereal.
+                      <b>Camilan pertama:</b> Satu gelas jus segar dan dua roti
+                      gandum.
                     </li>
                     <li class="list-group-item">
                       <b>Makan siang:</b> Dada ayam rebus dengan nasi. Salad
                       sayuran ringan.
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan kedua:</b> Yogurt tawar, roti diet.
+                      <b>Camilan kedua:</b> Yogurt alami, roti diet.
                     </li>
                     <li class="list-group-item">
-                      <b>Makan malam:</b> Ikan bakar atau rebus. Salad hijau
-                      dengan saus jus lemon.
+                      <b>Makan malam:</b> Ikan bakar atau rebus. Salad sayuran
+                      hijau yang diberi jus lemon.
                     </li>
                   </ul>
                 </div>
@@ -1582,21 +1680,21 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                       <b>Sarapan:</b> Soba rebus dengan satu sendok makan minyak
-                      sayur.
+                      sayur
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan pertama:</b> Satu apel, yogurt.
+                      <b>Camilan pertama:</b> Satu apel, yoghurt.
                     </li>
                     <li class="list-group-item">
-                      <b>Makan siang:</b> Daging dan kentang kukus. Salad
+                      <b>Makan siang:</b> Daging kukus dengan kentang. Salad
                       sayuran.
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan kedua:</b> Satu buah atau sayuran pilihan Anda.
+                      <b>Camilan kedua:</b> Buah atau sayuran apa saja
                     </li>
                     <li class="list-group-item">
-                      <b>Makan malam:</b> Ikan dengan nasi, sepiring sayuran
-                      pilihan Anda.
+                      <b>Makan malam:</b> Ikan dengan lauk nasi, sepiring
+                      sayuran pilihan
                     </li>
                   </ul>
                 </div>
@@ -1623,18 +1721,18 @@
                 <div class="accordion-body">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      <b>Sarapan:</b> Sandwich telur goreng dengan tomat, keju,
-                      dan roti hitam.
+                      <b>Sarapan:</b> Telur orak-arik dengan tomat, keju, dan
+                      roti lapis hitam
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan pertama:</b> Buah atau kerupuk.
+                      <b>Camilan pertama:</b> Buah atau biskuit.
                     </li>
                     <li class="list-group-item">
                       <b>Makan siang:</b> Sup vegetarian. Salad sayuran dengan
-                      saus minyak zaitun.
+                      minyak zaitun.
                     </li>
                     <li class="list-group-item">
-                      <b>Camilan kedua:</b> Yogurt, beberapa kue gandum.
+                      <b>Camilan kedua:</b> Yoghurt, beberapa biskuit oatmeal.
                     </li>
                     <li class="list-group-item">
                       <b>Makan malam:</b> Telur dadar dua protein dengan susu,
@@ -1647,156 +1745,99 @@
           </div>
 
           <p class="text margin-top">
-            Anda dapat mengubah rencana dan membuatnya sendiri dengan syarat
-            utama adalah mempertahankan buah-buahan, produk susu, biji-bijian,
-            sereal, ikan, dan ayam tetap ada dalam makanan Anda.
+            Anda dapat mengubah program dan menyusunnya sendiri, syarat
+            utamanya: keberadaan buah, produk susu, biji-bijian, sereal, ikan,
+            dan ayam dalam diet Anda.
           </p>
 
-          <!-- Четвертый шаг -->
-          <h4 class="title--little" id="4step">
-            4) Masih ada aturan tertentu yang harus Anda ikuti:
+          <!-- Пятый шаг -->
+          <h4 class="title--little" id="5step">
+            5) Ada juga beberapa aturan yang disarankan untuk diikuti:
           </h4>
 
           <ul class="list-group list-group-flush list-group-numbered">
             <li class="list-group-item">
-              Singkirkan garam. Garam akan menahan air di dalam tubuh, yang akan
-              memperlambat efek.
+              Hindari garam. Garam menyebabkan tubuh menahan air, yang akan
+              memperlambat munculnya hasil.
             </li>
             <li class="list-group-item">
-              Cobalah untuk tidak menggunakan saus yang dibeli dari toko. Saus
-              semacam itu tinggi kalori dan penuh dengan bahan tambahan buatan.
-              Percayalah, membuat saus sendiri jauh lebih sehat dan
-              menyenangkan!
+              Cobalah untuk tidak menggunakan saus toko. Mereka kalorik dan
+              penuh dengan aditif buatan. Percayalah, membuat saus sendiri jauh
+              lebih sehat dan menarik!
             </li>
             <li class="list-group-item">
-              Minum teh hijau, jus buah dan sayuran. Jangan terlalu banyak minum
-              kopi, jus yang dibeli di toko, dan teh dengan gula. Juga, minum
-              alkohol sesedikit mungkin, karena tinggi kalori dan membangkitkan
-              nafsu makan.
+              Minumlah teh hijau, jus buah, dan jus sayuran. Sebaiknya jangan
+              berlebihan dengan kopi, jus komersial, dan teh dengan gula. Juga,
+              kurangi konsumsi alkohol sebanyak mungkin, karena tinggi kalori
+              dan dapat meningkatkan nafsu makan.
             </li>
           </ul>
 
-          <!-- Пятый шаг -->
-          <h4 class="title--little margin-top" id="5step">
-            5) Tabel hasil tes.
+          <!-- Шестой шаг -->
+          <h4 class="title--little margin-top" id="6step">
+            6) Buku harian penurunan berat badan
           </h4>
 
           <p class="text">
-            Sekitar 98% subjek uji telah mencapai hasil penurunan berat badan
-            yang signifikan. Anda dapat melihat hasil rata-rata untuk program
-            ini pada tabel di bawah ini.
+            Untuk melihat hasil Anda, saya menyarankan Anda untuk membuat buku
+            harian penurunan berat badan dan mengisinya setiap minggu. Dengan
+            cara ini Anda akan dapat mengevaluasi dan mengamati hasilnya. Anda
+            juga bisa mengambil foto profil dan melihat berat badan Anda
+            berkurang di depan mata Anda dengan (PRODUCT). Saya berharap yang
+            terbaik untuk Anda!
           </p>
 
           <p class="text">
-            50.000 orang (pria dan wanita) ikut serta dalam pengujian SlimMax.
+            <b
+              ><span class="username">(NAME)</span>, saya sarankan untuk membuat
+              buku harian penurunan berat badan dalam format ini:</b
+            >
           </p>
 
           <div class="allocated-block-2">
             <div class="allocated-block-2__content">
-              <h4 class="title--little no-margin-top">Pria</h4>
-
-              <table class="table table-hover">
+              <table class="table table-hover table-bordered">
                 <tbody>
                   <tr>
-                    <th>Berat, (kg)</th>
-                    <th>Minggu ke-1, (kg)</th>
-                    <th>Minggu ke-2, (kg)</th>
-                    <th>Minggu ke-3, (kg)</th>
-                    <th>Minggu ke-4, (kg)</th>
+                    <th>Tanggal</th>
+                    <th>Berat badan</th>
+                    <th>Ukuran pinggul</th>
+                    <th>Lingkar pinggang</th>
                   </tr>
 
                   <tr>
-                    <td>60-70</td>
-                    <td>3-5</td>
-                    <td>3-5</td>
-                    <td>4-5</td>
-                    <td>3-6</td>
+                    <td class="date-table"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
 
                   <tr>
-                    <td>70-80</td>
-                    <td>3-6</td>
-                    <td>3-7</td>
-                    <td>4-8</td>
-                    <td>4-8</td>
+                    <td class="date-table"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
 
                   <tr>
-                    <td>80-100</td>
-                    <td>4-9</td>
-                    <td>5-9</td>
-                    <td>6-9</td>
-                    <td>6-9</td>
+                    <td class="date-table"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
 
                   <tr>
-                    <td>100-120</td>
-                    <td>5-9</td>
-                    <td>5-9</td>
-                    <td>6-9</td>
-                    <td>4-6</td>
+                    <td class="date-table"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
 
                   <tr>
-                    <td>120-160</td>
-                    <td>5-9</td>
-                    <td>5-8</td>
-                    <td>6-10</td>
-                    <td>6-9</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <h4 class="title--little">Wanita</h4>
-
-              <table class="table table-hover">
-                <tbody>
-                  <tr>
-                    <th>Berat, (kg)</th>
-                    <th>Minggu ke-1, (kg)</th>
-                    <th>Minggu ke-2, (kg)</th>
-                    <th>Minggu ke-3, (kg)</th>
-                    <th>Minggu ke-4, (kg)</th>
-                  </tr>
-
-                  <tr>
-                    <td>50-60</td>
-                    <td>2-4</td>
-                    <td>2-5</td>
-                    <td>2-3</td>
-                    <td>2-3</td>
-                  </tr>
-
-                  <tr>
-                    <td>60-70</td>
-                    <td>3-5</td>
-                    <td>3-5</td>
-                    <td>4-5</td>
-                    <td>3-6</td>
-                  </tr>
-
-                  <tr>
-                    <td>70-90</td>
-                    <td>4-9</td>
-                    <td>5-9</td>
-                    <td>5-9</td>
-                    <td>5-8</td>
-                  </tr>
-
-                  <tr>
-                    <td>90-100</td>
-                    <td>5-9</td>
-                    <td>5-9</td>
-                    <td>6-9</td>
-                    <td>4-6</td>
-                  </tr>
-
-                  <tr>
-                    <td>100-140</td>
-                    <td>5-9</td>
-                    <td>5-8</td>
-                    <td>6-10</td>
-                    <td>6-9</td>
+                    <td class="date-table"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
@@ -1804,26 +1845,9 @@
           </div>
 
           <p class="text">
-            Untuk memvisualisasikan hasil, kami menyarankan Anda untuk mengisi
-            tabel setiap minggu. Jadi Anda bisa mengevaluasi dan mengamati
-            efeknya. Selanjutnya, untuk tujuan klarifikasi, Anda dapat mengambil
-            gambar profil, melihat bagaimana kelebihan berat badan dibakar di
-            depan mata Anda sendiri dengan bantuan SlimMax. Semoga Anda sukses!
-          </p>
-
-          <p class="text">
-            Formula SlimMax tersebut dibuat di Jakarta Research Center khusus
-            untuk orang yang kelebihan berat badan. Produk SlimMax inovatif ini
-            sangat diminati oleh para bintang terkenal dunia dan orang-orang
-            yang ingin menurunkan berat badan. Akibatnya, kuantitas SlimMax di
-            pasaran menjadi terbatas.
-          </p>
-
-          <p class="text">
-            Kami merekomendasikan untuk membeli SlimMax sesegera mungkin untuk
-            memanfaatkan peluang untuk mencapai hasil penurunan berat badan yang
-            diinginkan dengan cepat dan efektif. Khusus untuk Anda, kami
-            memberikan diskon 50% setelah mengisi tes ini.
+            Kesehatan klien saya selalu diutamakan. (PRODUCT) dikembangkan
+            secara ilmiah dan didukung oleh jaminan kualitas. Anda dapat yakin
+            dengan pilihan Anda.
           </p>
 
           <p class="lead">

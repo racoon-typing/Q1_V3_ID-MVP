@@ -1,6 +1,7 @@
 import { questionsFact } from '../mock/facts.js';
 import { questionsList } from '../mock/questions.js';
 import { individualText } from '../mock/text.js';
+
 import { crollToBottom, minValue, maxValue } from '../utils.js';
 
 // Глобальные переменные
@@ -50,7 +51,7 @@ function clickByAnswer() {
       // Добаляет активный класс нажатому элементу
       nearestItem.classList.toggle('question__sub-item--checked');
 
-      if(questionsList[step].fact){
+      if (questionsList[step].fact) {
         factNode.classList.remove('question__item-fact--hidden');
         crollToBottom();
       }
@@ -95,10 +96,9 @@ function createQuestionItem() {
 
   // Запоняет совет текстом: номер зависит от вопросов (step - 1 от порядкового номера)
 
-  if(questionsList[step].fact){
-    factText.textContent = questionsList[step].fact
+  if (questionsList[step].fact) {
+    factText.textContent = questionsList[step].fact;
   }
-
 
   // Запоняет шаблон данными
   title.textContent = stepQuestion.title;
@@ -167,6 +167,7 @@ function getIndividualUserMessage(questionResults) {
   } else {
     grade = 3;
   }
+
 
   // Объект с результатом юзера
   const userResultMessage = individualText[grade];
@@ -240,25 +241,34 @@ buttonNext.addEventListener('click', () => {
     const firstIndividualMessage = document.getElementById(
       'individual__message-1',
     );
-    firstIndividualMessage.textContent = getIndividualUserMessage(questionResults).individualMessage.replace('{BMI}', userInfo.bmi);
+    firstIndividualMessage.textContent = getIndividualUserMessage(
+      questionResults,
+    ).individualMessage.replace('{BMI}', userInfo.bmi);
+
+    
 
     const secondIndividualText = document.getElementById(
       'individual__message-2',
     );
     const imageIndividual = secondIndividualText.querySelector('.head-img');
-    imageIndividual.src = getIndividualUserMessage(questionResults).appeal.src
+    imageIndividual.src = getIndividualUserMessage(questionResults).appeal.src;
 
     const headerIndividual = document.querySelector('.headerText');
-    headerIndividual.textContent = getIndividualUserMessage(questionResults).appeal.headerText;
+    headerIndividual.textContent =
+      getIndividualUserMessage(questionResults).appeal.headerText;
 
-    const nameIndividual = secondIndividualText.querySelector('.h4')
-    nameIndividual.textContent = getIndividualUserMessage(questionResults).appeal.name;
+    const nameIndividual = secondIndividualText.querySelector('.h4');
+    nameIndividual.textContent =
+      getIndividualUserMessage(questionResults).appeal.name;
 
-    const appealTextIndividual = secondIndividualText.querySelector('.appeal__text')
-    appealTextIndividual.textContent = getIndividualUserMessage(questionResults).appeal.text;
+    const appealTextIndividual =
+      secondIndividualText.querySelector('.appeal__text');
+    appealTextIndividual.textContent =
+      getIndividualUserMessage(questionResults).appeal.text;
 
     const bodyImgIndividual = secondIndividualText.querySelector('.body-img');
-    bodyImgIndividual.src = getIndividualUserMessage(questionResults).appeal.srcWide;
+    bodyImgIndividual.src =
+      getIndividualUserMessage(questionResults).appeal.srcWide;
     // Показывает лоадер после прохождения квиза
     openLoader();
 
