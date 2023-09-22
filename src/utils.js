@@ -67,4 +67,44 @@ const maxValue = questionListMax
   .map((el) => el[0].point)
   .reduce((accumulator, currentValue) => accumulator + currentValue);
 
-export { cutDownTimer, showMoreText, crollToBottom, minValue, maxValue };
+// Показывает блок загрузки
+const loaderContainer = document.querySelector('.loader');
+let resultTime = 0; // Задержка отображения текста
+
+function openLoader() {
+  const questionContainer = document.querySelector('.question__wrapper');
+  questionContainer.classList.add('hidden');
+  loaderContainer.classList.remove('hidden');
+
+  const textLoaders = document.querySelectorAll('.text-loader');
+  textLoaders.forEach((loader, index) => {
+    const wordsCount = loader.textContent.split(' ').length;
+    const delay = wordsCount * 100; // Интервал в миллисекундах, зависящий от количества слов
+    resultTime += delay;
+    setTimeout(() => {
+      if (index < 1) {
+        // loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
+      } else {
+        textLoaders[index - 1].classList.toggle('o-0');
+        loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
+      }
+    }, resultTime);
+  });
+
+  // Показывает следующий блок
+  const resultContainer = document.querySelector('.result');
+
+  setTimeout(() => {
+    loaderContainer.classList.add('hidden');
+    resultContainer.classList.remove('hidden');
+  }, resultTime + 4000);
+}
+
+export {
+  cutDownTimer,
+  showMoreText,
+  crollToBottom,
+  minValue,
+  maxValue,
+  openLoader,
+};

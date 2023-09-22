@@ -1,15 +1,13 @@
-import { questionsFact } from '../mock/facts.js';
 import { questionsList } from '../mock/questions.js';
-import { individualText } from '../mock/text.js';
-
-import { crollToBottom, minValue, maxValue } from '../utils.js';
+import { secondIndividualText } from '../mock/text-2.js';
+import { crollToBottom, minValue, maxValue, openLoader } from '../utils.js';
 
 // Глобальные переменные
 let step = 0; // счетчик: Номер вопроса
 let isStart = false; // Флаг на первую загрузку вопросов
 let myUserPoints = 0; // Кол-во очков, которое получил юзер после прохождения квиза
 let isAnswered = false; // Флаг ответил на вопрос или нет
-let userInfo = {};
+let userInfo = {}; // присваивает в значение пустой объект для дальнейшего переопределения
 
 // Устанавливает начальный процент прохождения квиза
 const scaleWidth = document.querySelector('.question__stage-line');
@@ -95,7 +93,6 @@ function createQuestionItem() {
   factNode.classList.add('question__item-fact--hidden');
 
   // Запоняет совет текстом: номер зависит от вопросов (step - 1 от порядкового номера)
-
   if (questionsList[step].fact) {
     factText.textContent = questionsList[step].fact;
   }
@@ -151,10 +148,8 @@ function getIndividualUserMessage(questionResults) {
 
   userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
-  let grade;
-  if (questionResults.myUserPoints <= firstGroup) {
-    grade = 0;
-  } else if (
+  let grade = 0;
+  if (
     questionResults.myUserPoints > firstGroup &&
     questionResults.myUserPoints <= secondGroup
   ) {
@@ -164,41 +159,15 @@ function getIndividualUserMessage(questionResults) {
     questionResults.myUserPoints <= thirdGroup
   ) {
     grade = 2;
-  } else {
+  } else if (questionResults.myUserPoints > thirdGroup) {
     grade = 3;
   }
 
-
   // Объект с результатом юзера
-  const userResultMessage = individualText[grade];
+  const userResultMessage = secondIndividualText[grade];
   return userResultMessage;
 }
 
-// Задержка отображения текста
-const loaderContainer = document.querySelector('.loader');
-let resultTime = 0;
-
-// Показывает блок загрузки
-function openLoader() {
-  const questionContainer = document.querySelector('.question__wrapper');
-  questionContainer.classList.add('hidden');
-  loaderContainer.classList.remove('hidden');
-
-  const textLoaders = document.querySelectorAll('.text-loader');
-  textLoaders.forEach((loader, index) => {
-    const wordsCount = loader.textContent.split(' ').length;
-    const delay = wordsCount * 100; // Интервал в миллисекундах, зависящий от количества слов
-    resultTime += delay;
-    setTimeout(() => {
-      if (index < 1) {
-        // loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
-      } else {
-        textLoaders[index - 1].classList.toggle('o-0');
-        loader.classList.toggle('o-0'); // Переключение класса для скрытия/показа
-      }
-    }, resultTime);
-  });
-}
 
 // Кнопка дальше
 const buttonNext = document.querySelector('.question__stage-button');
@@ -211,6 +180,8 @@ buttonNext.addEventListener('click', () => {
   // Получает баллы за ответ на вопрос
   const userPoints = getAnswerPoints();
   myUserPoints += Number(userPoints);
+  console.log(maxValue);
+  console.log(myUserPoints);
 
   // Переходит на слеюдущий шаг
   step += 1;
@@ -231,54 +202,17 @@ buttonNext.addEventListener('click', () => {
       maxValue,
     };
 
-    // Дубликат узла
-    const individualCheckListNode = document.querySelector(
-      '.result__check-list',
+    // Индивидуальные сообщения по результатам прохождения квиза
+    const individualMessageQuiz = document.getElementById(
+      'individual__message-quiz',
     );
-    const checkItemTemplate = document.querySelector('#result__check-item');
 
-    // Индивидуальные сообщения
-    const firstIndividualMessage = document.getElementById(
-      'individual__message-1',
-    );
-    firstIndividualMessage.textContent = getIndividualUserMessage(
-      questionResults,
-    ).individualMessage.replace('{BMI}', userInfo.bmi);
+    // Вставляет индивидуальные сообщения по результатам прохождения квиза
+    individualMessageQuiz.textContent =
+      getIndividualUserMessage(questionResults);
 
-    
-
-    const secondIndividualText = document.getElementById(
-      'individual__message-2',
-    );
-    const imageIndividual = secondIndividualText.querySelector('.head-img');
-    imageIndividual.src = getIndividualUserMessage(questionResults).appeal.src;
-
-    const headerIndividual = document.querySelector('.headerText');
-    headerIndividual.textContent =
-      getIndividualUserMessage(questionResults).appeal.headerText;
-
-    const nameIndividual = secondIndividualText.querySelector('.h4');
-    nameIndividual.textContent =
-      getIndividualUserMessage(questionResults).appeal.name;
-
-    const appealTextIndividual =
-      secondIndividualText.querySelector('.appeal__text');
-    appealTextIndividual.textContent =
-      getIndividualUserMessage(questionResults).appeal.text;
-
-    const bodyImgIndividual = secondIndividualText.querySelector('.body-img');
-    bodyImgIndividual.src =
-      getIndividualUserMessage(questionResults).appeal.srcWide;
     // Показывает лоадер после прохождения квиза
     openLoader();
-
-    // Показывает следующий блок
-    const resultContainer = document.querySelector('.result');
-
-    setTimeout(() => {
-      loaderContainer.classList.add('hidden');
-      resultContainer.classList.remove('hidden');
-    }, resultTime + 4000);
 
     return;
   } else {

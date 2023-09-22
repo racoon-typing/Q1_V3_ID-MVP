@@ -1,5 +1,5 @@
 import { getUserIcon } from './user-icon.js';
-import { outputUserValue } from './user-result.js';
+import { outputUserValue } from './user-result-bmi.js';
 import { populateProfile } from './profile.js';
 
 // Ноды
