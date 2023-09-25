@@ -11,3 +11,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // LazyLoadImg
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
+
+const preloaderScreen = document.querySelector('.preloader');
+const firstScreen = document.querySelector('.first-screen__container');
+
+document.addEventListener('DOMContentLoaded', () => {
+    preloaderScreen.classList.add('hidden');
+    firstScreen.classList.remove('hidden');
+});

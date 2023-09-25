@@ -1,6 +1,8 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const fs = require('fs');
 
@@ -34,6 +36,9 @@ module.exports = {
         },
       },
     }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.[contenthash].css',
+    }),
   ],
   module: {
     rules: [
@@ -44,9 +49,12 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-                ["@babel/preset-env", {
-                    "targets": "defaults, ie 11" // Целевые браузеры включают IE 11 и стандартные браузеры
-                }]
+              [
+                '@babel/preset-env',
+                {
+                  targets: 'defaults, ie 11', // Целевые браузеры включают IE 11 и стандартные браузеры
+                },
+              ],
             ],
           },
         },
@@ -54,9 +62,9 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
-          'css-loader', // добавляет css в CommonJS
-          'sass-loader', // sass в css
+          MiniCssExtractPlugin.loader, // Замените 'style-loader' на MiniCssExtractPlugin.loader
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
@@ -65,6 +73,30 @@ module.exports = {
         generator: {
           filename: path.join('assets/img', '[name].[contenthash][ext]'),
         },
+        use: [
+          {
+            loader: 'image-webpack-loader', // Добавляем ImageWebpackLoader для минимизации JavaScript
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 75,
+              },
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
@@ -74,5 +106,9 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()], // Добавляем TerserPlugin для минимизации JavaScript
   },
 };
