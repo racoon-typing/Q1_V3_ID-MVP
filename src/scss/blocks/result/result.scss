@@ -128,6 +128,7 @@
     align-items: center;
     border-radius: 5px;
     background-color: $light-gray;
+    margin-bottom: 30px;
 
     .head-img {
       width: 50%;
@@ -145,7 +146,7 @@
   }
 
   &__review {
-    margin-bottom: 16px;
+    margin-bottom: 4px;
 
     &-list {
         display: flex;
@@ -153,10 +154,11 @@
         padding: 0;
         margin: 0;
         list-style-type: none;
+        padding-bottom: 16px;
     }
 
     &-item {
-        width: 85%;
+        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -171,8 +173,8 @@
         }
 
         &-img {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 20px;
@@ -180,6 +182,7 @@
 
         &-info {
             text-align: center;
+            font-weight: 600;
         }
 
         &-text {
@@ -187,8 +190,6 @@
             margin: 0;
         }
     }
-
-
   }
 
   &__programm {

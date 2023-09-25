@@ -43,7 +43,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: [
+                ["@babel/preset-env", {
+                    "targets": "defaults, ie 11" // Целевые браузеры включают IE 11 и стандартные браузеры
+                }]
+            ],
           },
         },
       },

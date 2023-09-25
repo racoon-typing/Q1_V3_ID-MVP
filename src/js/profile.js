@@ -25,7 +25,6 @@ function calculateCalorieIntake(weight, height, age, gender) {
 
 // Функция для вставки данных из localStorage в блок профиля
 export function populateProfile() {
-  console.log('ok');
   // Получаем данные из localStorage
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
@@ -48,7 +47,6 @@ export function populateProfile() {
     yearsElement.textContent = userInfo.age;
     genderElement.textContent = userInfo.gender;
     excessWeightElement.textContent = `${userInfo.idealWeight}`;
-    console.log(userInfo.idealWeight);
     bmiElement.textContent = userInfo.bmi;
     waterElement.textContent = calculateWaterIntake(
       userInfo.userWeight,

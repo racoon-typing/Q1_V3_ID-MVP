@@ -13,7 +13,7 @@ const appeelSelebaBmi = document.getElementById(
 const imageSelebaBmi = appeelSelebaBmi.querySelector('.head-img');
 const nameSelebaBmi = appeelSelebaBmi.querySelector('.h4');
 const appealTextIndividual = appeelSelebaBmi.querySelector('.appeal__text');
-const bodyImgIndividual = appeelSelebaBmi.querySelector('.body-img');
+// const bodyImgIndividual = appeelSelebaBmi.querySelector('.body-img');
 
 // Выводит индивидуальные сообщения по BMI
 function outputUserMessageBmi(message, bmi) {
@@ -25,16 +25,14 @@ function outputUserMessageBmi(message, bmi) {
   headerMessageBmi.textContent = message.appeal.headerText;
   nameSelebaBmi.textContent = message.appeal.name;
   appealTextIndividual.textContent = message.appeal.text;
-  bodyImgIndividual.textContent = message.appeal.srcWide;
+//   bodyImgIndividual.textContent = message.appeal.srcWide;
 }
 
 // Выводит данные расчета на страницу: Результат
 function outputUserValue(calcUserInfo) {
-  //  console.log(calcUserInfo);
-  // Находит поля для заполнения
+  // Находит поля для заполнения на странице Результат
   const resultName = document.querySelectorAll('.username');
   const resultBmi = document.querySelector('#result__bmi');
-
   const resultUserWeight = document.querySelector('#result__userWeight');
   const resultIdealWeight = document.querySelector('#result__idealWeight');
   const resultExcessWeight = document.querySelector('#result__excessWeight');

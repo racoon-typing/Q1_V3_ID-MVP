@@ -180,8 +180,6 @@ buttonNext.addEventListener('click', () => {
   // Получает баллы за ответ на вопрос
   const userPoints = getAnswerPoints();
   myUserPoints += Number(userPoints);
-  console.log(maxValue);
-  console.log(myUserPoints);
 
   // Переходит на слеюдущий шаг
   step += 1;
