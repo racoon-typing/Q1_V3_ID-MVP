@@ -48,6 +48,11 @@
     &--no-margin-bottom {
         margin-bottom: 0;
     }
+
+    &--italic-light {
+        font-weight: 300;
+        font-style: italic;
+    }
   }
 
   &__counter {

@@ -223,6 +223,13 @@
     padding: 7px 0;
     text-decoration: none;
     min-height: 45px;
+
+    &-icon {
+        width: 30px;
+        fill: #fff;
+        margin-left: 6px;
+        rotate: 180deg;
+    }
   }
 
   &__slider {

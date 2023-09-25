@@ -175,10 +175,11 @@
                         <input type="text" name="name" id="name" class="calculator__input form-control" value=""
                             placeholder="Nama:" tabindex="0" required />
                     </div>
-                    <label for="height"> Tinggi: (sentimeter) </label>
+                    <label for="height"> Tinggi (cm): </label>
                     <div class="calculator__input-wrapper calculator__input-wrapper-height">
+                        <!-- Ограничения для полей: min="100" max="260" -->
                         <input type="number" name="height" id="height" class="calculator__input form-control" value=""
-                            placeholder="180" min="100" max="260" tabindex="0" />
+                            placeholder="180" tabindex="0" />
 
                         <span
                             class="calculator__input-text--error calculator__input-text--error-height calculator__input-text--error-hidden">
@@ -186,10 +187,11 @@
                         </span>
                     </div>
 
-                    <label for="weight"> Berat: (kilogram) </label>
+                    <label for="weight"> Berat badan (kg): </label>
                     <div class="calculator__input-wrapper calculator__input-wrapper-weight">
+                        <!-- Ограничения для полей: min="30" max="300" -->
                         <input type="number" name="weight" id="weight" class="calculator__input form-control" value=""
-                            placeholder="120" min="30" max="300" tabindex="0" />
+                            placeholder="120" tabindex="0" />
 
                         <span
                             class="calculator__input-text--error calculator__input-text--error-weight calculator__input-text--error-hidden">
@@ -197,10 +199,11 @@
                         </span>
                     </div>
 
-                    <label for="age"> Umur: (tahun) </label>
+                    <label for="age"> Usia (tahun): </label>
                     <div class="calculator__input-wrapper calculator__input-wrapper-age">
+                        <!-- Ограничения для полей: min="0" max="120" -->
                         <input type="number" name="age" id="age" class="calculator__input form-control" value=""
-                            placeholder="32" min="0" max="120" tabindex="0" />
+                            placeholder="32" tabindex="0" />
 
                         <span
                             class="calculator__input-text--error calculator__input-text--error-age calculator__input-text--error-hidden">
@@ -208,10 +211,10 @@
                         </span>
                     </div>
 
-                    <label for="gender"> Jenis kelamin </label>
+                    <label for="gender"> Jenis Kelamin: </label>
                     <div class="calculator__select calculator__input-wrapper calculator__input-wrapper-gender">
                         <select class="calculator__input form-select" id="form-select" name="gender" tabindex="0">
-                            <option selected disabled>jenis kelamin Anda</option>
+                            <option selected disabled>Jenis kelamin Anda</option>
                             <option value="Wanita">Wanita</option>
                             <option value="Pria">Pria</option>
                         </select>
@@ -417,77 +420,92 @@
                 <!-- <img class="body-img" src="./img/content/star-1(2).jpg" alt="" /> -->
             </div>
 
-
             <!-- Отзывы -->
             <div class="result__review">
                 <ul class="result__review-list">
                     <!-- 1 -->
                     <li class="result__review-item">
-                        <img src="./img/review/review-1.jpg" alt="" class="result__review-item-img">
+                        <img src="./img/review/review-1.jpg" alt="" class="result__review-item-img" />
 
                         <p class="result__review-item-info">
                             Rina Permata, 40 tahun, Semarang
                         </p>
 
                         <p class="result__review-item-text">
-                            Selama lima tahun saya mencoba berbagai macam diet dan program kebugaran, tetapi setiap kali saya hanya kecewa. Tapi berkat (PRODUCT) saya berhasil menurunkan berat badan sebanyak 15kg! Terima kasih, Cissie Nugraha
+                            Selama lima tahun saya mencoba berbagai macam diet dan program
+                            kebugaran, tetapi setiap kali saya hanya kecewa. Tapi berkat
+                            (PRODUCT) saya berhasil menurunkan berat badan sebanyak 15kg!
+                            Terima kasih, Cissie Nugraha
                         </p>
                     </li>
 
                     <!-- 2 -->
                     <li class="result__review-item">
-                        <img src="./img/review/review-2.jpg" alt="" class="result__review-item-img">
+                        <img src="./img/review/review-2.jpg" alt="" class="result__review-item-img" />
 
                         <p class="result__review-item-info">
                             Aisyah Usamah, 57 tahun, Surabaya
                         </p>
 
                         <p class="result__review-item-text">
-                            (PRODUCT) direkomendasikan kepada saya oleh seorang teman saya. Saya tidak percaya itu akan membantu, tetapi saya memutuskan untuk mencobanya. Dan saya tidak pernah menyesali pilihan saya! Sekarang saya terlihat hebat dan merasa nyaman dengan diri saya sendiri
+                            (PRODUCT) direkomendasikan kepada saya oleh seorang teman saya.
+                            Saya tidak percaya itu akan membantu, tetapi saya memutuskan
+                            untuk mencobanya. Dan saya tidak pernah menyesali pilihan saya!
+                            Sekarang saya terlihat hebat dan merasa nyaman dengan diri saya
+                            sendiri
                         </p>
                     </li>
 
                     <!-- 3 -->
                     <li class="result__review-item">
-                        <img src="./img/review/review-3.jpg" alt="" class="result__review-item-img">
+                        <img src="./img/review/review-3.jpg" alt="" class="result__review-item-img" />
 
                         <p class="result__review-item-info">
                             Farah Laksmiwati, 32 tahun, Pekanbaru
                         </p>
 
                         <p class="result__review-item-text">
-                            Ketika saya kelebihan berat badan, saya pikir saya tidak akan pernah bisa memiliki keluarga, tidak akan ada yang menyukai saya, bahkan untuk berjalan saja sulit, dan saya baru berusia 32 tahun! Tapi syukurlah semua itu sudah berlalu. Sekarang saya merasa muda dan sangat cantik berkat (PRODUCT)!
+                            Ketika saya kelebihan berat badan, saya pikir saya tidak akan
+                            pernah bisa memiliki keluarga, tidak akan ada yang menyukai
+                            saya, bahkan untuk berjalan saja sulit, dan saya baru berusia 32
+                            tahun! Tapi syukurlah semua itu sudah berlalu. Sekarang saya
+                            merasa muda dan sangat cantik berkat (PRODUCT)!
                         </p>
                     </li>
 
                     <!-- 4 -->
                     <li class="result__review-item">
-                        <img src="./img/review/review-4.jpg" alt="" class="result__review-item-img">
+                        <img src="./img/review/review-4.jpg" alt="" class="result__review-item-img" />
 
                         <p class="result__review-item-info">
                             Puti Susanti, 49 tahun, Bogor
                         </p>
 
                         <p class="result__review-item-text">
-                            Ketika sepertinya sudah tidak ada kesempatan lagi, (PRODUCT) membantu saya mengalahkan kelebihan berat badan yang mengerikan ini! Saya mendapatkan kembali kepercayaan diri saya dan mulai menikmati hidup lagi.
+                            Ketika sepertinya sudah tidak ada kesempatan lagi, (PRODUCT)
+                            membantu saya mengalahkan kelebihan berat badan yang mengerikan
+                            ini! Saya mendapatkan kembali kepercayaan diri saya dan mulai
+                            menikmati hidup lagi.
                         </p>
                     </li>
 
                     <!-- 5 -->
                     <li class="result__review-item">
-                        <img src="./img/review/review-5.png" alt="" class="result__review-item-img">
+                        <img src="./img/review/review-5.png" alt="" class="result__review-item-img" />
 
                         <p class="result__review-item-info">
                             Faizah Puspita, 28 tahun, Jayapura
                         </p>
 
                         <p class="result__review-item-text">
-                            Saya suka (PRODUK)! Saya tidak lagi takut naik timbangan dan orang-orang yang saya cintai tidak percaya betapa saya telah berubah. Saya berhasil menurunkan berat badan 20kg hanya dalam waktu satu setengah bulan
+                            Saya suka (PRODUK)! Saya tidak lagi takut naik timbangan dan
+                            orang-orang yang saya cintai tidak percaya betapa saya telah
+                            berubah. Saya berhasil menurunkan berat badan 20kg hanya dalam
+                            waktu satu setengah bulan
                         </p>
                     </li>
                 </ul>
             </div>
-
 
             <h3 class="title margin-bottom">
                 Formula (PRODUCT) diciptakan di pusat penelitian di Jakarta khusus
@@ -509,7 +527,7 @@
             </p>
 
             <!-- Слайдер -->
-            <div id="result__slider" class="result__slider">
+            <!-- <div id="result__slider" class="result__slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide result__slide">
                         <h3 class="result__slide-title">
@@ -565,7 +583,7 @@
                 </div>
 
                 <div class="swiper-pagination"></div>
-            </div>
+            </div> -->
 
             <h3 class="title margin-bottom">
                 Mengapa Anda dianjurkan untuk menggunakan (PRODUCT)?
@@ -699,7 +717,14 @@
                 berat badan yang direkomendasikan, (PRODUCT).
             </p>
 
-            <button class="button result__button">MASUK KE PAKET INDIVIDU</button>
+            <button class="button result__button">
+                MASUK KE PAKET INDIVIDU
+
+                <svg class="result__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" id="arrow" fill="currenColor">
+                    <path d="M1408 960V832q0-26-19-45t-45-19H842l189-189q19-19 19-45t-19-45l-91-91q-18-18-45-18t-45 18L488 760l-91 91q-18 18-18 45t18 45l91 91 362 362q18 18 45 18t45-18l91-91q18-18 18-45t-18-45l-189-189h502q26 0 45-19t19-45zm256-64q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z">
+                    </path>
+                </svg>
+            </button>
 
             <!-- Шаблон элемента чек-листа -->
             <template id="result__check-item">
@@ -742,36 +767,6 @@
                 badan Anda.
             </p>
 
-            <!-- <p class="text">
-          <b>
-            Apa pun yang Anda makan atau seberapa sering Anda berolahraga, Anda
-            dapat mengikuti rekomendasi dari rencana yang dibuat untuk Anda,
-            atau hanya menggunakan "SlimMax", tanpa mengubah gaya hidup Anda.
-            Namun Anda akan melihat bahwa kemajuan Anda sedikit lebih lambat
-            dibandingkan dengan jika mengikuti program. Dalam hal ini, Anda bisa
-            turun hingga 11 kg per bulan.
-          </b>
-        </p>
-
-        <h3 class="sub-title">
-          Menurut survei di antara lebih dari 100.000 pengguna "SlimMax", produk
-          ini menunjukkan efisiensi tinggi sebagai berikut:
-        </h3> -->
-
-            <!-- <ol class="list-group list-group-flush">
-          <li class="list-group-item">
-            1. Pencernaan menjadi normal: 97% responden
-          </li>
-          <li class="list-group-item">
-            2. Energi muncul, tidur membaik: 95% responden
-          </li>
-          <li class="list-group-item">
-            3. Berhasil menurunkan berat badan: 99% responden
-          </li>
-          <li class="list-group-item">
-            4. Berat yang dicapai tetap bertahan selamanya: 95% responden
-          </li>
-        </ol> -->
 
             <div class="text-and-form" id="textShown">
                 <div>
@@ -907,11 +902,9 @@
                 </form>
 
                 <p class="lead mini-text no-margin-bottom">
-                    * Saya yakin program saya akan efektif untuk Anda dan Anda akan
-                    mendapatkan hasil yang nyata dalam 4 minggu! Jika tidak, saya
-                    bersedia mengembalikan uang Anda kembali jika Anda dapat menunjukkan
-                    bahwa Anda telah mengikuti program yang telah dipersonalisasi dengan
-                    (PRODUCT).
+                    * File dengan rekomendasi pribadi dan rencana gizi/olahraga akan
+                    segera ditampilkan setelah mengisi formulir. Anda dapat mengunduhnya
+                    dan memulai program Anda hari ini.
                 </p>
             </div>
 
@@ -1497,10 +1490,8 @@
                     dengan pilihan Anda.
                 </p>
 
-                <p class="lead product__text--no-margin-bottom">
-                    * File dengan rekomendasi pribadi dan rencana gizi/olahraga akan
-                    segera ditampilkan setelah mengisi formulir. Anda dapat mengunduhnya
-                    dan memulai program Anda hari ini.
+                <p class="text product__text--no-margin-bottom product__text--italic-light">
+                    * Saya yakin program saya akan efektif untuk Anda dan Anda akan mendapatkan hasil yang nyata dalam 4 minggu! Jika tidak, saya bersedia mengembalikan uang Anda kembali jika Anda dapat menunjukkan bahwa Anda telah mengikuti program yang telah dipersonalisasi dengan (PRODUCT).
                 </p>
             </div>
         </div>
