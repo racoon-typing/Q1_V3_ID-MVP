@@ -4,7 +4,7 @@
   height: 100%;
   box-sizing: border-box;
   padding: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   overflow: auto;
 
   &__headline {
@@ -16,10 +16,6 @@
     margin: 0;
     border-top: 1px solid $light-gray;
     border-bottom: 1.5px solid $light-gray;
-    margin-bottom: 20px;
-  }
-
-  &__list {
     margin-bottom: 20px;
   }
 

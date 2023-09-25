@@ -2,9 +2,11 @@
   padding: 0 15px 30px;
   width: 100%;
   padding: 15px;
+  padding-bottom: 30px;
 
   .mini-text{
     font-size: $font-size-helper;
+    margin-bottom: 0;
   }
 
   .margin-top {
@@ -42,6 +44,10 @@
     font-weight: 500;
     line-height: $line-height-2;
     margin-bottom: 16px;
+
+    &--no-margin-bottom {
+        margin-bottom: 0;
+    }
   }
 
   &__counter {
@@ -111,6 +117,7 @@
     align-items: center;
     max-width: 470px;
     gap: 15px;
+    text-align: center;
 
     &-img-and-prices {
       display: flex;
@@ -202,13 +209,10 @@
   .img {
     width: 100%;
     border-radius: $border-radius-1;
-    margin: 10px 0;
+    margin: 10px 0 !important;
   }
 
   /* Выделенный блок 2 */
-//   .allocated-block-2 {
-//   }
-
   .allocated-block-2__icon {
     display: block;
     width: 100%;

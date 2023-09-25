@@ -5,6 +5,7 @@
     flex-grow: 1;
     height: 100%;
     padding: 15px;
+    padding-bottom: 30px;
   }
 
   &__title {
@@ -130,7 +131,7 @@
   }
 
   &__stars{
-    
+
     display: flex;
     flex-direction: column;
     padding-bottom: 25px;
@@ -150,18 +151,15 @@
   &__surprise {
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
-    min-width: 200px;
-    width: 200px;
-    height: 100px;
+    min-width: 185px;
+    width: min-content;
     background: linear-gradient(
       to bottom right,
       rgb(123, 221, 110) 5px,
       #1a5213
     );
-    padding: 15px;
+    padding: 10px 15px;
     box-sizing: border-box;
     border-radius: $border-radius-1;
     box-shadow: $box-shadow-2;
@@ -187,7 +185,6 @@
 
     &-text {
       display: block;
-      max-width: 120px;
       font-size: $font-size-helper;
       line-height: $line-height-2;
       text-align: right;
@@ -195,6 +192,6 @@
       color: $white;
     }
 
-    
+
   }
 }
