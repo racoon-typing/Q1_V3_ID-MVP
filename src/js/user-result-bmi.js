@@ -53,7 +53,6 @@ function outputUserValue(calcUserInfo) {
   const resultUserWeight = document.querySelector('#result__userWeight');
   const resultIdealWeight = document.querySelector('#result__idealWeight');
   const resultExcessWeight = document.querySelector('#result__excessWeight');
-  const resultToBeWeight = document.querySelector('#result__toBeWeight');
   const programExcessWeight = document.querySelector('.excessWeight');
   const programExcessWeightTime = document.querySelector('#excessWeight-time');
 
@@ -63,7 +62,6 @@ function outputUserValue(calcUserInfo) {
   resultIdealWeight.textContent = calcUserInfo.idealWeight;
   resultExcessWeight.textContent = calcUserInfo.excessWeight;
   programExcessWeight.textContent = calcUserInfo.excessWeight;
-  resultToBeWeight.textContent = calcUserInfo.idealWeight;
   resultName.forEach((element) => {
     element.textContent = calcUserInfo.name;
   });
