@@ -58,5 +58,8 @@ formSubmit.addEventListener('submit', function (e) {
     })
     .catch((error) => {
       alert(error);
+
+      // Показывает скрытую программу
+      showMoreText();
     });
 });
