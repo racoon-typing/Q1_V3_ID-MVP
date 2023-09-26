@@ -13,6 +13,7 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 
+// Убирает лоадер на загрузку страницы
 const preloaderScreen = document.querySelector('.preloader');
 const firstScreen = document.querySelector('.first-screen__container');
 
