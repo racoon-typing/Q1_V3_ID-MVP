@@ -14,15 +14,15 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-  .hidden {
+  & .hidden {
     display: none;
   }
 
-  .no-margin-bottom {
+  & .no-margin-bottom {
     margin-bottom: 0;
   }
 
-  .no-margin-top {
+  & .no-margin-top {
     margin-top: 0;
   }
 }
@@ -107,7 +107,7 @@ td, th{
 }
 
 .text {
-  
+
   font-size: $font-size-text;
   line-height: $line-height;
 }

@@ -25,7 +25,24 @@ function outputUserMessageBmi(message, bmi) {
   headerMessageBmi.textContent = message.appeal.headerText;
   nameSelebaBmi.textContent = message.appeal.name;
   appealTextIndividual.textContent = message.appeal.text;
-//   bodyImgIndividual.textContent = message.appeal.srcWide;
+  //   bodyImgIndividual.textContent = message.appeal.srcWide;
+}
+
+// Выводит время для достижения цели: снижение веса
+function outputUserMessageTimeToResult(excessWeight) {
+  let timeToResult = '';
+  if (excessWeight <= 12) {
+    timeToResult = 'dua minggu';
+  } else if (excessWeight > 12 && excessWeight <= 21) {
+    timeToResult = 'satu bulan';
+  } else if (excessWeight > 21 && excessWeight <= 35) {
+    timeToResult = 'satu setengah bulan';
+  } else if (excessWeight > 35 && excessWeight <= 45) {
+    timeToResult = 'dua bulan';
+  } else if (excessWeight > 45) {
+    timeToResult = 'tiga bulan';
+  }
+  return timeToResult;
 }
 
 // Выводит данные расчета на страницу: Результат
@@ -38,6 +55,7 @@ function outputUserValue(calcUserInfo) {
   const resultExcessWeight = document.querySelector('#result__excessWeight');
   const resultToBeWeight = document.querySelector('#result__toBeWeight');
   const programExcessWeight = document.querySelector('.excessWeight');
+  const programExcessWeightTime = document.querySelector('#excessWeight-time');
 
   // Вставляет данные о юзере на страницу
   resultBmi.textContent = calcUserInfo.bmi;
@@ -49,6 +67,9 @@ function outputUserValue(calcUserInfo) {
   resultName.forEach((element) => {
     element.textContent = calcUserInfo.name;
   });
+  programExcessWeightTime.textContent = outputUserMessageTimeToResult(
+    calcUserInfo.excessWeight
+  );
 
   // Объект с инфой о селебе на основе BMI
   let userResultMessageBmi;
