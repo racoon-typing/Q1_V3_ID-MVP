@@ -47,10 +47,8 @@ formSubmit.addEventListener('submit', function (e) {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Ошибка запроса');
+        throw new Error('Terjadi kesalahan saat mengirim permintaan. Muat ulang halaman dan coba lagi');
       }
-
-      console.log('Запрос отправлен успешно');
 
       // Показывает скрытую программу
       showMoreText();
@@ -59,8 +57,6 @@ formSubmit.addEventListener('submit', function (e) {
       trackPixel();
     })
     .catch((error) => {
-      console.log('Запрос не отправлен:', error);
-      // Показывает скрытую программу
-      showMoreText();
+      alert(error);
     });
 });

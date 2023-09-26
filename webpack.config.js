@@ -4,7 +4,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const fs = require('fs');
+
 
 module.exports = {
   entry: './src/main.js',
