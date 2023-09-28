@@ -60,6 +60,6 @@ formSubmit.addEventListener('submit', function (e) {
       alert(error);
 
       // Показывает скрытую программу
-      showMoreText();
+    //   showMoreText();
     });
 });
