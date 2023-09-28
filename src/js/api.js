@@ -41,7 +41,7 @@ formSubmit.addEventListener('submit', function (e) {
   const formData = new FormData(formSubmit);
 
   // Fetch запрос
-  fetch('server.php', {
+  fetch('get-affbay.php', {
     method: 'POST',
     body: formData,
   })
